@@ -156,7 +156,14 @@
           "url": "https://www.iq.com/album/hometown-romance-2026-1pg1klzlrtl"
         }
       ],
-      "trailerUrl": "https://youtu.be/bS_vRrzvxy0?si=VhjmOE2VVcUxEdML"
+      "trailerUrl": "https://youtu.be/bS_vRrzvxy0?si=VhjmOE2VVcUxEdML",
+      "bookLinks": [
+        {
+          "lang": "en",
+          "store": "Amazon",
+          "url": "https://amzn.eu/d/08JTsKyv"
+        }
+      ]
     },
     {
       "id": "1776889365998",
@@ -186,7 +193,19 @@
           "url": "https://www.iq.com/album/the-water-4-elements-2026-2fxxh4am0kx"
         }
       ],
-      "trailerUrl": "https://youtu.be/rDNsXiN9S74?si=XfMWPYvkW2h62VlX"
+      "trailerUrl": "https://youtu.be/rDNsXiN9S74?si=XfMWPYvkW2h62VlX",
+      "bookLinks": [
+        {
+          "lang": "en",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/?action=book_details&book_id=368787"
+        },
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-253894-THE-WATER-%E0%B8%99%E0%B8%97%E0%B8%B5%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%A5%E0%B9%88%E0%B8%AB%E0%B9%8C"
+        }
+      ]
     },
     {
       "id": "1776889415383",
@@ -211,7 +230,19 @@
       "bookUrl": "https://en.mebmarket.com/?action=book_details&book_id=377605",
       "upcoming": false,
       "watchLinks": [],
-      "trailerUrl": "https://youtu.be/a6aH88Zzb_w?si=qwgTmGQf70mdsPS5"
+      "trailerUrl": "https://youtu.be/a6aH88Zzb_w?si=qwgTmGQf70mdsPS5",
+      "bookLinks": [
+        {
+          "lang": "en",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/?action=book_details&book_id=377605"
+        },
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-259296-THE-AIR-%E0%B9%80%E0%B8%AA%E0%B8%99%E0%B9%88%E0%B8%AB%E0%B8%B2%E0%B8%A7%E0%B8%B2%E0%B9%82%E0%B8%A2"
+        }
+      ]
     },
     {
       "id": "1776889447326",
@@ -236,7 +267,14 @@
       "bookUrl": "https://en.mebmarket.com/?action=book_details&book_id=342572",
       "upcoming": false,
       "watchLinks": [],
-      "trailerUrl": "https://youtu.be/4K__c9385LE?si=CmWq00qfJk5E-fgo"
+      "trailerUrl": "https://youtu.be/4K__c9385LE?si=CmWq00qfJk5E-fgo",
+      "bookLinks": [
+        {
+          "lang": "es",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/?action=book_details&book_id=342572"
+        }
+      ]
     },
     {
       "id": "1776889488147",
@@ -301,7 +339,21 @@
       "bookUrl": "https://en.mebmarket.com/?action=book_details&book_id=391629",
       "upcoming": true,
       "skipDates": [],
-      "episodes": []
+      "episodes": [],
+      "watchLinks": [],
+      "trailerUrl": "",
+      "bookLinks": [
+        {
+          "lang": "en",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/?action=book_details&book_id=391629"
+        },
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-265834-THE-FIRE-%E0%B9%82%E0%B8%8B%E0%B9%88%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B8%AD%E0%B8%B1%E0%B8%84%E0%B8%99%E0%B8%B5"
+        }
+      ]
     },
     {
       "id": "1776931938317",
@@ -312,13 +364,32 @@
       "country": "Tailandia",
       "network": "",
       "networkUrl": "",
-      "bookSource": "In Love Forever (Spanish Version)",
+      "bookSource": "In Love Forever",
       "basedOnBook": true,
       "bookCoverUrl": "https://cdn-local.mebmarket.com/meb/server1/429133/Thumbnail/book_detail_large.gif?2",
       "bookUrl": "https://en.mebmarket.com/?action=book_details&book_id=429133",
       "upcoming": true,
       "skipDates": [],
-      "episodes": []
+      "episodes": [],
+      "watchLinks": [],
+      "trailerUrl": "",
+      "bookLinks": [
+        {
+          "lang": "es",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/?action=book_details&book_id=429133"
+        },
+        {
+          "lang": "en",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-425185-In-Love-Forever-%E0%B8%A7%E0%B8%B2%E0%B8%94%E0%B8%9D%E0%B8%B1%E0%B8%99%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%A7%E0%B8%B4%E0%B8%A7%E0%B8%B2%E0%B8%AB%E0%B9%8C-English-Version"
+        },
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-354792-%E0%B8%A7%E0%B8%B2%E0%B8%94%E0%B8%9D%E0%B8%B1%E0%B8%99%E0%B8%A7%E0%B8%B1%E0%B8%99%E0%B8%A7%E0%B8%B4%E0%B8%A7%E0%B8%B2%E0%B8%AB%E0%B9%8C"
+        }
+      ]
     },
     {
       "id": "1776932166717",
@@ -332,12 +403,19 @@
       "bookSource": "PLS LOVE",
       "basedOnBook": true,
       "bookCoverUrl": "https://cdn-local.mebmarket.com/meb/server1/374428/Thumbnail/book_detail_large.gif?13",
-      "bookUrl": "",
+      "bookUrl": "https://www.mebmarket.com/ebook-374428-PLS-LOVE-%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B9%84%E0%B8%94%E0%B9%89%E0%B9%84%E0%B8%AB%E0%B8%A1",
       "upcoming": true,
       "skipDates": [],
       "episodes": [],
       "watchLinks": [],
-      "trailerUrl": ""
+      "trailerUrl": "",
+      "bookLinks": [
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-374428-PLS-LOVE-%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B9%84%E0%B8%94%E0%B9%89%E0%B9%84%E0%B8%AB%E0%B8%A1"
+        }
+      ]
     },
     {
       "id": "1776932289648",
@@ -354,7 +432,21 @@
       "bookUrl": "https://en.mebmarket.com/?action=book_details&book_id=413568",
       "upcoming": true,
       "skipDates": [],
-      "episodes": []
+      "episodes": [],
+      "watchLinks": [],
+      "trailerUrl": "",
+      "bookLinks": [
+        {
+          "lang": "en",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/?action=book_details&book_id=413568"
+        },
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-402930-%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B8%99%E0%B8%B5%E0%B9%89%E0%B8%95%E0%B8%B5%E0%B8%95%E0%B8%A3%E0%B8%B2"
+        }
+      ]
     },
     {
       "id": "1776932412578",
@@ -527,7 +619,19 @@
       ],
       "totalEpisodes": 8,
       "skipDates": [],
-      "episodes": []
+      "episodes": [],
+      "bookLinks": [
+        {
+          "lang": "en",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-364467-The-Earth---Vows-of-the-Land-4-Elements-GL-Series-English-Version"
+        },
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-249145-THE-EARTH-%E0%B8%A7%E0%B8%B4%E0%B8%A7%E0%B8%B2%E0%B8%AB%E0%B9%8C%E0%B8%9B%E0%B8%90%E0%B8%9E%E0%B8%B5"
+        }
+      ]
     },
     {
       "id": "1776966975487",
@@ -540,13 +644,20 @@
       "networkUrl": "",
       "watchLinks": [],
       "trailerUrl": "https://www.youtube.com/watch?v=wfEgXrB5Xuo&pp=ygUQdGhlIGhpZGRlbiBibG9vZNIHCQnFCgGHKiGM7w%3D%3D",
-      "bookSource": "",
-      "basedOnBook": false,
-      "bookCoverUrl": "",
-      "bookUrl": "",
+      "bookSource": "เลือดห้ามรัก (THE HIDDEN BLOOD)",
+      "basedOnBook": true,
+      "bookCoverUrl": "https://cdn-local.mebmarket.com/meb/server1/423525/Thumbnail/book_detail_large.gif?2",
+      "bookUrl": "https://www.mebmarket.com/ebook-423525-%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%94%E0%B8%AB%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B1%E0%B8%81-THE-HIDDEN-BLOOD",
       "upcoming": true,
       "skipDates": [],
-      "episodes": []
+      "episodes": [],
+      "bookLinks": [
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-423525-%E0%B9%80%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%94%E0%B8%AB%E0%B9%89%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B1%E0%B8%81-THE-HIDDEN-BLOOD"
+        }
+      ]
     },
     {
       "id": "1776967103985",
@@ -559,13 +670,40 @@
       "networkUrl": "",
       "watchLinks": [],
       "trailerUrl": "",
-      "bookSource": "BUILT IN LOVE [Spanish Version]",
+      "bookSource": "BUILT IN LOVE",
       "basedOnBook": true,
       "bookCoverUrl": "https://cdn-local.mebmarket.com/meb/server1/305897/Thumbnail/book_detail_large.gif?11",
       "bookUrl": "https://www.mebmarket.com/ebook-305897-BUILT-IN-LOVE-Spanish-Version",
       "upcoming": true,
       "skipDates": [],
-      "episodes": []
+      "episodes": [],
+      "bookLinks": [
+        {
+          "lang": "es",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-305897-BUILT-IN-LOVE-Spanish-Version"
+        },
+        {
+          "lang": "en",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-301332-BUILT-IN-LOVE-%E0%B8%81%E0%B9%88%E0%B8%AD%E0%B8%A3%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%A5%E0%B8%B4%E0%B8%9F-English-version"
+        },
+        {
+          "lang": "pt",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-321031-BUILT-IN-LOVE-Portuguese-Version"
+        },
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-229005-BUILT-IN-LOVE-%E0%B8%81%E0%B9%88%E0%B8%AD%E0%B8%A3%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87%E0%B9%80%E0%B8%A5%E0%B8%B4%E0%B8%9F"
+        },
+        {
+          "lang": "other",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-304713-BUILT-IN-LOVE-Indonesian-Version"
+        }
+      ]
     }
   ],
   "movies": [
@@ -582,7 +720,16 @@
       "basedOnBook": true,
       "bookSource": "A las chicas les gustan las chicas",
       "bookCoverUrl": "https://m.media-amazon.com/images/I/81VkKFSxr-L._SL1500_.jpg",
-      "bookUrl": "https://amzn.eu/d/0iUIkBzi"
+      "bookUrl": "https://amzn.eu/d/0iUIkBzi",
+      "watchLinks": [],
+      "trailerUrl": "",
+      "bookLinks": [
+        {
+          "lang": "es",
+          "store": "Amazon",
+          "url": "https://amzn.eu/d/0iUIkBzi"
+        }
+      ]
     },
     {
       "id": "1776966535594",
@@ -602,5 +749,5 @@
       "bookUrl": ""
     }
   ],
-  "exportedAt": "2026-04-23T17:58:36.057Z"
+  "exportedAt": "2026-04-23T18:25:03.443Z"
 }
