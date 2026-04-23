@@ -606,7 +606,7 @@ async function loadData(){
     state.movies=d.movies||[];
     if(d.exportedAt){
       const dt=new Date(d.exportedAt);
-      document.getElementById('updateBadge').textContent='✓ Act. '+dt.toLocaleDateString('es-ES',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
+      const badge=document.getElementById('updateBadge'); if(badge) badge.textContent='✓ Act. '+dt.toLocaleDateString('es-ES',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'});
     }
     return true;
   }catch(e){
