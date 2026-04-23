@@ -273,6 +273,16 @@
           "lang": "es",
           "store": "MEB",
           "url": "https://en.mebmarket.com/?action=book_details&book_id=342572"
+        },
+        {
+          "lang": "en",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/?action=book_details&book_id=318897"
+        },
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-189157-%E0%B8%A5%E0%B8%B1%E0%B8%A5%E0%B8%A5%E0%B9%8C%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%8A%E0%B8%AD%E0%B8%9A%E0%B9%84%E0%B8%A7%E0%B8%99%E0%B9%8C-Enemies-With-Benefits"
         }
       ]
     },
@@ -949,6 +959,138 @@
       "upcoming": true,
       "skipDates": [],
       "episodes": []
+    },
+    {
+      "id": "1776972733396",
+      "name": "Los Bridgerton (Temp. 5)",
+      "poster": "",
+      "synopsis": "La temporada 5 de Bridgerton se centra en Francesca Bridgerton y su complicada historia de amor con Michaela Stirling, tras quedar viuda.",
+      "year": "",
+      "country": "Estados Unidos",
+      "network": "Netflix",
+      "networkUrl": "https://www.netflix.com/es/title/80232398",
+      "watchLinks": [
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com/es/title/80232398"
+        }
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=cDtMMg_jayA",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": true,
+      "skipDates": [],
+      "episodes": []
+    },
+    {
+      "id": "1776972993462",
+      "name": "Love's Echoes",
+      "poster": "https://i.mydramalist.com/NdJldA_4f.jpg",
+      "synopsis": "Clara y New compartían el mismo sueño: convertirse en ídolos.\n\nHoy, una brilla con luz propia bajo los focos, mientras que la otra permanece en la sombra, dedicada a la escritura. Sus caminos se cruzan de nuevo cuando una novela de New se adapta al cine y Clara descubre la verdad tras su distanciamiento: New se retiró debido a un tumor que le deterioraba la audición.\n\nTras haber sido muy unidas, ¿les permitirá este reencuentro reavivar su vínculo... o quizás construir algo aún más fuerte?",
+      "year": "",
+      "country": "Tailandia",
+      "network": "",
+      "networkUrl": "",
+      "watchLinks": [],
+      "trailerUrl": "https://youtu.be/R0ny7lQSr2k?si=TnXtFdYlfJJ88ep_",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": true,
+      "skipDates": [],
+      "episodes": []
+    },
+    {
+      "id": "1776973104361",
+      "name": "Bake Love Feeling",
+      "poster": "https://i.mydramalist.com/JBYKQl_4f.jpg",
+      "synopsis": "Aunque empezamos mal, espero que nos acerquemos y que pueda trabajar bien contigo. No sé si es la cercanía o qué lo que me acelera el corazón.\n\nTengo que repetirme que la amabilidad que me has mostrado es solo por obligación, ¡no te lo tomes tan en serio!",
+      "year": "",
+      "country": "Tailandia",
+      "network": "",
+      "networkUrl": "",
+      "watchLinks": [],
+      "trailerUrl": "",
+      "bookSource": "Bake Love Feelings",
+      "basedOnBook": true,
+      "bookCoverUrl": "https://cdn-local.mebmarket.com/meb/server1/410048/Thumbnail/book_detail_large.gif?2",
+      "bookLinks": [
+        {
+          "lang": "es",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/?action=book_details&book_id=410048"
+        },
+        {
+          "lang": "en",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/?action=book_details&book_id=392846"
+        },
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-239464-%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%9B%E0%B8%B1%E0%B8%87%E0%B8%8A%E0%B8%B5%E0%B8%AA%E0%B9%80%E0%B8%99%E0%B8%A2-Bake-love-feelings"
+        }
+      ],
+      "bookUrl": "https://en.mebmarket.com/?action=book_details&book_id=410048",
+      "upcoming": true,
+      "skipDates": [],
+      "episodes": []
+    },
+    {
+      "id": "1776973507673",
+      "name": "Whale Store xoxo",
+      "poster": "https://i.mydramalist.com/nO6nPE_4f.jpg",
+      "synopsis": "En rápida sucesión, Wan pierde a su padre y se queda sin trabajo repentinamente, heredando de repente la tienda de comestibles paterna, que se hunde en tiempos difíciles.\n\nPronto conoce a Maewnam, una clienta habitual, trabajadora y coqueta. Maewnam apoya los esfuerzos de Wan por reflotar el negocio, pero oculta la verdad sobre su propio negocio familiar, lo que amenaza los planes de Wan.",
+      "year": 2025,
+      "country": "Tailandia",
+      "network": "Netflix, youtube",
+      "networkUrl": "https://www.netflix.com/title/82056570",
+      "watchLinks": [
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com/title/82056570"
+        },
+        {
+          "name": "Yotube",
+          "url": "https://www.youtube.com/watch?v=w8x8AedJzbY&list=PLszepnkojZI4qpSumzOHRdNa79JRiC-cE"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/P2YZ7d1aI6k?si=qjl31Q70tnASGZx_",
+      "bookSource": "The Whale Store",
+      "basedOnBook": true,
+      "bookCoverUrl": "https://cdn-local.mebmarket.com/meb/server1/347291/Thumbnail/book_detail_large.gif?2",
+      "bookLinks": [
+        {
+          "lang": "es",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/?action=book_details&book_id=348741"
+        },
+        {
+          "lang": "en",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-347291-The-Whale-Store-%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%A7%E0%B8%B2%E0%B8%AC%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%8A%E0%B8%B3-English-Version"
+        },
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-169299-%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%A7%E0%B8%B2%E0%B8%AC%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%8A%E0%B8%B3-The-Whale-Store-%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B8%99%E0%B8%B5%E0%B9%89%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B8%82%E0%B8%B2%E0%B8%A2"
+        }
+      ],
+      "bookUrl": "https://en.mebmarket.com/?action=book_details&book_id=348741",
+      "upcoming": false,
+      "startDate": "2025-06-25",
+      "dayOfWeek": 2,
+      "emissionDays": [
+        2
+      ],
+      "totalEpisodes": 10,
+      "skipDates": [],
+      "episodes": []
     }
   ],
   "movies": [
@@ -994,5 +1136,5 @@
       "bookUrl": ""
     }
   ],
-  "exportedAt": "2026-04-23T19:27:12.976Z"
+  "exportedAt": "2026-04-23T19:45:31.764Z"
 }
