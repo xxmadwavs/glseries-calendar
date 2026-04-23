@@ -924,6 +924,8 @@ const LANG_META={es:{flag:'🇪🇸',label:'Español'},en:{flag:'🇬🇧',label
 function langFlag(val){return (LANG_META[val]||{flag:'🌐'}).flag;}
 function langLabel(val){return (LANG_META[val]||{label:val}).label;}
 
+let booksState={q:'',sort:'az',type:'all',letter:''};
+
 function getAllBooks(){
   const books=[];
   state.series.forEach((s,i)=>{
