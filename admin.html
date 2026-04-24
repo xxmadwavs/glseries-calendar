@@ -658,7 +658,7 @@ function addPlatformRow(name='',url=''){
   if(!list) return;
   const row=document.createElement('div'); row.className='platform-row-sel';
   row.innerHTML=`
-    <select onchange="if(this.value){const p=PLATFORMS.find(x=>x.name===this.value);this.previousElementSibling.previousElementSibling.value=this.value;if(p&&p.url&&!this.nextElementSibling.value)this.nextElementSibling.value=p.url;this.value=''}">
+    <select onchange="if(this.value){const p=PLATFORMS.find(x=>x.name===this.value);const ni=this.nextElementSibling;const ui=ni.nextElementSibling;ni.value=this.value;if(p&&p.url&&!ui.value)ui.value=p.url;this.value=''}">
       ${platformSelectHtml()}
     </select>
     <input placeholder="Nombre visible" value="${name}">
@@ -976,7 +976,7 @@ function addMoviePlatformRow(name='',url=''){
   const list=document.getElementById('moviePlatformsList'); if(!list) return;
   const row=document.createElement('div'); row.className='platform-row-sel';
   row.innerHTML=`
-    <select onchange="if(this.value){const p=PLATFORMS.find(x=>x.name===this.value);this.nextElementSibling.value=this.value;if(p&&p.url&&!this.nextElementSibling.nextElementSibling.value)this.nextElementSibling.nextElementSibling.value=p.url;this.value=''}">
+    <select onchange="if(this.value){const p=PLATFORMS.find(x=>x.name===this.value);const ni=this.nextElementSibling;const ui=ni.nextElementSibling;ni.value=this.value;if(p&&p.url&&!ui.value)ui.value=p.url;this.value=''}">
       ${platformSelectHtml()}
     </select>
     <input placeholder="Nombre visible" value="${name}">
