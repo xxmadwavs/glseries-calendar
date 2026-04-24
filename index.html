@@ -212,7 +212,6 @@ body::before{content:'';position:fixed;inset:0;background:
 .series-card-meta{font-size:11px;color:var(--muted);line-height:1.5}
 .series-card-next{font-size:11px;color:var(--accent);font-weight:600;margin-top:4px}
 .series-card-done{font-size:11px;color:var(--teal);font-weight:600;margin-top:4px}
-/* Today indicator on series card */
 .series-card-today{
   font-size:11px;font-weight:700;margin-top:4px;
   display:inline-flex;align-items:center;gap:5px;
@@ -221,16 +220,13 @@ body::before{content:'';position:fixed;inset:0;background:
   animation:todayPulse 2.2s ease-in-out infinite;
 }
 @keyframes todayPulse{0%,100%{box-shadow:0 0 0 0 rgba(201,79,124,0.35)}60%{box-shadow:0 0 0 6px rgba(201,79,124,0)}}
-/* Progress bar — aired vs total */
 .progress-wrap{height:5px;background:var(--border);border-radius:3px;margin-top:8px;overflow:hidden;position:relative}
 .progress-fill{height:100%;border-radius:3px;transition:width .4s}
 .progress-today-marker{
   position:absolute;top:-1px;bottom:-1px;width:2px;
   background:rgba(255,255,255,0.85);border-radius:2px;
-  box-shadow:0 0 4px rgba(0,0,0,.2);
-  pointer-events:none;
+  box-shadow:0 0 4px rgba(0,0,0,.2);pointer-events:none;
 }
-/* Calendar cell past/future coloring */
 .day-cell.is-past{background:rgba(245,240,243,0.7)}
 .day-cell.is-past .day-num{color:rgba(138,104,120,0.5)}
 .day-cell.is-past .ep-pill{opacity:.55}
@@ -666,6 +662,7 @@ function getEpMap(y,m){
   const map={};
   state.series.filter(s=>!s.upcoming).forEach((s,si)=>{
     genEps(s).forEach(ep=>{
+      if(ep.skipped) return;
       const d=new Date(ep.date+'T12:00:00');
       if(d.getFullYear()===y&&d.getMonth()===m){
         if(!map[ep.date]) map[ep.date]=[];
@@ -714,11 +711,11 @@ function renderCal(){
         const col=PALETTE[si%PALETTE.length], bg=PALETTE_SOFT[si%PALETTE_SOFT.length];
         const thumb=s.poster?`<img class="ep-thumb" src="${s.poster}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">`:'' ;
         const ph=`<div class="ep-thumb-ph" style="${s.poster?'display:none':''}background:${bg}">🎬</div>`;
-        html+=`<div class="ep-pill" style="background:${bg}">
+        html+=`<div class="ep-pill${ep.skipped?' skipped':''}" style="background:${bg}">
           ${thumb}${ph}
           <div class="ep-pill-text" style="color:${col}">
             <div class="ep-pill-name">${s.name}</div>
-            <div class="ep-pill-ep">Ep. ${ep.num}</div>
+            <div class="ep-pill-ep">Ep. ${ep.num}${ep.skipped?' · ✗':''}</div>
           </div></div>`;
       }
     });
@@ -739,7 +736,6 @@ function seriesCardHtml(s, si){
   const pct=Math.round(aired/s.totalEpisodes*100);
   const col=PALETTE[si%PALETTE.length];
   const next=eps.find(e=>new Date(e.date+'T12:00:00')>now&&!e.skipped);
-  // Check if any ep airs today
   const todayEps=eps.filter(e=>e.date===todayStr&&!e.skipped);
   const days=getEmissionDays(s).map(d=>DAYS_L[d]).join(' y ');
   const posterEl=s.poster
@@ -747,7 +743,6 @@ function seriesCardHtml(s, si){
     :`<div class="series-card-poster-wrap"><div class="series-card-poster-ph">🎬</div></div>`;
   const links=s.watchLinks&&s.watchLinks.length?s.watchLinks:(s.networkUrl?[{name:s.network||'Ver serie',url:s.networkUrl}]:[]);
   const watchRow=links.length?`<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:4px">${links.map(l=>`<a class="card-watch-pill" href="${l.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">▶ ${l.name}</a>`).join('')}</div>`:'';
-  // Next ep or today indicator
   let nextLine='';
   if(todayEps.length){
     nextLine=`<div class="series-card-today">🌸 Hoy · Ep. ${todayEps.map(e=>e.num).join(' & ')}</div>`;
@@ -756,8 +751,6 @@ function seriesCardHtml(s, si){
   } else {
     nextLine=`<div class="series-card-done">✓ Finalizada</div>`;
   }
-  // Progress bar with today marker
-  const markerPct=pct; // marker sits at current aired boundary
   const progressBar=`<div class="progress-wrap">
     <div class="progress-fill" style="width:${pct}%;background:${col}"></div>
     ${pct>0&&pct<100?`<div class="progress-today-marker" style="left:${pct}%"></div>`:''}
