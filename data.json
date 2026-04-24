@@ -722,7 +722,7 @@
       "name": "Chasing Love",
       "poster": "https://i.mydramalist.com/JB8R1y_4f.jpg",
       "synopsis": "Tres mujeres que huyen del amor se cruzan con otras tres que se niegan a renunciar a perseguir sus corazones, demostrando que el amor es lo que mantiene vivo el espíritu humano. No importa cuánto intentemos escapar, al final, todas queremos amar y ser amadas.",
-      "year": "",
+      "year": 2026,
       "country": "Tailandia",
       "network": "",
       "networkUrl": "",
@@ -744,9 +744,16 @@
         }
       ],
       "bookUrl": "https://www.mebmarket.com/ebook-382259-Chasing-Love-%E0%B8%9E%E0%B8%B5%E0%B9%88%E0%B9%80%E0%B8%AD%E0%B8%87%E0%B8%81%E0%B9%87%E0%B8%A5%E0%B8%B3%E0%B8%9A%E0%B8%B2%E0%B8%81-English-version",
-      "upcoming": true,
+      "upcoming": false,
       "skipDates": [],
-      "episodes": []
+      "episodes": [],
+      "startDate": "2026-05-29",
+      "dayOfWeek": 0,
+      "emissionDays": [
+        0,
+        4
+      ],
+      "totalEpisodes": 8
     },
     {
       "id": "1776971297117",
@@ -1556,6 +1563,90 @@
       "upcoming": true,
       "skipDates": [],
       "episodes": []
+    },
+    {
+      "id": "1777048197930",
+      "name": "The Loyal Pin",
+      "poster": "https://i.mydramalist.com/2wnwdR_4f.jpg",
+      "synopsis": "Su Alteza Serenísima Aninlaphat, o Princesa Anin, y Mamá Rajawongse Pilanthita, o Khunying Pin, han sido muy unidas desde pequeñas.\n\nCuando la Princesa Anin cumplió quince años, tuvo que viajar a Inglaterra para continuar sus estudios, separándola de su gran amiga Khunying Pin. Sin embargo, esta distancia le permitió a Anin conocerse mejor a sí misma y comprender profundamente sus sentimientos hacia ella.\n\nAl regresar a Tailandia, la Princesa Anin intentó por todos los medios acercarse a Khunying Pin para confesarle su amor. No obstante, parecía una tarea imposible, ya que Khunying Pin estaba comprometida con Khun Chai Kueakiat.",
+      "year": 2024,
+      "country": "Tailandia",
+      "network": "youtube",
+      "networkUrl": "https://www.youtube.com/playlist?list=PL4D0KlUVq4IyqMr7kszWIINegVFFrztUD",
+      "watchLinks": [
+        {
+          "name": "youtube",
+          "url": "https://www.youtube.com/playlist?list=PL4D0KlUVq4IyqMr7kszWIINegVFFrztUD"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/lzv--GYRrxQ?si=8hqpbqcLGe9p45xo",
+      "bookSource": "The Loyal Pin",
+      "basedOnBook": true,
+      "bookCoverUrl": "https://m.media-amazon.com/images/I/71ri015-O-L._SL1500_.jpg",
+      "bookLinks": [
+        {
+          "lang": "en",
+          "store": "Amazon",
+          "url": "https://www.amazon.es/Loyal-Pin-Vol-1-English-ebook/dp/B0CKY1HV4T"
+        },
+        {
+          "lang": "en",
+          "store": "Amazon",
+          "url": "https://www.amazon.es/Loyal-Pin-Vol-2-English-ebook/dp/B0CNSD1S3R"
+        },
+        {
+          "lang": "en",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/ebook-261006-"
+        },
+        {
+          "lang": "en",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/ebook-271045-The-Loyal-Pin-Vol-2"
+        }
+      ],
+      "bookUrl": "https://www.amazon.es/Loyal-Pin-Vol-1-English-ebook/dp/B0CKY1HV4T",
+      "upcoming": false,
+      "startDate": "2024-08-04",
+      "dayOfWeek": 6,
+      "emissionDays": [
+        6
+      ],
+      "totalEpisodes": 16,
+      "skipDates": [],
+      "episodes": []
+    },
+    {
+      "id": "1777048586253",
+      "name": "Scandal Love",
+      "poster": "https://i.mydramalist.com/YYWkXW_4f.jpg",
+      "synopsis": "En la industria del K-pop, altamente comercializada, las emociones a menudo se fabrican y se venden como parte de la marca.\n\nScandal Love sigue a cuatro mujeres que se desenvuelven en diferentes niveles de poder dentro del sistema de un grupo femenino de K-pop. Mientras luchan con contratos estrictos, el abrumador escrutinio público y sus propios sentimientos genuinos, cada una se ve obligada a tomar decisiones imposibles.\n\nLa serie explora una pregunta central: ¿puede el amor verdadero sobrevivir dentro de relaciones cuidadosamente diseñadas y controladas?",
+      "year": 2026,
+      "country": "Corea del Sur",
+      "network": "iQiyi",
+      "networkUrl": "https://mydramalist.com/redirect?q=https%3A%2F%2Fwww.iq.com%2Falbum%2Fscandal-love-2026-1ljligb250d%3Flang%3Den_us&utm_source=mdl&utm_medium=page&utm_campaign=iqiyi&utm_content=807426",
+      "watchLinks": [
+        {
+          "name": "iQiyi",
+          "url": "https://mydramalist.com/redirect?q=https%3A%2F%2Fwww.iq.com%2Falbum%2Fscandal-love-2026-1ljligb250d%3Flang%3Den_us&utm_source=mdl&utm_medium=page&utm_campaign=iqiyi&utm_content=807426"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/mEqpVHvlLhY?si=gbYswBu5P83tB8EN",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "startDate": "2026-04-08",
+      "dayOfWeek": 2,
+      "emissionDays": [
+        2,
+        3
+      ],
+      "totalEpisodes": 10,
+      "skipDates": [],
+      "episodes": []
     }
   ],
   "movies": [
@@ -1601,5 +1692,5 @@
       "bookUrl": ""
     }
   ],
-  "exportedAt": "2026-04-24T15:58:02.756Z"
+  "exportedAt": "2026-04-24T16:36:35.977Z"
 }
