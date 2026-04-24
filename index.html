@@ -1009,45 +1009,33 @@ function getEpMap(y,m){
 function renderWeekPanel(){
   const now=new Date();
   const todayStr=toStr(now.getFullYear(),now.getMonth(),now.getDate());
-  // Get next 7 days
-  const days7=[];
-  for(let i=0;i<7;i++){
-    const d=new Date(now); d.setDate(d.getDate()+i);
-    days7.push(toStr(d.getFullYear(),d.getMonth(),d.getDate()));
-  }
   const items=[];
   state.series.filter(s=>!s.upcoming).forEach((s,si)=>{
     genEps(s).forEach(ep=>{
-      if(!ep.skipped && days7.includes(ep.date))
-        items.push({type:'series',s,ep,si,date:ep.date});
+      if(!ep.skipped && ep.date===todayStr)
+        items.push({type:'series',s,ep,si});
     });
   });
   state.movies.forEach((mv,mi)=>{
-    if(mv.date && days7.includes(mv.date))
-      items.push({type:'movie',s:mv,ep:{date:mv.date},si:mi,date:mv.date});
+    if(mv.date && mv.date===todayStr)
+      items.push({type:'movie',s:mv,ep:{date:mv.date},si:mi});
   });
-  items.sort((a,b)=>a.date.localeCompare(b.date));
   const panel=document.getElementById('weekPanel');
   if(!items.length){panel.innerHTML='';return;}
-  let html=`<div class="week-panel"><div class="week-panel-title">📅 Próximos 7 días</div><div class="week-panel-list">`;
-  items.forEach(({type,s,ep,si,date})=>{
-    const isToday=date===todayStr;
-    const d=new Date(date+'T12:00:00');
-    const dayLabel=isToday?'Hoy':d.toLocaleDateString('es-ES',{weekday:'short',day:'numeric',month:'short'});
+  let html=`<div class="week-panel"><div class="week-panel-title">🌸 Hoy</div><div class="week-panel-list">`;
+  items.forEach(({type,s,ep,si})=>{
     if(type==='movie'){
       html+=`<div class="week-ep-row" onclick="openMovie(${si})">
         <div class="week-ep-dot" style="background:var(--lavender)"></div>
         <div class="week-ep-name">🎥 ${s.name}</div>
-        <div class="week-ep-date">${dayLabel}</div>
-        ${isToday?'<span class="week-ep-today">HOY</span>':''}
+        <span class="week-ep-today">HOY</span>
       </div>`;
     } else {
       const col=PALETTE[si%PALETTE.length];
       html+=`<div class="week-ep-row" onclick="openSeries(${si})">
         <div class="week-ep-dot" style="background:${col}"></div>
         <div class="week-ep-name">${s.name} <span style="font-weight:400;color:var(--muted)">Ep.${ep.num}</span></div>
-        <div class="week-ep-date">${dayLabel}</div>
-        ${isToday?'<span class="week-ep-today">HOY</span>':''}
+        <span class="week-ep-today">HOY</span>
       </div>`;
     }
   });
