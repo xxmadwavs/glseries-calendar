@@ -1330,7 +1330,7 @@
       "network": "",
       "networkUrl": "",
       "watchLinks": [],
-      "trailerUrl": "https://www.youtube.com/watch?v=TDY-ZwAtCPI",
+      "trailerUrl": "https://youtu.be/TDY-ZwAtCPI?si=QofRjQB5iTfuFaxn",
       "bookSource": "Lunar Secret",
       "basedOnBook": true,
       "bookCoverUrl": "https://cdn-local.mebmarket.com/meb/server1/12745/Thumbnail/book_detail_large.gif?18",
@@ -1525,7 +1525,7 @@
       "network": "",
       "networkUrl": "",
       "watchLinks": [],
-      "trailerUrl": "https://www.youtube.com/watch?v=sY15eXJcRMU",
+      "trailerUrl": "https://youtu.be/sY15eXJcRMU?si=6zrqd4IiZYlJI4Yj",
       "bookSource": "",
       "basedOnBook": false,
       "bookCoverUrl": "",
@@ -1545,7 +1545,7 @@
       "network": "",
       "networkUrl": "",
       "watchLinks": [],
-      "trailerUrl": "https://www.youtube.com/watch?v=b8Fa97kmgwQ",
+      "trailerUrl": "https://youtu.be/b8Fa97kmgwQ?si=uk2guxOz4cN85v-2",
       "bookSource": "",
       "basedOnBook": false,
       "bookCoverUrl": "",
@@ -1599,5 +1599,5 @@
       "bookUrl": ""
     }
   ],
-  "exportedAt": "2026-04-24T12:18:45.463Z"
+  "exportedAt": "2026-04-24T12:33:02.560Z"
 }
