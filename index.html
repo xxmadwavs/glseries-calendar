@@ -32,7 +32,10 @@
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
 }
-*{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box;margin:0;padding:0;max-width:100%}
+/* Excepciones donde max-width:100% rompería el layout */
+img,svg,video,canvas,iframe{max-width:100%}
+.series-grid,.upcoming-grid,.movies-grid,.books-grid{max-width:100%}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:14px;line-height:1.6;min-height:100vh}
 
