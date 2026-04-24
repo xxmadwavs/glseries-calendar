@@ -157,7 +157,68 @@ body::before{content:'';position:fixed;inset:0;background:
   }
 }
 
-/* ═══ CALENDAR ═══ */
+/* ═══ CALENDAR LEGEND ═══ */
+.cal-legend{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;padding:10px 14px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
+.cal-legend-item{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text);font-weight:600;cursor:pointer;padding:3px 8px;border-radius:20px;transition:background .15s}
+.cal-legend-item:hover{background:var(--surface2)}
+.cal-legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.cal-legend-movie{background:var(--lavender)}
+
+/* ═══ WEEK PANEL ═══ */
+.week-panel{
+  background:var(--surface);border:1.5px solid var(--border2);
+  border-radius:var(--radius);padding:12px 16px;margin-bottom:14px;
+  box-shadow:var(--shadow-sm);
+}
+.week-panel-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:10px}
+.week-panel-list{display:flex;flex-direction:column;gap:5px}
+.week-panel-empty{font-size:12px;color:var(--muted);font-style:italic}
+.week-ep-row{
+  display:flex;align-items:center;gap:8px;
+  padding:5px 8px;border-radius:8px;
+  background:var(--surface2);border:1px solid var(--border);
+  cursor:pointer;transition:all .14s;font-size:12px;
+}
+.week-ep-row:hover{border-color:var(--accent2);background:var(--accent-soft)}
+.week-ep-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.week-ep-name{font-weight:600;color:var(--text);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.week-ep-date{font-size:11px;color:var(--muted);white-space:nowrap}
+.week-ep-badge{font-size:10px;padding:1px 7px;border-radius:20px;font-weight:700;white-space:nowrap}
+.week-ep-today{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:10px;padding:1px 8px;border-radius:20px;font-weight:700;animation:todayPulse 2.2s ease-in-out infinite}
+
+/* ═══ MONTH PICKER ═══ */
+.month-picker-year{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.month-picker-year-val{font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--text)}
+.month-picker-arr{background:var(--surface2);border:1.5px solid var(--border2);border-radius:20px;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:14px;transition:all .15s;font-family:var(--font-body)}
+.month-picker-arr:hover{background:var(--accent-soft);border-color:var(--accent2);color:var(--accent)}
+.month-picker-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.month-picker-btn{
+  padding:8px 4px;border-radius:10px;border:1.5px solid var(--border);
+  background:var(--surface2);color:var(--text);font-size:12px;font-weight:600;
+  cursor:pointer;font-family:var(--font-body);transition:all .15s;text-align:center;
+}
+.month-picker-btn:hover{border-color:var(--accent2);background:var(--accent-soft);color:var(--accent)}
+.month-picker-btn.active{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-color:var(--accent);box-shadow:0 3px 10px rgba(201,79,124,.3)}
+
+/* ═══ MONTH DISPLAY HINT ═══ */
+.month-display::after{content:' ▾';font-size:16px;opacity:.4;font-family:var(--font-body);font-weight:400}
+
+/* ═══ MODAL IMPROVEMENTS ═══ */
+.modal-progress-block{margin-bottom:14px}
+.modal-progress-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
+.modal-progress-label{font-size:11.5px;color:var(--muted);font-weight:600}
+.modal-progress-pct{font-family:var(--font-display);font-size:20px;font-weight:700;line-height:1}
+.modal-next-badge{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:10px}
+.modal-next-badge.today{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;animation:todayPulse 2.2s ease-in-out infinite}
+.modal-next-badge.soon{background:var(--accent-soft);color:var(--accent);border:1px solid rgba(201,79,124,.2)}
+.modal-next-badge.done{background:var(--teal-soft);color:var(--teal);border:1px solid rgba(74,173,160,.2)}
+.modal-dates-row{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.modal-date-chip{font-size:11px;color:var(--muted);background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:3px 10px;font-weight:600}
+.modal-completeness{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);margin-bottom:10px;padding:6px 10px;background:var(--surface2);border-radius:10px;border:1px solid var(--border)}
+.modal-completeness-bar{flex:1;height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.modal-completeness-fill{height:100%;border-radius:2px;background:linear-gradient(to right,var(--accent),var(--lavender))}
+
+
 .cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:10px}
 .month-display{font-family:var(--font-display);font-size:28px;font-weight:700;color:var(--text);letter-spacing:-.02em}
 .month-display span{color:var(--accent);font-style:italic}
@@ -471,7 +532,10 @@ body::before{content:'';position:fixed;inset:0;background:
   border-radius:20px;padding:3px 10px;border:1px solid rgba(176,128,48,0.22);
   transition:all .15s;white-space:nowrap;
 }
-.book-edition-pill:hover{background:rgba(176,128,48,0.18);transform:translateY(-1px);box-shadow:0 3px 8px rgba(176,128,48,0.15)}
+.book-edition-pill-active{background:rgba(176,128,48,0.22)!important;border-color:rgba(176,128,48,0.5)!important;box-shadow:0 2px 6px rgba(176,128,48,0.2)}
+@media(max-width:600px){#monthPickerBg .modal{border-radius:20px!important;max-height:80vh}}
+
+
 .book-edition-flag{font-size:13px}
 .book-edition-store{font-size:10px;opacity:.85}
 @media(max-width:480px){
@@ -700,19 +764,29 @@ code{background:var(--lavender-soft);color:var(--lavender);padding:1px 7px;borde
 
   <div id="viewCal">
     <div class="cal-nav">
-      <div class="month-display" id="monthDisplay"></div>
+      <div class="month-display" id="monthDisplay" onclick="openMonthPicker()" title="Haz clic para saltar a otro mes" style="cursor:pointer;user-select:none"></div>
       <div class="nav-btns">
         <button class="nav-btn" id="prevBtn">← Anterior</button>
         <button class="nav-btn" id="todayBtn">Hoy</button>
         <button class="nav-btn" id="nextBtn">Siguiente →</button>
       </div>
     </div>
+    <div id="weekPanel"></div>
     <div id="calInner"><div class="loading">🌸 Cargando…</div></div>
+    <div id="calLegend"></div>
   </div>
   <div id="viewList" style="display:none"></div>
   <div id="viewMovies" style="display:none"></div>
   <div id="viewUpcoming" style="display:none"></div>
   <div id="viewBooks" style="display:none"></div>
+</div>
+
+<div class="modal-bg" id="monthPickerBg" onclick="if(event.target===this)closeMonthPicker()">
+  <div class="modal" style="max-width:340px;padding:1.5rem">
+    <button class="modal-close-btn" onclick="closeMonthPicker()">✕</button>
+    <div style="font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:1rem;color:var(--text)">Ir a un mes</div>
+    <div id="monthPickerInner"></div>
+  </div>
 </div>
 
 <div class="modal-bg" id="modalBg" onclick="if(event.target===this)closeModal()">
@@ -817,6 +891,77 @@ function getEpMap(y,m){
   return map;
 }
 
+function renderWeekPanel(){
+  const now=new Date();
+  const todayStr=toStr(now.getFullYear(),now.getMonth(),now.getDate());
+  // Get next 7 days
+  const days7=[];
+  for(let i=0;i<7;i++){
+    const d=new Date(now); d.setDate(d.getDate()+i);
+    days7.push(toStr(d.getFullYear(),d.getMonth(),d.getDate()));
+  }
+  const items=[];
+  state.series.filter(s=>!s.upcoming).forEach((s,si)=>{
+    genEps(s).forEach(ep=>{
+      if(!ep.skipped && days7.includes(ep.date))
+        items.push({type:'series',s,ep,si,date:ep.date});
+    });
+  });
+  state.movies.forEach((mv,mi)=>{
+    if(mv.date && days7.includes(mv.date))
+      items.push({type:'movie',s:mv,ep:{date:mv.date},si:mi,date:mv.date});
+  });
+  items.sort((a,b)=>a.date.localeCompare(b.date));
+  const panel=document.getElementById('weekPanel');
+  if(!items.length){panel.innerHTML='';return;}
+  let html=`<div class="week-panel"><div class="week-panel-title">📅 Próximos 7 días</div><div class="week-panel-list">`;
+  items.forEach(({type,s,ep,si,date})=>{
+    const isToday=date===todayStr;
+    const d=new Date(date+'T12:00:00');
+    const dayLabel=isToday?'Hoy':d.toLocaleDateString('es-ES',{weekday:'short',day:'numeric',month:'short'});
+    if(type==='movie'){
+      html+=`<div class="week-ep-row" onclick="openMovie(${si})">
+        <div class="week-ep-dot" style="background:var(--lavender)"></div>
+        <div class="week-ep-name">🎥 ${s.name}</div>
+        <div class="week-ep-date">${dayLabel}</div>
+        ${isToday?'<span class="week-ep-today">HOY</span>':''}
+      </div>`;
+    } else {
+      const col=PALETTE[si%PALETTE.length];
+      html+=`<div class="week-ep-row" onclick="openSeries(${si})">
+        <div class="week-ep-dot" style="background:${col}"></div>
+        <div class="week-ep-name">${s.name} <span style="font-weight:400;color:var(--muted)">Ep.${ep.num}</span></div>
+        <div class="week-ep-date">${dayLabel}</div>
+        ${isToday?'<span class="week-ep-today">HOY</span>':''}
+      </div>`;
+    }
+  });
+  html+='</div></div>';
+  panel.innerHTML=html;
+}
+
+function renderCalLegend(){
+  const activeSeries=state.series.filter(s=>!s.upcoming);
+  if(!activeSeries.length && !state.movies.length){document.getElementById('calLegend').innerHTML='';return;}
+  let html='<div class="cal-legend">';
+  activeSeries.forEach((s,idx)=>{
+    const si=state.series.indexOf(s);
+    const col=PALETTE[si%PALETTE.length];
+    html+=`<div class="cal-legend-item" onclick="openSeries(${si})" title="Ver detalles">
+      <div class="cal-legend-dot" style="background:${col}"></div>
+      <span>${s.name}</span>
+    </div>`;
+  });
+  if(state.movies.length){
+    html+=`<div class="cal-legend-item" style="cursor:default">
+      <div class="cal-legend-dot cal-legend-movie"></div>
+      <span>Películas</span>
+    </div>`;
+  }
+  html+='</div>';
+  document.getElementById('calLegend').innerHTML=html;
+}
+
 function renderCal(){
   const {month:m,year:y}=state;
   document.getElementById('monthDisplay').innerHTML=`<span>${MONTHS[m]}</span> ${y}`;
@@ -862,7 +1007,30 @@ function renderCal(){
   for(let d=1;d<=rem;d++) html+=`<div class="day-cell other-month"><div class="day-num">${d}</div></div>`;
   html+='</div></div>';
   document.getElementById('calInner').innerHTML=html;
+  renderCalLegend();
+  renderWeekPanel();
 }
+
+let monthPickerYear=new Date().getFullYear();
+function openMonthPicker(){
+  monthPickerYear=state.year;
+  renderMonthPicker();
+  document.getElementById('monthPickerBg').classList.add('open');
+}
+function closeMonthPicker(){ document.getElementById('monthPickerBg').classList.remove('open'); }
+function renderMonthPicker(){
+  const html=`
+    <div class="month-picker-year">
+      <button class="month-picker-arr" onclick="monthPickerYear--;renderMonthPicker()">←</button>
+      <span class="month-picker-year-val">${monthPickerYear}</span>
+      <button class="month-picker-arr" onclick="monthPickerYear++;renderMonthPicker()">→</button>
+    </div>
+    <div class="month-picker-grid">
+      ${MONTHS.map((mn,i)=>`<button class="month-picker-btn${state.year===monthPickerYear&&state.month===i?' active':''}" onclick="state.month=${i};state.year=monthPickerYear;closeMonthPicker();renderCal()">${mn.slice(0,3)}</button>`).join('')}
+    </div>`;
+  document.getElementById('monthPickerInner').innerHTML=html;
+}
+
 
 function seriesCardHtml(s, si){
   const now=new Date();
@@ -909,8 +1077,6 @@ function seriesCardHtml(s, si){
 let seriesSubtab='airing';
 let seriesFilters={q:'',country:'',sort:'az',book:'all',year:''};
 
-function switchSeriesSubtab(sub){ seriesSubtab=sub; renderList(); }
-
 function getCountries(arr){ return [...new Set(arr.map(s=>s.country).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'es')); }
 
 function getSeriesLastActivity(s){
@@ -944,8 +1110,72 @@ function applySeriesFilters(arr){
 
 function renderList(){
   const view=document.getElementById('viewList');
+  // First render: build the static toolbar shell
+  if(!view.querySelector('.list-toolbar-shell')){
+    const active=state.series.filter(s=>!s.upcoming);
+    const allCountries=getCountries(active);
+    const allYears=[...new Set([...state.series].map(s=>s.startDate?s.startDate.substring(0,4):'').filter(Boolean))].sort((a,b)=>b-a);
+    const countriesOpts=allCountries.map(c=>`<option value="${c}"${seriesFilters.country===c?' selected':''}>${c}</option>`).join('');
+    const yearsOpts=allYears.map(y=>`<option value="${y}"${seriesFilters.year===y?' selected':''}>${y}</option>`).join('');
+    view.innerHTML=`<div class="list-toolbar-shell books-toolbar">
+      <div class="toolbar-search-row">
+        <div class="search-wrap" style="position:relative;margin-bottom:0;width:100%">
+          <span class="search-icon">🔍</span>
+          <input id="seriesSearchInput" class="search-input" placeholder="Buscar serie, país, plataforma…" value="${seriesFilters.q}" oninput="seriesFilters.q=this.value;renderListResults()" autocomplete="off">
+        </div>
+      </div>
+      <div class="toolbar-filters-row">
+        <div class="filter-group">
+          <span class="filter-label">País</span>
+          <select class="filter-select" onchange="seriesFilters.country=this.value;renderListResults()">
+            <option value="">🌍 País</option>${countriesOpts}
+          </select>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Orden</span>
+          <select id="seriesSortSel" class="filter-select" onchange="seriesFilters.sort=this.value;renderListResults()">
+            <option value="az"${seriesFilters.sort==='az'?' selected':''}>A → Z</option>
+            <option value="za"${seriesFilters.sort==='za'?' selected':''}>Z → A</option>
+            <option value="eps"${seriesFilters.sort==='eps'?' selected':''}>+ Episodios</option>
+            <option value="date"${seriesFilters.sort==='date'?' selected':''}>Por fecha</option>
+            <option value="recent"${seriesFilters.sort==='recent'?' selected':''}>🕐 Actualizado recientemente</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Libro</span>
+          <select id="seriesBookSel" class="filter-select" onchange="seriesFilters.book=this.value;renderListResults()">
+            <option value="all">📚 Libro</option>
+            <option value="yes">📖 Con libro</option>
+            <option value="no">Sin libro</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Año</span>
+          <select id="seriesYearSel" class="filter-select" onchange="seriesFilters.year=this.value;renderListResults()">
+            <option value="">📅 Año</option>${yearsOpts}
+          </select>
+        </div>
+        <button id="seriesClearBtn" class="filter-clear-btn" onclick="seriesFilters.country='';seriesFilters.book='all';seriesFilters.year='';document.getElementById('seriesBookSel').value='all';document.getElementById('seriesYearSel').value='';renderListResults()" style="display:none">✕ Limpiar</button>
+      </div>
+    </div>
+    <div id="listResults"></div>`;
+  }
+  renderListResults();
+}
+
+function renderListResults(){
+  const resultsEl=document.getElementById('listResults');
+  if(!resultsEl) return;
+  // Sync select values in case called from filter clear
+  const sortSel=document.getElementById('seriesSortSel');
+  const bookSel=document.getElementById('seriesBookSel');
+  const yearSel=document.getElementById('seriesYearSel');
+  const clearBtn=document.getElementById('seriesClearBtn');
+  if(sortSel) sortSel.value=seriesFilters.sort;
+  if(bookSel) bookSel.value=seriesFilters.book;
+  if(clearBtn) clearBtn.style.display=(seriesFilters.country||seriesFilters.book!=='all'||seriesFilters.year)?'':'none';
+
   const active=state.series.filter(s=>!s.upcoming);
-  const allCountries=getCountries(active);
   const filtered=applySeriesFilters(active);
   const now=new Date();
   const airing=filtered.filter(s=>{ const eps=genEps(s); return eps.some(e=>new Date(e.date+'T12:00:00')>now&&!e.skipped); });
@@ -954,58 +1184,11 @@ function renderList(){
   if(seriesFilters.q&&seriesSubtab==='airing'&&!airing.length&&finished.length) seriesSubtab='finished';
   if(seriesFilters.q&&seriesSubtab==='finished'&&!finished.length&&airing.length) seriesSubtab='airing';
 
-  const countriesOpts=allCountries.map(c=>`<option value="${c}"${seriesFilters.country===c?' selected':''}>${c}</option>`).join('');
-  const allYears=[...new Set([...state.series].map(s=>s.startDate?s.startDate.substring(0,4):'').filter(Boolean))].sort((a,b)=>b-a);
-  const yearsOpts=allYears.map(y=>`<option value="${y}"${seriesFilters.year===y?' selected':''}>${y}</option>`).join('');
-
-  let html=`<div class="books-toolbar">
-    <div class="toolbar-search-row">
-      <div class="search-wrap" style="position:relative;margin-bottom:0;width:100%">
-        <span class="search-icon">🔍</span>
-        <input class="search-input" placeholder="Buscar serie, país, plataforma…" value="${seriesFilters.q}" oninput="seriesFilters.q=this.value;renderList()">
-      </div>
-    </div>
-    <div class="toolbar-filters-row">
-      <div class="filter-group">
-        <span class="filter-label">País</span>
-        <select class="filter-select" onchange="seriesFilters.country=this.value;renderList()">
-          <option value=""${!seriesFilters.country?' selected':''}>🌍 País</option>${countriesOpts}
-        </select>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Orden</span>
-        <select class="filter-select" onchange="seriesFilters.sort=this.value;renderList()">
-          <option value="az"${seriesFilters.sort==='az'?' selected':''}>A → Z</option>
-          <option value="za"${seriesFilters.sort==='za'?' selected':''}>Z → A</option>
-          <option value="eps"${seriesFilters.sort==='eps'?' selected':''}>+ Episodios</option>
-          <option value="date"${seriesFilters.sort==='date'?' selected':''}>Por fecha</option>
-          <option value="recent"${seriesFilters.sort==='recent'?' selected':''}>🕐 Actualizado recientemente</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Libro</span>
-        <select class="filter-select" onchange="seriesFilters.book=this.value;renderList()">
-          <option value="all"${seriesFilters.book==='all'?' selected':''}>📚 Libro</option>
-          <option value="yes"${seriesFilters.book==='yes'?' selected':''}>📖 Con libro</option>
-          <option value="no"${seriesFilters.book==='no'?' selected':''}>Sin libro</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Año</span>
-        <select class="filter-select" onchange="seriesFilters.year=this.value;renderList()">
-          <option value=""${!seriesFilters.year?' selected':''}>📅 Año</option>${yearsOpts}
-        </select>
-      </div>
-      ${seriesFilters.country||seriesFilters.book!=='all'||seriesFilters.year?`<button class="filter-clear-btn" onclick="seriesFilters.country='';seriesFilters.book='all';seriesFilters.year='';renderList()">✕ Limpiar</button>`:''}
-    </div>
-  </div>`;
-
   if(!filtered.length){
-    html+='<div class="search-empty">No se encontró ninguna serie con esos filtros.</div>';
-    view.innerHTML=html; return;
+    resultsEl.innerHTML='<div class="search-empty">No se encontró ninguna serie con esos filtros.</div>';
+    return;
   }
-
-  html+=`<div class="subtabs">
+  let html=`<div class="subtabs">
     <button class="subtab${seriesSubtab==='airing'?' active':''}" onclick="switchSeriesSubtab('airing')">
       🌸 En emisión<span class="subtab-count">${airing.length}</span>
     </button>
@@ -1013,7 +1196,6 @@ function renderList(){
       ✓ Finalizadas<span class="subtab-count">${finished.length}</span>
     </button>
   </div>`;
-
   if(seriesSubtab==='airing'){
     if(airing.length){
       html+=`<div class="books-count">Mostrando <strong>${airing.length}</strong> serie${airing.length!==1?'s':''}</div><div class="series-grid">`;
@@ -1031,8 +1213,10 @@ function renderList(){
       html+='<div class="search-empty">No hay series finalizadas con esos filtros.</div>';
     }
   }
-  view.innerHTML=html;
+  resultsEl.innerHTML=html;
 }
+
+function switchSeriesSubtab(sub){ seriesSubtab=sub; renderListResults(); }
 
 let upcomingFilters={q:'',country:'',sort:'az',book:'all',year:''};
 
@@ -1061,60 +1245,75 @@ function renderUpcoming(){
   const allUpcoming=state.series.filter(s=>s.upcoming);
   const view=document.getElementById('viewUpcoming');
   if(!allUpcoming.length){view.innerHTML='<div class="empty">✨ No hay series próximamente de momento. ¡Pronto habrá novedades!</div>';return;}
-  const allCountries=getCountries(allUpcoming);
-  const countriesOpts=allCountries.map(c=>`<option value="${c}"${upcomingFilters.country===c?' selected':''}>${c}</option>`).join('');
-  const upYears=[...new Set(allUpcoming.map(s=>s.startDate?s.startDate.substring(0,4):'').filter(Boolean))].sort((a,b)=>b-a);
-  const allUpcomingYears=upYears.map(y=>`<option value="${y}"${upcomingFilters.year===y?' selected':''}>${y}</option>`).join('');
+
+  if(!view.querySelector('.upcoming-toolbar-shell')){
+    const allCountries=getCountries(allUpcoming);
+    const countriesOpts=allCountries.map(c=>`<option value="${c}">${c}</option>`).join('');
+    const upYears=[...new Set(allUpcoming.map(s=>s.startDate?s.startDate.substring(0,4):'').filter(Boolean))].sort((a,b)=>b-a);
+    const yearsOpts=upYears.map(y=>`<option value="${y}">${y}</option>`).join('');
+    view.innerHTML=`<div class="section-heading" style="margin-bottom:.25rem">✨ Próximamente</div>
+    <p class="section-desc" style="margin-bottom:.85rem">Series anunciadas que aún no tienen fecha de emisión confirmada.</p>
+    <div class="upcoming-toolbar-shell books-toolbar">
+      <div class="toolbar-search-row">
+        <div class="search-wrap" style="position:relative;margin-bottom:0;width:100%">
+          <span class="search-icon">🔍</span>
+          <input id="upcomingSearchInput" class="search-input" placeholder="Buscar serie, país, plataforma…" value="${upcomingFilters.q}" oninput="upcomingFilters.q=this.value;renderUpcomingResults()" autocomplete="off">
+        </div>
+      </div>
+      <div class="toolbar-filters-row">
+        <div class="filter-group">
+          <span class="filter-label">País</span>
+          <select class="filter-select" onchange="upcomingFilters.country=this.value;renderUpcomingResults()">
+            <option value="">🌍 País</option>${countriesOpts}
+          </select>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Orden</span>
+          <select id="upcomingSortSel" class="filter-select" onchange="upcomingFilters.sort=this.value;renderUpcomingResults()">
+            <option value="az">A → Z</option>
+            <option value="za">Z → A</option>
+            <option value="recent">🕐 Actualizado recientemente</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Libro</span>
+          <select id="upcomingBookSel" class="filter-select" onchange="upcomingFilters.book=this.value;renderUpcomingResults()">
+            <option value="all">📚 Libro</option>
+            <option value="yes">📖 Con libro</option>
+            <option value="no">Sin libro</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Año</span>
+          <select id="upcomingYearSel" class="filter-select" onchange="upcomingFilters.year=this.value;renderUpcomingResults()">
+            <option value="">📅 Año</option>${yearsOpts}
+          </select>
+        </div>
+        <button id="upcomingClearBtn" class="filter-clear-btn" style="display:none"
+          onclick="upcomingFilters.country='';upcomingFilters.book='all';upcomingFilters.year='';document.getElementById('upcomingBookSel').value='all';document.getElementById('upcomingYearSel').value='';renderUpcomingResults()">✕ Limpiar</button>
+      </div>
+    </div>
+    <div id="upcomingResults"></div>`;
+  }
+  renderUpcomingResults();
+}
+
+function renderUpcomingResults(){
+  const resultsEl=document.getElementById('upcomingResults');
+  if(!resultsEl) return;
+  const sortSel=document.getElementById('upcomingSortSel');
+  const clearBtn=document.getElementById('upcomingClearBtn');
+  if(sortSel) sortSel.value=upcomingFilters.sort;
+  if(clearBtn) clearBtn.style.display=(upcomingFilters.country||upcomingFilters.book!=='all'||upcomingFilters.year)?'':'none';
+
+  const allUpcoming=state.series.filter(s=>s.upcoming);
   const upcoming=applyUpcomingFilters(allUpcoming);
 
-  let html=`<div class="section-heading" style="margin-bottom:.25rem">✨ Próximamente</div>
-  <p class="section-desc" style="margin-bottom:.85rem">Series anunciadas que aún no tienen fecha de emisión confirmada.</p>
-  <div class="books-toolbar">
-    <div class="toolbar-search-row">
-      <div class="search-wrap" style="position:relative;margin-bottom:0;width:100%">
-        <span class="search-icon">🔍</span>
-        <input class="search-input" placeholder="Buscar serie, país, plataforma…" value="${upcomingFilters.q}" oninput="upcomingFilters.q=this.value;renderUpcoming()">
-      </div>
-    </div>
-    <div class="toolbar-filters-row">
-      <div class="filter-group">
-        <span class="filter-label">País</span>
-        <select class="filter-select" onchange="upcomingFilters.country=this.value;renderUpcoming()">
-          <option value=""${!upcomingFilters.country?' selected':''}>🌍 País</option>${countriesOpts}
-        </select>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Orden</span>
-        <select class="filter-select" onchange="upcomingFilters.sort=this.value;renderUpcoming()">
-          <option value="az"${upcomingFilters.sort==='az'?' selected':''}>A → Z</option>
-          <option value="za"${upcomingFilters.sort==='za'?' selected':''}>Z → A</option>
-          <option value="recent"${upcomingFilters.sort==='recent'?' selected':''}>🕐 Actualizado recientemente</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Libro</span>
-        <select class="filter-select" onchange="upcomingFilters.book=this.value;renderUpcoming()">
-          <option value="all"${upcomingFilters.book==='all'?' selected':''}>📚 Libro</option>
-          <option value="yes"${upcomingFilters.book==='yes'?' selected':''}>📖 Con libro</option>
-          <option value="no"${upcomingFilters.book==='no'?' selected':''}>Sin libro</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Año</span>
-        <select class="filter-select" onchange="upcomingFilters.year=this.value;renderUpcoming()">
-          <option value=""${!upcomingFilters.year?' selected':''}>📅 Año</option>${allUpcomingYears}
-        </select>
-      </div>
-      ${upcomingFilters.country||upcomingFilters.book!=='all'||upcomingFilters.year?`<button class="filter-clear-btn" onclick="upcomingFilters.country='';upcomingFilters.book='all';upcomingFilters.year='';renderUpcoming()">✕ Limpiar</button>`:''}
-    </div>
-  </div>`;
-
   if(!upcoming.length){
-    html+='<div class="search-empty">No se encontró ninguna serie con esos filtros.</div>';
-    view.innerHTML=html; return;
+    resultsEl.innerHTML='<div class="search-empty">No se encontró ninguna serie con esos filtros.</div>';
+    return;
   }
-
-  html+=`<div class="books-count">Mostrando <strong>${upcoming.length}</strong> de <strong>${allUpcoming.length}</strong> serie${allUpcoming.length!==1?'s':''}</div>
+  let html=`<div class="books-count">Mostrando <strong>${upcoming.length}</strong> de <strong>${allUpcoming.length}</strong> serie${allUpcoming.length!==1?'s':''}</div>
   <div class="upcoming-grid">`;
   upcoming.forEach((s)=>{
     const si=state.series.indexOf(s);
@@ -1134,7 +1333,7 @@ function renderUpcoming(){
     </div>`;
   });
   html+='</div>';
-  view.innerHTML=html;
+  resultsEl.innerHTML=html;
 }
 
 function openDay(dateStr){
@@ -1167,12 +1366,44 @@ function openDay(dateStr){
   document.getElementById('modalBg').classList.add('open');
 }
 
+function daysUntil(dateStr){
+  const now=new Date(); now.setHours(0,0,0,0);
+  const target=new Date(dateStr+'T00:00:00');
+  return Math.round((target-now)/(1000*60*60*24));
+}
+
 function openSeries(si){
   const s=state.series[si], eps=genEps(s), now=new Date();
   const col=PALETTE[si%PALETTE.length];
   const aired=eps.filter(e=>new Date(e.date+'T12:00:00')<=now&&!e.skipped).length;
   const pct=Math.round(aired/s.totalEpisodes*100);
   const days=getEmissionDays(s).map(d=>DAYS_L[d]).join(' y ');
+  const next=eps.find(e=>new Date(e.date+'T12:00:00')>now&&!e.skipped);
+  const todayStr=toStr(now.getFullYear(),now.getMonth(),now.getDate());
+  const todayEps=eps.filter(e=>e.date===todayStr&&!e.skipped);
+  const isFinished=!next;
+  // Start / end dates
+  const datesWithEps=eps.filter(e=>!e.skipped).map(e=>e.date).sort();
+  const firstEpDate=datesWithEps[0]||s.startDate;
+  const lastEpDate=datesWithEps[datesWithEps.length-1];
+  // Next ep badge
+  let nextBadgeHtml='';
+  if(todayEps.length){
+    nextBadgeHtml=`<div class="modal-next-badge today">🌸 Hoy · Ep. ${todayEps.map(e=>e.num).join(' & ')}</div>`;
+  } else if(next){
+    const du=daysUntil(next.date);
+    const label=du===1?'mañana':du===0?'hoy':`en ${du} días`;
+    nextBadgeHtml=`<div class="modal-next-badge soon">▶ Ep. ${next.num} — ${fmtDate(next.date)} · ${label}</div>`;
+  } else {
+    nextBadgeHtml=`<div class="modal-next-badge done">✓ Serie finalizada</div>`;
+  }
+  // Dates row
+  let datesRowHtml='<div class="modal-dates-row">';
+  if(firstEpDate) datesRowHtml+=`<span class="modal-date-chip">🎬 Inicio: ${fmtDate(firstEpDate)}</span>`;
+  if(isFinished && lastEpDate) datesRowHtml+=`<span class="modal-date-chip">🏁 Final: ${fmtDate(lastEpDate)}</span>`;
+  if(s.country) datesRowHtml+=`<span class="modal-date-chip">🌍 ${s.country}</span>`;
+  datesRowHtml+='</div>';
+
   const posterEl=s.poster?`<img class="modal-poster-full" src="${s.poster}" alt="${s.name}" onerror="this.outerHTML='<div class=modal-poster-full-ph>🎬</div>'">`:`<div class="modal-poster-full-ph">🎬</div>`;
   let metaGrid='';
   if(s.year) metaGrid+=`<div class="meta-item"><div class="meta-key">Año</div><div class="meta-val">${s.year}</div></div>`;
@@ -1180,10 +1411,23 @@ function openSeries(si){
   if(s.network) metaGrid+=`<div class="meta-item"><div class="meta-key">Plataforma</div><div class="meta-val">${s.network}</div></div>`;
   metaGrid+=`<div class="meta-item"><div class="meta-key">Episodios</div><div class="meta-val">${s.totalEpisodes}</div></div>`;
   const watchLinksHtml=(()=>{const links=s.watchLinks&&s.watchLinks.length?s.watchLinks:(s.networkUrl?[{name:s.network||'Ver serie',url:s.networkUrl}]:[]);if(!links.length)return '';return `<div class="watch-links-label">▶ Dónde ver</div><div class="watch-links">${links.map(l=>`<a class="watch-link" href="${l.url}" target="_blank" rel="noopener"><span class="watch-link-icon">▶</span>${l.name}</a>`).join('')}</div>`;})();
+  // Progress block
+  const progressBlock=`<div class="modal-progress-block">
+    <div class="modal-progress-header">
+      <span class="modal-progress-label">${aired} / ${s.totalEpisodes} emitidos · ${days}</span>
+      <span class="modal-progress-pct" style="color:${col}">${pct}%</span>
+    </div>
+    <div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;position:relative">
+      <div style="width:${pct}%;height:100%;background:${col};border-radius:3px;transition:width .4s"></div>
+    </div>
+  </div>`;
+
   let html=`${posterEl}<div class="modal-body">
   <div class="modal-badges">${s.basedOnBook?'<span class="badge badge-book">📖 Basada en libro</span>':''}</div>
   <div class="modal-title">${s.name}</div>
-  <div style="font-size:12px;color:var(--muted);margin-bottom:12px">${days} · ${aired}/${s.totalEpisodes} emitidos</div>
+  ${datesRowHtml}
+  ${nextBadgeHtml}
+  ${progressBlock}
   ${watchLinksHtml}
   ${s.trailerUrl?trailerHtml(s.trailerUrl):''}
   ${metaGrid?`<div class="modal-meta-grid">${metaGrid}</div>`:''}
@@ -1200,12 +1444,13 @@ function openSeries(si){
       ${editions.length?`<div class="book-editions-row">${edPills}</div>`:''}
     </div></div>`;
   })():''}
-  <div style="height:4px;background:var(--border);border-radius:2px;overflow:hidden;margin-bottom:14px"><div style="width:${pct}%;height:100%;background:${col};border-radius:2px"></div></div>
+  <div class="divider"></div>
   <div class="ep-detail-list">`;
   eps.forEach(ep=>{
     const isPast=new Date(ep.date+'T12:00:00')<=now;
-    const st=ep.skipped?'skipped':isPast?'aired':'pending', lb=ep.skipped?'No emitido':isPast?'Emitido':'Pendiente';
-    html+=`<div class="ep-detail-row"><span class="ep-detail-num" style="color:${col}">E${ep.num}</span><span class="ep-detail-date">${fmtDate(ep.date)}</span><span class="chip ${st}">${lb}</span></div>`;
+    const isEpToday=ep.date===todayStr;
+    const st=ep.skipped?'skipped':isPast?'aired':'pending', lb=ep.skipped?'No emitido':isEpToday?'¡Hoy!':isPast?'Emitido':'Pendiente';
+    html+=`<div class="ep-detail-row"><span class="ep-detail-num" style="color:${col}">E${ep.num}</span><span class="ep-detail-date">${fmtDate(ep.date)}</span><span class="chip ${isEpToday&&!ep.skipped?'pending':st}" style="${isEpToday&&!ep.skipped?'background:var(--accent);color:#fff':''}">${lb}</span></div>`;
   });
   html+=`</div><div style="display:flex;justify-content:flex-end;margin-top:1rem"><button class="btn" onclick="closeModal()">Cerrar</button></div></div>`;
   document.getElementById('modalBox').innerHTML=html;
@@ -1214,19 +1459,31 @@ function openSeries(si){
 
 function openUpcoming(si){
   const s=state.series[si];
+  // Completeness score
+  const fields=[s.poster,s.synopsis,s.trailerUrl,s.country,s.network,s.year,s.basedOnBook?(s.bookSource||s.bookCoverUrl):null];
+  const filled=fields.filter(Boolean).length;
+  const pctInfo=Math.round(filled/fields.length*100);
+  const infoLabel=pctInfo>=80?'Info completa':pctInfo>=50?'Info parcial':'Info básica';
+
   const posterEl=s.poster?`<img class="upcoming-detail-img" src="${s.poster}" alt="${s.name}" onerror="this.outerHTML='<div class=upcoming-detail-img-ph>🎬</div>'">`:`<div class="upcoming-detail-img-ph">🎬</div>`;
   let metaGrid='';
   if(s.year) metaGrid+=`<div class="meta-item"><div class="meta-key">Año aprox.</div><div class="meta-val">${s.year}</div></div>`;
   if(s.country) metaGrid+=`<div class="meta-item"><div class="meta-key">País</div><div class="meta-val">${s.country}</div></div>`;
   if(s.network) metaGrid+=`<div class="meta-item"><div class="meta-key">Plataforma</div><div class="meta-val">${s.network}</div></div>`;
+  const watchLinksHtml=(()=>{const links=s.watchLinks&&s.watchLinks.length?s.watchLinks:(s.networkUrl?[{name:s.network||'Ver serie',url:s.networkUrl}]:[]);if(!links.length)return '';return `<div class="watch-links-label">▶ Dónde ver</div><div class="watch-links">${links.map(l=>`<a class="watch-link" href="${l.url}" target="_blank" rel="noopener"><span class="watch-link-icon">▶</span>${l.name}</a>`).join('')}</div>`;})();
   let html=`${posterEl}<div class="modal-body">
   <div class="modal-badges"><span class="badge badge-upcoming">📅 Próximamente</span>${s.basedOnBook?'<span class="badge badge-book">📖 Libro</span>':''}</div>
   <div class="modal-title">${s.name}</div>
-  <div style="font-size:12px;color:var(--muted);margin-bottom:12px">Fecha de emisión por confirmar</div>
-  ${(()=>{const links=s.watchLinks&&s.watchLinks.length?s.watchLinks:(s.networkUrl?[{name:s.network||'Ver serie',url:s.networkUrl}]:[]);if(!links.length)return '';return `<div class="watch-links-label">▶ Dónde ver</div><div class="watch-links">${links.map(l=>`<a class="watch-link" href="${l.url}" target="_blank" rel="noopener"><span class="watch-link-icon">▶</span>${l.name}</a>`).join('')}</div>`;})()}
+  <div class="modal-completeness">
+    <span style="font-weight:700;color:var(--text);white-space:nowrap">${infoLabel}</span>
+    <div class="modal-completeness-bar"><div class="modal-completeness-fill" style="width:${pctInfo}%"></div></div>
+    <span style="white-space:nowrap">${pctInfo}%</span>
+  </div>
+  ${s.country?`<div class="modal-dates-row"><span class="modal-date-chip">🌍 ${s.country}</span>${s.year?`<span class="modal-date-chip">📆 ${s.year}</span>`:''}</div>`:''}
+  ${watchLinksHtml}
   ${s.trailerUrl?trailerHtml(s.trailerUrl):''}
   ${metaGrid?`<div class="modal-meta-grid">${metaGrid}</div>`:''}
-  ${s.synopsis?`<div class="synopsis">${s.synopsis}</div>`:''}
+  ${s.synopsis?`<div class="synopsis">${s.synopsis}</div>`:`<div style="text-align:center;padding:1.5rem;color:var(--muted);font-size:13px;font-style:italic">📝 Sinopsis no disponible aún</div>`}
   ${s.basedOnBook?(()=>{
     const hasCover=s.bookCoverUrl&&s.bookCoverUrl.trim();
     const hasTitle=s.bookSource&&s.bookSource.trim();
@@ -1248,6 +1505,25 @@ function openMovie(mi){
   const mv=state.movies[mi], now=new Date();
   const isPast=mv.date&&new Date(mv.date+'T12:00:00')<=now;
   const posterEl=mv.poster?`<img class="modal-poster-full" src="${mv.poster}" alt="${mv.name}" onerror="this.outerHTML='<div class=modal-poster-full-ph>🎥</div>'">`:`<div class="modal-poster-full-ph">🎥</div>`;
+  // Release badge
+  let releaseBadgeHtml='';
+  if(mv.date){
+    if(isPast){
+      releaseBadgeHtml=`<div class="modal-next-badge done">✓ Estrenada el ${fmtDate(mv.date)}</div>`;
+    } else {
+      const du=daysUntil(mv.date);
+      const label=du===0?'¡Hoy!':du===1?'Mañana':`En ${du} días`;
+      releaseBadgeHtml=`<div class="modal-next-badge soon">🎬 Estreno: ${fmtDate(mv.date)} · ${label}</div>`;
+    }
+  } else {
+    releaseBadgeHtml=`<div class="modal-next-badge soon" style="background:var(--surface2);color:var(--muted);border:1px solid var(--border)">📅 Fecha de estreno por confirmar</div>`;
+  }
+  // Chips row
+  let chipsHtml='<div class="modal-dates-row">';
+  if(mv.country) chipsHtml+=`<span class="modal-date-chip">🌍 ${mv.country}</span>`;
+  if(mv.year) chipsHtml+=`<span class="modal-date-chip">📆 ${mv.year}</span>`;
+  chipsHtml+='</div>';
+
   let metaGrid='';
   if(mv.year) metaGrid+=`<div class="meta-item"><div class="meta-key">Año</div><div class="meta-val">${mv.year}</div></div>`;
   if(mv.country) metaGrid+=`<div class="meta-item"><div class="meta-key">País</div><div class="meta-val">${mv.country}</div></div>`;
@@ -1266,10 +1542,13 @@ function openMovie(mi){
       ${editions.length?`<div class="book-editions-row">${edPills}</div>`:''}
     </div></div>`;
   })();
+  const watchLinksHtml=(()=>{const links=mv.watchLinks&&mv.watchLinks.length?mv.watchLinks:(mv.networkUrl?[{name:mv.network||'Ver película',url:mv.networkUrl}]:[]);if(!links.length)return '';return `<div class="watch-links-label">▶ Dónde ver</div><div class="watch-links">${links.map(l=>`<a class="watch-link" href="${l.url}" target="_blank" rel="noopener" style="background:var(--lavender-soft);color:var(--lavender);border-color:rgba(155,130,201,.35)"><span class="watch-link-icon">▶</span>${l.name}</a>`).join('')}</div>`;})();
   let html=`${posterEl}<div class="modal-body">
   <div class="modal-badges"><span class="badge" style="background:var(--lavender-soft);color:var(--lavender)">🎥 Película</span>${mv.basedOnBook?'<span class="badge badge-book">📖 Libro</span>':''}${isPast?'<span class="badge" style="background:var(--teal-soft);color:var(--teal)">✓ Estrenada</span>':'<span class="badge" style="background:var(--accent-soft);color:var(--accent)">⏳ Próximamente</span>'}</div>
   <div class="modal-title">${mv.name}</div>
-  ${(()=>{const links=mv.watchLinks&&mv.watchLinks.length?mv.watchLinks:(mv.networkUrl?[{name:mv.network||'Ver película',url:mv.networkUrl}]:[]);if(!links.length)return '';return `<div class="watch-links-label">▶ Dónde ver</div><div class="watch-links">${links.map(l=>`<a class="watch-link" href="${l.url}" target="_blank" rel="noopener" style="--wl-col:var(--lavender);background:var(--lavender-soft);color:var(--lavender);border-color:rgba(155,130,201,.35)"><span class="watch-link-icon">▶</span>${l.name}</a>`).join('')}</div>`;})()}
+  ${chipsHtml}
+  ${releaseBadgeHtml}
+  ${watchLinksHtml}
   ${mv.trailerUrl?trailerHtml(mv.trailerUrl):''}
   ${metaGrid?`<div class="modal-meta-grid">${metaGrid}</div>`:''}
   ${mv.synopsis?`<div class="synopsis">${mv.synopsis}</div>`:''}
@@ -1296,9 +1575,6 @@ function applyMoviesFilters(arr){
   return r;
 }
 
-let moviesSubtab='all';
-function switchMoviesSubtab(sub){ moviesSubtab=sub; renderMovies(); }
-
 function movieCardHtml(mv){
   const mi=state.movies.indexOf(mv);
   const now=new Date();
@@ -1322,71 +1598,86 @@ function movieCardHtml(mv){
     </div></div>`;
 }
 
+let moviesSubtab='all';
+
 function renderMovies(){
   const view=document.getElementById('viewMovies');
   if(!state.movies.length){view.innerHTML='<div class="empty">🎥 No hay películas todavía.</div>';return;}
+
+  if(!view.querySelector('.movies-toolbar-shell')){
+    const allCountries=getCountries(state.movies);
+    const mvYears=[...new Set(state.movies.map(mv=>mv.date?mv.date.substring(0,4):'').filter(Boolean))].sort((a,b)=>b-a);
+    const countriesOpts=allCountries.map(c=>`<option value="${c}">${c}</option>`).join('');
+    const yearsOpts=mvYears.map(y=>`<option value="${y}">${y}</option>`).join('');
+    view.innerHTML=`<div class="movies-toolbar-shell books-toolbar">
+      <div class="toolbar-search-row">
+        <div class="search-wrap" style="position:relative;margin-bottom:0;width:100%">
+          <span class="search-icon">🔍</span>
+          <input id="moviesSearchInput" class="search-input" placeholder="Buscar película, país, plataforma…" value="${moviesFilters.q}" oninput="moviesFilters.q=this.value;renderMoviesResults()" autocomplete="off">
+        </div>
+      </div>
+      <div class="toolbar-filters-row">
+        <div class="filter-group">
+          <span class="filter-label">País</span>
+          <select class="filter-select" onchange="moviesFilters.country=this.value;renderMoviesResults()">
+            <option value="">🌍 País</option>${countriesOpts}
+          </select>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Orden</span>
+          <select id="moviesSortSel" class="filter-select" onchange="moviesFilters.sort=this.value;renderMoviesResults()">
+            <option value="date">Por fecha</option>
+            <option value="az">A → Z</option>
+            <option value="za">Z → A</option>
+            <option value="recent">🕐 Actualizado recientemente</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Libro</span>
+          <select id="moviesBookSel" class="filter-select" onchange="moviesFilters.book=this.value;renderMoviesResults()">
+            <option value="all">📚 Libro</option>
+            <option value="yes">📖 Con libro</option>
+            <option value="no">Sin libro</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <span class="filter-label">Año</span>
+          <select id="moviesYearSel" class="filter-select" onchange="moviesFilters.year=this.value;renderMoviesResults()">
+            <option value="">📅 Año</option>${yearsOpts}
+          </select>
+        </div>
+        <button id="moviesClearBtn" class="filter-clear-btn" style="display:none"
+          onclick="moviesFilters.country='';moviesFilters.book='all';moviesFilters.year='';document.getElementById('moviesBookSel').value='all';document.getElementById('moviesYearSel').value='';renderMoviesResults()">✕ Limpiar</button>
+      </div>
+    </div>
+    <div id="moviesResults"></div>`;
+  }
+  renderMoviesResults();
+}
+
+function switchMoviesSubtab(sub){ moviesSubtab=sub; renderMoviesResults(); }
+
+function renderMoviesResults(){
+  const resultsEl=document.getElementById('moviesResults');
+  if(!resultsEl) return;
+  const sortSel=document.getElementById('moviesSortSel');
+  const clearBtn=document.getElementById('moviesClearBtn');
+  if(sortSel) sortSel.value=moviesFilters.sort;
+  if(clearBtn) clearBtn.style.display=(moviesFilters.country||moviesFilters.book!=='all'||moviesFilters.year)?'':'none';
+
   const now=new Date();
-  const allCountries=getCountries(state.movies);
-  const mvYears=[...new Set(state.movies.map(mv=>mv.date?mv.date.substring(0,4):'').filter(Boolean))].sort((a,b)=>b-a);
-  const mvYearsOpts=mvYears.map(y=>`<option value="${y}"${moviesFilters.year===y?' selected':''}>${y}</option>`).join('');
   const filtered=applyMoviesFilters(state.movies);
   const inTheaters=filtered.filter(mv=>mv.date&&new Date(mv.date+'T12:00:00')<=now);
   const comingSoon=filtered.filter(mv=>!mv.date||new Date(mv.date+'T12:00:00')>now);
-
-  // clamp subtab if empty
   if(moviesSubtab==='theaters'&&!inTheaters.length) moviesSubtab='all';
   if(moviesSubtab==='soon'&&!comingSoon.length) moviesSubtab='all';
-
-  const shown = moviesSubtab==='theaters'?inTheaters : moviesSubtab==='soon'?comingSoon : filtered;
-  const countriesOpts=allCountries.map(c=>`<option value="${c}"${moviesFilters.country===c?' selected':''}>${c}</option>`).join('');
-
-  let html=`<div class="books-toolbar">
-    <div class="toolbar-search-row">
-      <div class="search-wrap" style="position:relative;margin-bottom:0;width:100%">
-        <span class="search-icon">🔍</span>
-        <input class="search-input" placeholder="Buscar película, país, plataforma…" value="${moviesFilters.q}" oninput="moviesFilters.q=this.value;renderMovies()">
-      </div>
-    </div>
-    <div class="toolbar-filters-row">
-      <div class="filter-group">
-        <span class="filter-label">País</span>
-        <select class="filter-select" onchange="moviesFilters.country=this.value;renderMovies()">
-          <option value=""${!moviesFilters.country?' selected':''}>🌍 País</option>${countriesOpts}
-        </select>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Orden</span>
-        <select class="filter-select" onchange="moviesFilters.sort=this.value;renderMovies()">
-          <option value="date"${moviesFilters.sort==='date'?' selected':''}>Por fecha</option>
-          <option value="az"${moviesFilters.sort==='az'?' selected':''}>A → Z</option>
-          <option value="za"${moviesFilters.sort==='za'?' selected':''}>Z → A</option>
-          <option value="recent"${moviesFilters.sort==='recent'?' selected':''}>🕐 Actualizado recientemente</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Libro</span>
-        <select class="filter-select" onchange="moviesFilters.book=this.value;renderMovies()">
-          <option value="all"${moviesFilters.book==='all'?' selected':''}>📚 Libro</option>
-          <option value="yes"${moviesFilters.book==='yes'?' selected':''}>📖 Con libro</option>
-          <option value="no"${moviesFilters.book==='no'?' selected':''}>Sin libro</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <span class="filter-label">Año</span>
-        <select class="filter-select" onchange="moviesFilters.year=this.value;renderMovies()">
-          <option value=""${!moviesFilters.year?' selected':''}>📅 Año</option>${mvYearsOpts}
-        </select>
-      </div>
-      ${moviesFilters.country||moviesFilters.book!=='all'||moviesFilters.year?`<button class="filter-clear-btn" onclick="moviesFilters.country='';moviesFilters.book='all';moviesFilters.year='';renderMovies()">✕ Limpiar</button>`:''}
-    </div>
-  </div>`;
+  const shown=moviesSubtab==='theaters'?inTheaters:moviesSubtab==='soon'?comingSoon:filtered;
 
   if(!filtered.length){
-    html+='<div class="search-empty">No se encontró ninguna película con esos filtros.</div>';
-    view.innerHTML=html; return;
+    resultsEl.innerHTML='<div class="search-empty">No se encontró ninguna película con esos filtros.</div>';
+    return;
   }
-
-  html+=`<div class="subtabs" style="margin-bottom:1.25rem">
+  let html=`<div class="subtabs" style="margin-bottom:1.25rem">
     <button class="subtab${moviesSubtab==='all'?' active':''}" onclick="switchMoviesSubtab('all')">
       🎥 Todas<span class="subtab-count">${filtered.length}</span>
     </button>
@@ -1397,17 +1688,15 @@ function renderMovies(){
       📅 Próximos estrenos<span class="subtab-count">${comingSoon.length}</span>
     </button>
   </div>`;
-
   if(!shown.length){
     html+='<div class="search-empty">No hay películas en esta categoría con esos filtros.</div>';
-    view.innerHTML=html; return;
+    resultsEl.innerHTML=html; return;
   }
-
   html+=`<div class="books-count">Mostrando <strong>${shown.length}</strong> película${shown.length!==1?'s':''}</div>
   <div class="movies-grid">`;
   shown.forEach(mv=>{ html+=movieCardHtml(mv); });
   html+='</div>';
-  view.innerHTML=html;
+  resultsEl.innerHTML=html;
 }
 
 function closeModal(){ document.getElementById('modalBg').classList.remove('open'); }
@@ -1471,7 +1760,7 @@ const LANG_META={es:{flag:'🇪🇸',label:'Español'},en:{flag:'🇬🇧',label
 function langFlag(val){return (LANG_META[val]||{flag:'🌐'}).flag;}
 function langLabel(val){return (LANG_META[val]||{label:val}).label;}
 
-let booksState={q:'',sort:'az',type:'all',letter:''};
+let booksState={q:'',sort:'az',type:'all',letter:'',lang:''};
 
 function getAllBooks(){
   const books=[];
@@ -1498,76 +1787,111 @@ function renderBooks(){
     return;
   }
 
+  if(!view.querySelector('.books-toolbar-shell')){
+    const allLangs=[...new Set(allBooks.flatMap(b=>b.editions.map(e=>e.lang)).filter(Boolean))].sort();
+    const langOpts=allLangs.map(l=>`<option value="${l}">${langFlag(l)} ${langLabel(l)}</option>`).join('');
+    view.innerHTML=`<div class="section-heading" style="margin-bottom:.25rem">📚 Fuentes literarias</div>
+    <p class="section-desc" style="margin-bottom:.85rem">Libros, novelas y manhwas en los que se basan las series y películas de la lista.</p>
+    <div class="books-toolbar-shell books-toolbar">
+      <div class="search-wrap" style="position:relative">
+        <span class="search-icon">🔍</span>
+        <input id="booksSearchInput" class="search-input" placeholder="Buscar libro o serie…" value="${booksState.q}" oninput="booksState.q=this.value;renderBooksResults()" autocomplete="off">
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Tipo</span>
+        <select id="booksTypeSel" class="filter-select" onchange="booksState.type=this.value;renderBooksResults()">
+          <option value="all">Todos</option>
+          <option value="serie">Series</option>
+          <option value="película">Películas</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Idioma</span>
+        <select id="booksLangSel" class="filter-select" onchange="booksState.lang=this.value;renderBooksResults()">
+          <option value="">🌐 Idioma</option>${langOpts}
+        </select>
+      </div>
+      <div class="filter-group">
+        <span class="filter-label">Orden</span>
+        <select id="booksSortSel" class="filter-select" onchange="booksState.sort=this.value;renderBooksResults()">
+          <option value="az">A → Z</option>
+          <option value="za">Z → A</option>
+          <option value="serie">Por serie</option>
+          <option value="pub">Orden de la lista</option>
+        </select>
+      </div>
+      <button id="booksClearBtn" class="filter-clear-btn" style="display:none"
+        onclick="booksState.type='all';booksState.lang='';booksState.letter='';document.getElementById('booksTypeSel').value='all';document.getElementById('booksLangSel').value='';renderBooksResults()">✕ Limpiar</button>
+    </div>
+    <div id="booksAlphaBar"></div>
+    <div id="booksResults"></div>`;
+  }
+  renderBooksResults();
+}
+
+function renderBooksResults(){
+  const resultsEl=document.getElementById('booksResults');
+  const alphaEl=document.getElementById('booksAlphaBar');
+  if(!resultsEl) return;
+
+  // Sync selects
+  const typeSel=document.getElementById('booksTypeSel');
+  const langSel=document.getElementById('booksLangSel');
+  const sortSel=document.getElementById('booksSortSel');
+  const clearBtn=document.getElementById('booksClearBtn');
+  if(typeSel) typeSel.value=booksState.type;
+  if(langSel) langSel.value=booksState.lang;
+  if(sortSel) sortSel.value=booksState.sort;
+  if(clearBtn) clearBtn.style.display=(booksState.type!=='all'||booksState.lang||booksState.letter)?'':'none';
+
+  const allBooks=getAllBooks();
   const usedLetters=new Set(allBooks.map(b=>b.title[0]?.toUpperCase()).filter(Boolean));
   const ALPHABET='ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+  // Render alpha bar (lightweight, no inputs)
+  if(alphaEl){
+    alphaEl.className='alpha-bar';
+    alphaEl.innerHTML=`<button class="alpha-btn${!booksState.letter?' alpha-active':''}" onclick="booksState.letter='';renderBooksResults()" title="Todos">Todas</button>`
+      +ALPHABET.map(l=>{
+        const has=usedLetters.has(l);
+        return `<button class="alpha-btn${booksState.letter===l?' alpha-active':''}${!has?' alpha-disabled':''}" onclick="${has?`booksState.letter=booksState.letter==='${l}'?'':'${l}';renderBooksResults()`:''}" title="${l}">${l}</button>`;
+      }).join('');
+  }
 
   let books=[...allBooks];
   const q=booksState.q.toLowerCase().trim();
   if(q) books=books.filter(b=>b.title.toLowerCase().includes(q)||b.seriesName.toLowerCase().includes(q));
   if(booksState.type!=='all') books=books.filter(b=>b.type===booksState.type);
   if(booksState.letter) books=books.filter(b=>b.title[0]?.toUpperCase()===booksState.letter);
-
+  if(booksState.lang) books=books.filter(b=>b.editions.some(e=>e.lang===booksState.lang));
   if(booksState.sort==='az') books.sort((a,b)=>a.title.localeCompare(b.title,'es'));
   else if(booksState.sort==='za') books.sort((a,b)=>b.title.localeCompare(a.title,'es'));
   else if(booksState.sort==='serie') books.sort((a,b)=>a.seriesName.localeCompare(b.seriesName,'es'));
   else if(booksState.sort==='pub') books.sort((a,b)=>a.order-b.order);
 
-  let html=`<div class="section-heading" style="margin-bottom:.25rem">📚 Fuentes literarias</div>
-  <p class="section-desc" style="margin-bottom:.85rem">Libros, novelas y manhwas en los que se basan las series y películas de la lista.</p>
-
-  <div class="books-toolbar">
-    <div class="search-wrap" style="position:relative">
-      <span class="search-icon">🔍</span>
-      <input class="search-input" placeholder="Buscar libro o serie…" value="${booksState.q}" oninput="booksState.q=this.value;renderBooks()">
-    </div>
-    <div class="filter-group">
-      <span class="filter-label">Tipo</span>
-      <select class="filter-select" onchange="booksState.type=this.value;renderBooks()">
-        <option value="all"${booksState.type==='all'?' selected':''}>Todos</option>
-        <option value="serie"${booksState.type==='serie'?' selected':''}>Series</option>
-        <option value="película"${booksState.type==='película'?' selected':''}>Películas</option>
-      </select>
-    </div>
-    <div class="filter-group">
-      <span class="filter-label">Orden</span>
-      <select class="filter-select" onchange="booksState.sort=this.value;renderBooks()">
-        <option value="az"${booksState.sort==='az'?' selected':''}>A → Z</option>
-        <option value="za"${booksState.sort==='za'?' selected':''}>Z → A</option>
-        <option value="serie"${booksState.sort==='serie'?' selected':''}>Por serie</option>
-        <option value="pub"${booksState.sort==='pub'?' selected':''}>Orden de la lista</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="alpha-bar">
-    <button class="alpha-btn${!booksState.letter?' alpha-active':''}" onclick="booksState.letter='';renderBooks()" title="Todos">Todas</button>
-    ${ALPHABET.map(l=>{
-      const has=usedLetters.has(l);
-      return `<button class="alpha-btn${booksState.letter===l?' alpha-active':''}${!has?' alpha-disabled':''}" onclick="${has?`booksState.letter=booksState.letter==='${l}'?'':'${l}';renderBooks()`:''}" title="${l}">${l}</button>`;
-    }).join('')}
-  </div>`;
-
   if(!books.length){
-    html+='<div class="search-empty">No se encontró ningún libro con esos criterios.</div>';
-    view.innerHTML=html; return;
+    resultsEl.innerHTML='<div class="search-empty">No se encontró ningún libro con esos criterios.</div>';
+    return;
   }
-
-  html+=`<div class="books-count">Mostrando <strong>${books.length}</strong> de <strong>${allBooks.length}</strong> libro${allBooks.length!==1?'s':''}</div>`;
+  let html=`<div class="books-count">Mostrando <strong>${books.length}</strong> de <strong>${allBooks.length}</strong> libro${allBooks.length!==1?'s':''}</div>`;
   html+='<div class="books-grid">';
   books.forEach(b=>{
     const coverEl=b.cover?`<img class="book-card-cover" src="${b.cover}" alt="${b.title}" onerror="this.outerHTML='<div class=book-card-cover-ph>📖</div>'">`:`<div class="book-card-cover-ph">📖</div>`;
-    const editionPills=b.editions.map(e=>`<a class="book-edition-pill" href="${e.url}" target="_blank" rel="noopener"><span class="book-edition-flag">${langFlag(e.lang)}</span><span class="book-edition-store">${e.store}</span></a>`).join('');
+    const editionPills=b.editions.map(e=>{
+      const isActive=booksState.lang&&e.lang===booksState.lang;
+      return `<a class="book-edition-pill${isActive?' book-edition-pill-active':''}" href="${e.url}" target="_blank" rel="noopener"><span class="book-edition-flag">${langFlag(e.lang)}</span><span class="book-edition-store">${e.store}</span></a>`;
+    }).join('');
     html+=`<div class="book-card">
       ${coverEl}
       <div class="book-card-body">
         <div class="book-card-title">${b.title}</div>
         <div class="book-card-series">Adaptada en <strong>${b.seriesName}</strong> <span class="book-type-tag">${b.type}</span></div>
-        ${b.editions.length?`<div class="book-editions-row">${editionPills}</div>`:''}
+        ${b.editions.length?`<div class="book-editions-row">${editionPills}</div>`:'<div style="font-size:11px;color:var(--muted);font-style:italic;margin-top:4px">Sin ediciones enlazadas</div>'}
       </div>
     </div>`;
   });
   html+='</div>';
-  view.innerHTML=html;
+  resultsEl.innerHTML=html;
 }
 function switchTab(tab){
   state.tab=tab;
@@ -1577,6 +1901,7 @@ function switchTab(tab){
     if(btn) btn.className='tab'+(tab===t?' active':'');
     if(view) view.style.display=tab===t?'':'none';
   });
+  if(tab==='cal') renderCal();
   if(tab==='list') renderList();
   if(tab==='movies') renderMovies();
   if(tab==='upcoming') renderUpcoming();
