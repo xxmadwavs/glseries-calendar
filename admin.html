@@ -621,6 +621,14 @@ function saveSeries(si){
   const bookCoverUrl=document.getElementById('f_bookcoverurl')?.value.trim()||'';
   const upcoming=document.getElementById('f_upcoming').checked;
   if(!name){alert('El nombre es obligatorio');return;}
+  // Comprobación de duplicados
+  const dupSeries=series.find((s,i)=>i!==si&&s.name.trim().toLowerCase()===name.toLowerCase());
+  const dupMovie=(movies||[]).find(mv=>mv.name.trim().toLowerCase()===name.toLowerCase());
+  if(dupSeries){
+    if(!confirm(`⚠️ Ya existe una serie llamada "${dupSeries.name}". ¿Seguro que quieres guardar de todas formas?`)) return;
+  } else if(dupMovie){
+    if(!confirm(`⚠️ Ya existe una película llamada "${dupMovie.name}". ¿Seguro que quieres guardar de todas formas?`)) return;
+  }
   const trailerUrl=document.getElementById('f_trailer')?.value.trim()||'';
   const bookLinks=getBookEditions('bookEditionsList');
   const bookUrl=bookLinks.length?bookLinks[0].url:'';
@@ -840,6 +848,14 @@ function getMovieWatchLinks(){
 function saveMovie(mi){
   const name=document.getElementById('mf_name').value.trim();
   if(!name){alert('El nombre es obligatorio');return;}
+  // Comprobación de duplicados
+  const dupMovie=movies.find((mv,i)=>i!==mi&&mv.name.trim().toLowerCase()===name.toLowerCase());
+  const dupSeries=(series||[]).find(s=>s.name.trim().toLowerCase()===name.toLowerCase());
+  if(dupMovie){
+    if(!confirm(`⚠️ Ya existe una película llamada "${dupMovie.name}". ¿Seguro que quieres guardar de todas formas?`)) return;
+  } else if(dupSeries){
+    if(!confirm(`⚠️ Ya existe una serie llamada "${dupSeries.name}". ¿Seguro que quieres guardar de todas formas?`)) return;
+  }
   const watchLinks=getMovieWatchLinks();
   const bookLinks=getBookEditions('movieBookEditionsList');
   const payload={
