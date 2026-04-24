@@ -187,6 +187,16 @@ code{background:var(--lavender-soft);color:var(--lavender);padding:1px 7px;borde
         <button class="admin-pill" data-status="finished" onclick="setAdminStatus('finished',this)">✓ Finalizadas</button>
         <button class="admin-pill" data-status="upcoming" onclick="setAdminStatus('upcoming',this)">📅 Próximas</button>
       </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="font-size:12px;color:var(--muted);font-weight:600;white-space:nowrap">Ordenar por</span>
+        <select id="adminSeriesSort" onchange="render()" style="padding:6px 12px;border-radius:20px;border:1.5px solid var(--border2);background:var(--surface2);color:var(--text);font-size:12px;font-family:'Nunito',sans-serif;font-weight:600;outline:none;cursor:pointer">
+          <option value="added">📋 Orden de añadido</option>
+          <option value="az">🔤 A → Z</option>
+          <option value="za">🔤 Z → A</option>
+          <option value="next">📅 Próximo episodio</option>
+          <option value="progress">📊 Progreso</option>
+        </select>
+      </div>
     </div>
     <button class="btn primary" style="margin-bottom:1rem;width:100%" onclick="openAddSeries()">+ Añadir nueva serie</button>
     <div class="series-count-label" id="seriesCountLabel"></div>
@@ -336,6 +346,27 @@ function render(){
     }
     return true;
   });
+
+  // Ordenación
+  const sort=(document.getElementById('adminSeriesSort')?.value)||'added';
+  const now2=new Date();
+  if(sort==='az') filtered.sort((a,b)=>a.name.localeCompare(b.name,'es'));
+  else if(sort==='za') filtered.sort((a,b)=>b.name.localeCompare(a.name,'es'));
+  else if(sort==='next'){
+    filtered.sort((a,b)=>{
+      const nextEp=s=>{ if(s.upcoming) return null; const ep=genEpisodes(s).find(e=>new Date(e.date+'T12:00:00')>now2&&!e.skipped); return ep?ep.date:null; };
+      const da=nextEp(a), db=nextEp(b);
+      if(!da&&!db) return a.name.localeCompare(b.name,'es');
+      if(!da) return 1; if(!db) return -1;
+      return da<db?-1:da>db?1:0;
+    });
+  } else if(sort==='progress'){
+    filtered.sort((a,b)=>{
+      const pct=s=>{ if(s.upcoming||!s.totalEpisodes) return -1; const aired=genEpisodes(s).filter(e=>new Date(e.date+'T12:00:00')<=now2&&!e.skipped).length; return aired/s.totalEpisodes; };
+      return pct(b)-pct(a);
+    });
+  }
+  // (sort==='added' mantiene el orden original)
 
   const countLabel=document.getElementById('seriesCountLabel');
   if(countLabel){
