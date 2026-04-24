@@ -99,10 +99,43 @@ body::before{content:'';position:fixed;inset:0;background:
 
 /* ═══ CONTAINER ═══ */
 .container{max-width:1020px;margin:0 auto;padding:2rem 1.5rem;position:relative;z-index:1}
-@media(max-width:600px){.container{padding:1.25rem 1rem}}
+@media(max-width:600px){.container{padding:1.25rem 1rem 6rem}}
 
 /* Legacy page-header (hidden now) */
 .page-header{display:none}
+
+/* ═══ BOTTOM NAV (móvil) ═══ */
+.bottom-nav{display:none}
+@media(max-width:600px){
+  .tabs{display:none}
+  .bottom-nav{
+    display:flex;
+    position:fixed;bottom:0;left:0;right:0;
+    z-index:100;
+    background:rgba(255,255,255,0.96);
+    border-top:1px solid var(--border2);
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    box-shadow:0 -4px 24px rgba(180,80,120,0.10);
+    padding:0 0 env(safe-area-inset-bottom,0);
+  }
+  .bnav-item{
+    flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:3px;padding:9px 4px 8px;cursor:pointer;
+    border:none;background:transparent;font-family:var(--font-body);
+    color:var(--muted);transition:color .15s;
+    -webkit-tap-highlight-color:transparent;
+  }
+  .bnav-item.active{color:var(--accent)}
+  .bnav-icon{font-size:19px;line-height:1;transition:transform .18s}
+  .bnav-item.active .bnav-icon{transform:scale(1.15)}
+  .bnav-label{font-size:9.5px;font-weight:600;letter-spacing:.02em;white-space:nowrap}
+  .bnav-dot{
+    width:4px;height:4px;border-radius:50%;background:var(--accent);
+    position:absolute;bottom:6px;opacity:0;transition:opacity .15s;
+  }
+  .bnav-item{position:relative}
+  .bnav-item.active .bnav-dot{opacity:1}
+}
 
 /* ═══ TABS ═══ */
 .tabs{
@@ -647,8 +680,6 @@ function renderStats(){
   const movieCount=state.movies.length;
   const stats=[
     {num:activeSeries.length, label:'series activas', cls:''},
-    {num:airedEps, label:'episodios emitidos', cls:''},
-    {num:totalEps-airedEps, label:'pendientes', cls:''},
   ];
   if(movieCount) stats.push({num:movieCount, label:'películas', cls:'lav'});
   if(upcoming) stats.push({num:upcoming, label:'próximamente', cls:'lav'});
@@ -1326,6 +1357,10 @@ function switchTab(tab){
     if(btn) btn.className='tab'+(tab===t?' active':'');
     if(view) view.style.display=tab===t?'':'none';
   });
+  // Sync bottom nav
+  document.querySelectorAll('.bnav-item').forEach(el=>{
+    el.classList.toggle('active', el.dataset.tab===tab);
+  });
   if(tab==='list') renderList();
   if(tab==='movies') renderMovies();
   if(tab==='upcoming') renderUpcoming();
@@ -1337,6 +1372,34 @@ document.getElementById('nextBtn').onclick=()=>{state.month++;if(state.month>11)
 document.getElementById('todayBtn').onclick=()=>{state.month=new Date().getMonth();state.year=new Date().getFullYear();renderCal();};
 
 (async()=>{ if(await loadData()){renderStats();renderCal();} })();
-</script>
+
+<nav class="bottom-nav">
+  <button class="bnav-item active" data-tab="cal" onclick="switchTab('cal')">
+    <span class="bnav-icon">📅</span>
+    <span class="bnav-label">Calendario</span>
+    <span class="bnav-dot"></span>
+  </button>
+  <button class="bnav-item" data-tab="list" onclick="switchTab('list')">
+    <span class="bnav-icon">🎬</span>
+    <span class="bnav-label">Series</span>
+    <span class="bnav-dot"></span>
+  </button>
+  <button class="bnav-item" data-tab="movies" onclick="switchTab('movies')">
+    <span class="bnav-icon">🎥</span>
+    <span class="bnav-label">Películas</span>
+    <span class="bnav-dot"></span>
+  </button>
+  <button class="bnav-item" data-tab="upcoming" onclick="switchTab('upcoming')">
+    <span class="bnav-icon">✨</span>
+    <span class="bnav-label">Próximas</span>
+    <span class="bnav-dot"></span>
+  </button>
+  <button class="bnav-item" data-tab="books" onclick="switchTab('books')">
+    <span class="bnav-icon">📚</span>
+    <span class="bnav-label">Libros</span>
+    <span class="bnav-dot"></span>
+  </button>
+</nav>
+
 </body>
 </html>
