@@ -528,9 +528,10 @@
       "emissionDays": [
         2
       ],
-      "totalEpisodes": 10,
+      "totalEpisodes": 7,
       "skipDates": [],
-      "episodes": []
+      "episodes": [],
+      "bookLinks": []
     },
     {
       "id": "1776965794937",
@@ -553,9 +554,10 @@
       "emissionDays": [
         2
       ],
-      "totalEpisodes": 10,
+      "totalEpisodes": 7,
       "skipDates": [],
-      "episodes": []
+      "episodes": [],
+      "bookLinks": []
     },
     {
       "id": "1776966024996",
@@ -1599,5 +1601,5 @@
       "bookUrl": ""
     }
   ],
-  "exportedAt": "2026-04-24T12:51:08.285Z"
+  "exportedAt": "2026-04-24T15:58:02.756Z"
 }
