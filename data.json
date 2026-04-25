@@ -2260,6 +2260,140 @@
       "totalEpisodes": 33,
       "skipDates": [],
       "episodes": []
+    },
+    {
+      "id": "1777107997520",
+      "name": "Warrior Nun",
+      "poster": "https://m.media-amazon.com/images/M/MV5BNWNmYjRiOGEtMDRiZS00ZTYwLThhNmUtYWQ1MmQzZDdjNTczXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "synopsis": "Una joven huérfana despierta en una morgue y descubre que una secta secreta de monjas cazademonios le ha conferido superpoderes. Es la elegida: la portadora del halo.",
+      "year": 2020,
+      "country": "Estados Unidos",
+      "network": "Netflix",
+      "networkUrl": "https://www.netflix.com/es/title/80242724",
+      "watchLinks": [
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com/es/title/80242724"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/cwa6iQSFJkM?si=aMGLUmqP8RGb0Cr4",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Drama",
+        "Acción",
+        "Fantasía",
+        "Ciencia Ficción",
+        "Sobrenatural"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2020-07-02",
+          "totalEpisodes": 10,
+          "emissionDays": [
+            3
+          ],
+          "skipDates": [],
+          "episodes": [
+            {
+              "num": 2,
+              "date": "2020-07-02",
+              "skipped": false
+            },
+            {
+              "num": 3,
+              "date": "2020-07-02",
+              "skipped": false
+            },
+            {
+              "num": 4,
+              "date": "2020-07-02",
+              "skipped": false
+            },
+            {
+              "num": 5,
+              "date": "2020-07-02",
+              "skipped": false
+            },
+            {
+              "num": 6,
+              "date": "2020-07-02",
+              "skipped": false
+            },
+            {
+              "num": 7,
+              "date": "2020-07-02",
+              "skipped": false
+            },
+            {
+              "num": 8,
+              "date": "2020-07-02",
+              "skipped": false
+            },
+            {
+              "num": 9,
+              "date": "2020-07-02",
+              "skipped": false
+            },
+            {
+              "num": 10,
+              "date": "2020-07-02",
+              "skipped": false
+            }
+          ]
+        },
+        {
+          "label": "Temporada 2",
+          "startDate": "2022-11-10",
+          "totalEpisodes": 8,
+          "emissionDays": [
+            3
+          ],
+          "skipDates": [],
+          "episodes": [
+            {
+              "num": 2,
+              "date": "2022-11-10",
+              "skipped": false
+            },
+            {
+              "num": 3,
+              "date": "2022-11-10",
+              "skipped": false
+            },
+            {
+              "num": 4,
+              "date": "2022-12-10",
+              "skipped": false
+            },
+            {
+              "num": 5,
+              "date": "2022-11-10",
+              "skipped": false
+            },
+            {
+              "num": 6,
+              "date": "2022-11-10",
+              "skipped": false
+            },
+            {
+              "num": 7,
+              "date": "2022-11-10",
+              "skipped": false
+            },
+            {
+              "num": 8,
+              "date": "2022-11-10",
+              "skipped": false
+            }
+          ]
+        }
+      ]
     }
   ],
   "movies": [
@@ -2393,5 +2527,5 @@
       "genres": []
     }
   ],
-  "exportedAt": "2026-04-25T08:49:48.550Z"
+  "exportedAt": "2026-04-25T09:09:19.184Z"
 }
