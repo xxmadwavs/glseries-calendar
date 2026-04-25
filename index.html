@@ -1030,13 +1030,18 @@ async function loadData(){
 function renderStats(){
   const activeSeries=state.series.filter(s=>!s.upcoming);
   const now=new Date();
+  // Solo las que tienen al menos 1 episodio ya emitido = "en emisión real"
+  const airingNow=activeSeries.filter(s=>{
+    const eps=genEps(s);
+    return eps.some(e=>new Date(e.date+'T12:00:00')<=now&&!e.skipped);
+  });
   const totalEps=activeSeries.reduce((a,s)=>a+s.totalEpisodes,0);
   const airedEps=activeSeries.reduce((a,s)=>{ const eps=genEps(s); return a+eps.filter(e=>new Date(e.date+'T12:00:00')<=now&&!e.skipped).length; },0);
   const upcoming=state.series.filter(s=>s.upcoming).length;
   const bookBased=state.series.filter(s=>s.basedOnBook).length;
   const movieCount=state.movies.length;
   const stats=[
-    {num:activeSeries.length, label:'series activas', cls:''},
+    {num:airingNow.length, label:'series activas', cls:''},
   ];
   if(movieCount) stats.push({num:movieCount, label:'películas', cls:'lav'});
   if(upcoming) stats.push({num:upcoming, label:'próximamente', cls:'lav'});
@@ -1335,12 +1340,12 @@ function renderListResults(){
   const filtered=applySeriesFilters(active);
   const now=new Date();
 
-  // "En emisión": tiene episodios futuros (ya empezó a emitirse)
+  // "En emisión": ya ha emitido al menos 1 ep Y tiene episodios futuros pendientes
   const airing=filtered.filter(s=>{
     const eps=genEps(s);
     const hasAired=eps.some(e=>new Date(e.date+'T12:00:00')<=now&&!e.skipped);
     const hasFuture=eps.some(e=>new Date(e.date+'T12:00:00')>now&&!e.skipped);
-    return hasFuture; // tiene episodios pendientes (puede o no tener emitidos)
+    return hasAired&&hasFuture;
   });
 
   // "Estreno Próximo": todos los episodios son futuros, ninguno emitido aún
@@ -1394,42 +1399,20 @@ function renderListResults(){
   let html=tabsHtml;
 
   if(seriesSubtab==='airing'){
-    // Within "airing", split between truly ongoing (has aired eps) and not-yet-started-but-scheduled
-    const trulyAiring=airing.filter(s=>{
-      const eps=genEps(s);
-      return eps.some(e=>new Date(e.date+'T12:00:00')<=now&&!e.skipped);
-    });
-    const scheduledNotStarted=airing.filter(s=>{
-      const eps=genEps(s);
-      return !eps.some(e=>new Date(e.date+'T12:00:00')<=now&&!e.skipped);
-    });
     if(airing.length){
-      // Show truly airing first, then scheduled-not-started as a sub-group
-      html+=`<div class="books-count">Mostrando <strong>${airing.length}</strong> serie${airing.length!==1?'s':''}</div>`;
-      if(trulyAiring.length){
-        html+=`<div class="series-grid">`;
-        trulyAiring.forEach(s=>{ html+=seriesCardHtml(s, state.series.indexOf(s)); });
-        html+='</div>';
-      }
-      if(scheduledNotStarted.length){
-        html+=`<div style="margin:1.25rem 0 .75rem;display:flex;align-items:center;gap:8px">
-          <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)">🗓️ Estreno próximo</span>
-          <span style="flex:1;height:1px;background:var(--border)"></span>
-          <span style="font-size:11px;color:var(--muted);font-weight:600">${scheduledNotStarted.length}</span>
-        </div><div class="series-grid">`;
-        scheduledNotStarted.forEach(s=>{ html+=seriesCardHtml(s, state.series.indexOf(s)); });
-        html+='</div>';
-      }
+      html+=`<div class="books-count">Mostrando <strong>${airing.length}</strong> serie${airing.length!==1?'s':''} en emisión</div><div class="series-grid">`;
+      airing.forEach(s=>{ html+=seriesCardHtml(s, state.series.indexOf(s)); });
+      html+='</div>';
     } else {
       html+='<div class="search-empty">No hay series en emisión con esos filtros.</div>';
     }
   } else if(seriesSubtab==='notstarted'){
     if(notStarted.length){
-      html+=`<div class="books-count">Mostrando <strong>${notStarted.length}</strong> serie${notStarted.length!==1?'s':''} sin estrenar</div><div class="series-grid">`;
+      html+=`<div class="books-count">Mostrando <strong>${notStarted.length}</strong> serie${notStarted.length!==1?'s':''} con estreno próximo</div><div class="series-grid">`;
       notStarted.forEach(s=>{ html+=seriesCardHtml(s, state.series.indexOf(s)); });
       html+='</div>';
     } else {
-      html+='<div class="search-empty">No hay series sin estrenar con esos filtros.</div>';
+      html+='<div class="search-empty">No hay series con estreno próximo con esos filtros.</div>';
     }
   } else {
     if(finished.length){
