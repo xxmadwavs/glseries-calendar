@@ -693,6 +693,7 @@ body::before{content:'';position:fixed;inset:0;background:
   cursor:pointer;font-size:13px;font-weight:500;color:var(--text);
   transition:background .12s;user-select:none;
 }
+.cpd-item *{cursor:pointer;pointer-events:none}
 .cpd-item:hover{background:var(--surface2)}
 .cpd-item.selected{background:var(--accent-soft);color:var(--accent);font-weight:700}
 .cpd-item input[type=checkbox]{
@@ -1030,10 +1031,12 @@ async function loadData(){
 function renderStats(){
   const activeSeries=state.series.filter(s=>!s.upcoming);
   const now=new Date();
-  // Solo las que tienen al menos 1 episodio ya emitido = "en emisión real"
+  // Solo las que tienen ≥1 ep emitido Y episodios futuros pendientes (= realmente en emisión)
   const airingNow=activeSeries.filter(s=>{
     const eps=genEps(s);
-    return eps.some(e=>new Date(e.date+'T12:00:00')<=now&&!e.skipped);
+    const hasAired=eps.some(e=>new Date(e.date+'T12:00:00')<=now&&!e.skipped);
+    const hasFuture=eps.some(e=>new Date(e.date+'T12:00:00')>now&&!e.skipped);
+    return hasAired&&hasFuture;
   });
   const totalEps=activeSeries.reduce((a,s)=>a+s.totalEpisodes,0);
   const airedEps=activeSeries.reduce((a,s)=>{ const eps=genEps(s); return a+eps.filter(e=>new Date(e.date+'T12:00:00')<=now&&!e.skipped).length; },0);
@@ -1289,8 +1292,11 @@ function buildCountryPicker(id, onChange, availableCountries){
       const item=document.createElement('div');
       item.className='cpd-item'+(selected.includes(country)?' selected':'');
       item.innerHTML=`<input type="checkbox" ${selected.includes(country)?'checked':''}><span>${country}</span>`;
-      item.querySelector('input').addEventListener('change',e=>{
-        if(e.target.checked){if(!selected.includes(country))selected.push(country);}
+      item.addEventListener('click',e=>{
+        // Toggle regardless of whether user clicked checkbox or text
+        const cb=item.querySelector('input');
+        if(e.target!==cb) cb.checked=!cb.checked;
+        if(cb.checked){if(!selected.includes(country))selected.push(country);}
         else{selected=selected.filter(x=>x!==country);}
         item.classList.toggle('selected',selected.includes(country));
         updateBtn();onChange(getAll());
