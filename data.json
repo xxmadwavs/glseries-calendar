@@ -1967,6 +1967,41 @@
       "totalEpisodes": 10,
       "skipDates": [],
       "episodes": []
+    },
+    {
+      "id": "1777102056290",
+      "name": "Lucky My Love",
+      "poster": "https://i.mydramalist.com/qYqNDB_4c.jpg?v=1",
+      "synopsis": "En su búsqueda del amor, Napdao lo ha intentado todo. Se ha hecho leer la fortuna y ha tenido varias citas a ciegas. Sin embargo, lamentablemente, nadie parece estar en la misma sintonía que ella.\n\nEmpieza a pensar que quizás su apuesto y atento jefe, Pheem, podría ser el indicado. Entonces aparece Wela, su nueva jefa de equipo, y revoluciona las cosas con su atención y cariño.\n\nA medida que la cercanía con Wela crece, Napdao comienza a cuestionar lo que realmente busca en una pareja, dividida entre la seguridad que proyecta Pheem y la conexión profunda y vibrante que siente con su nueva jefa.",
+      "year": 2023,
+      "country": "Tailandia",
+      "network": "YouTube",
+      "networkUrl": "https://youtube.com/playlist?list=PLZqIjfvyGXxYEgfNrqrThCwRxB5kDzGlN&si=rb1ggpgtj_jFwb6s",
+      "watchLinks": [
+        {
+          "name": "YouTube",
+          "url": "https://youtube.com/playlist?list=PLZqIjfvyGXxYEgfNrqrThCwRxB5kDzGlN&si=rb1ggpgtj_jFwb6s"
+        }
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=WG2nB5U_TTk",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Comedia"
+      ],
+      "startDate": "2023-10-28",
+      "dayOfWeek": 5,
+      "emissionDays": [
+        5
+      ],
+      "totalEpisodes": 5,
+      "skipDates": [],
+      "episodes": []
     }
   ],
   "movies": [
@@ -2019,7 +2054,67 @@
         "Romance",
         "Drama"
       ]
+    },
+    {
+      "id": "1777101748048",
+      "name": "Mother Mary",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/9/9/4/3/5/3/994353-mother-mary-2026-0-1000-0-1500-crop.jpg?v=a2644168b4",
+      "synopsis": "Esto no es una historia de fantasmas.\nViejas heridas resurgen cuando la icónica estrella del pop, Mother Mary, se reencuentra con su mejor amiga, con quien estaba distanciada, y antigua diseñadora de vestuario, Sam Anselm, en vísperas de su actuación de regreso a los escenarios.",
+      "year": 2026,
+      "country": "Estados Unidos",
+      "network": "",
+      "networkUrl": "",
+      "watchLinks": [],
+      "trailerUrl": "https://youtu.be/aqYHOsuje1E?si=eVpsKgKxa0AIOvoS",
+      "date": "2026-04-26",
+      "basedOnBook": false,
+      "bookSource": "",
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "genres": [
+        "Drama",
+        "Thriller"
+      ]
+    },
+    {
+      "id": "1777102156945",
+      "name": "SKIFF",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/0/9/0/0/1/5/1090015-skiff-0-1000-0-1500-crop.jpg?v=3f5144135e",
+      "synopsis": "Malou, de quince años, lucha consigo misma; su madre está casi siempre ausente y sus compañeros de remo la acosan, pero la única persona en la que puede confiar es su hermano Max. Cuando Malou se enamora de Nouria, la novia de Max, su vida se ve arrastrada por una corriente imparable. Malou tendrá que enfrentarse a su verdadera identidad, aunque eso signifique sacrificar a su hermano.",
+      "year": 2026,
+      "country": "Bélgica",
+      "network": "",
+      "networkUrl": "",
+      "watchLinks": [],
+      "trailerUrl": "https://youtu.be/zSv_pEIC_7Q?si=646vqGruhl9Bjpvj",
+      "date": "2026-02-04",
+      "basedOnBook": false,
+      "bookSource": "",
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "genres": []
+    },
+    {
+      "id": "1777102345039",
+      "name": "Teenage Sex and Death at Camp Miasma",
+      "poster": "https://a.ltrbxd.com/resized/film-poster/1/1/2/3/8/6/7/1123867-teenage-sex-and-death-at-camp-miasma-0-1000-0-1500-crop.jpg?v=1fde25f24f",
+      "synopsis": "Un nuevo tipo de remake de terror.\nTras años de secuelas chapuceras y una base de fans en declive, la franquicia de terror Camp Miasma se entrega a una joven y entusiasta directora para su resurrección. Pero cuando visita a la estrella de la película original, una actriz ahora recluida y envuelta en misterio, ambas mujeres se ven inmersas en un mundo sangriento de deseo, miedo y delirio.",
+      "year": 2026,
+      "country": "Estados Unidos",
+      "network": "",
+      "networkUrl": "",
+      "watchLinks": [],
+      "trailerUrl": "https://youtu.be/MA5NqUMEdbI?si=NSKlmAbLSbGeEL1z",
+      "date": "2026-08-07",
+      "basedOnBook": false,
+      "bookSource": "",
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "genres": []
     }
   ],
-  "exportedAt": "2026-04-24T22:02:02.129Z"
+  "exportedAt": "2026-04-25T07:32:26.986Z"
 }
