@@ -2611,6 +2611,58 @@
           "episodes": []
         }
       ]
+    },
+    {
+      "id": "1777123893340",
+      "name": "GAP",
+      "poster": "https://static.wikia.nocookie.net/drama/images/8/8a/GAP-8.jpg/revision/latest?cb=20221119105123&path-prefix=es",
+      "synopsis": "Mucho después de que Sam rescatara a Mon cuando eran niñas, Sam se convirtió, sin duda, en el ídolo de Mon. Con el firme deseo de estar cerca de ella, Mon consigue un trabajo bajo su supervisión.\n\nCuando finalmente se reencuentran en la oficina, Mon se sorprende por la actitud fría y distante de Sam, una faceta tan diferente de la imagen idealizada que guardaba y de la persona que ella misma aspira a ser.\n\nMon y Sam no solo son polos opuestos en su comportamiento; también pertenecen a clases sociales distintas y las separa una brecha de ocho años, factores que pondrán a prueba la admiración de Mon y la coraza emocional de Sam.",
+      "year": 2022,
+      "country": "Tailandia",
+      "network": "YouTube",
+      "networkUrl": "https://youtu.be/o3gZsuz8w8o?si=HBAziAgulsuN7b8I",
+      "watchLinks": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/o3gZsuz8w8o?si=HBAziAgulsuN7b8I"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/f7Kso0QOaiE?si=_CW_6WkjN-xDaRGn",
+      "bookSource": "GAP",
+      "basedOnBook": true,
+      "bookCoverUrl": "https://cdn-local.mebmarket.com/meb/server1/181426/Thumbnail/book_detail_large.gif?5",
+      "bookLinks": [
+        {
+          "lang": "en",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/?action=book_details&book_id=181426"
+        },
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-70724-GAP--%E0%B8%97%E0%B8%A4%E0%B8%A9%E0%B8%8E%E0%B8%B5%E0%B8%AA%E0%B8%B5%E0%B8%8A%E0%B8%A1%E0%B8%9E%E0%B8%B9-%E0%B9%80%E0%B8%A5%E0%B9%88%E0%B8%A1-1"
+        },
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-70732-GAP--%E0%B8%97%E0%B8%A4%E0%B8%A9%E0%B8%8E%E0%B8%B5%E0%B8%AA%E0%B8%B5%E0%B8%8A%E0%B8%A1%E0%B8%9E%E0%B8%B9-%E0%B9%80%E0%B8%A5%E0%B9%88%E0%B8%A1-2"
+        }
+      ],
+      "bookUrl": "https://en.mebmarket.com/?action=book_details&book_id=181426",
+      "upcoming": false,
+      "genres": [],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2022-11-19",
+          "totalEpisodes": 12,
+          "emissionDays": [
+            5
+          ],
+          "skipDates": [],
+          "episodes": []
+        }
+      ]
     }
   ],
   "movies": [
@@ -2744,5 +2796,5 @@
       "genres": []
     }
   ],
-  "exportedAt": "2026-04-25T11:26:04.361Z"
+  "exportedAt": "2026-04-25T13:31:41.544Z"
 }
