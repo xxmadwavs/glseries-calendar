@@ -208,6 +208,20 @@ code{background:var(--lavender-soft);color:var(--lavender);padding:1px 7px;borde
   border:1.5px solid rgba(155,130,201,0.3);
   border-radius:14px;padding:14px 16px;margin-bottom:18px;
 }
+.ai-apikey-row{display:flex;gap:7px;align-items:center;margin-bottom:8px}
+.ai-apikey-input{
+  flex:1;padding:8px 13px;border-radius:10px;border:1.5px solid rgba(155,130,201,0.35);
+  background:var(--surface);color:var(--text);font-size:12px;font-family:'Nunito',sans-serif;
+  outline:none;transition:border-color .15s;
+}
+.ai-apikey-input:focus{border-color:var(--lavender)}
+.ai-apikey-input::placeholder{color:var(--muted)}
+.ai-apikey-save{
+  padding:7px 13px;border-radius:10px;border:1.5px solid rgba(155,130,201,0.4);
+  background:transparent;color:var(--lavender);font-size:12px;font-weight:700;
+  font-family:'Nunito',sans-serif;cursor:pointer;white-space:nowrap;transition:all .15s;flex-shrink:0;
+}
+.ai-apikey-save:hover{background:var(--lavender);color:#fff;border-color:var(--lavender)}
 .ai-autofill-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--lavender);font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:5px}
 .ai-autofill-row{display:flex;gap:7px;align-items:center}
 .ai-autofill-input{
@@ -1355,14 +1369,28 @@ function importData(e){
 
 /* ═══ AI AUTOFILL ═══ */
 function aiAutofillBarHtml(type='series'){
+  const savedKey = localStorage.getItem('anthropic_api_key')||'';
+  const keyMasked = savedKey ? '••••••••'+savedKey.slice(-4) : '';
   return `<div class="ai-autofill-bar">
     <div class="ai-autofill-label">✨ Autocompletar con IA</div>
+    <div class="ai-apikey-row">
+      <input class="ai-apikey-input" id="aiKeyInput" placeholder="API Key de Anthropic (sk-ant-…)" type="password" value="${savedKey}" autocomplete="off">
+      <button class="ai-apikey-save" onclick="saveAiKey()">💾 Guardar key</button>
+    </div>
     <div class="ai-autofill-row">
       <input class="ai-autofill-input" id="aiLinkInput" placeholder="Pega un link de MyDramaList o Letterboxd…" type="url">
       <button class="ai-autofill-btn" id="aiAutofillBtn" onclick="runAiAutofill('${type}')">Rellenar</button>
     </div>
-    <div class="ai-autofill-status" id="aiAutofillStatus"></div>
+    <div class="ai-autofill-status" id="aiAutofillStatus">${savedKey ? '🔑 Key guardada.' : '⚠ Introduce tu API key de Anthropic para usar esta función.'}</div>
   </div>`;
+}
+
+function saveAiKey(){
+  const k = (document.getElementById('aiKeyInput')?.value||'').trim();
+  if(!k){ alert('Pega tu API key primero.'); return; }
+  localStorage.setItem('anthropic_api_key', k);
+  const s = document.getElementById('aiAutofillStatus');
+  if(s){ s.className='ai-autofill-status ok'; s.innerHTML='✓ Key guardada correctamente.'; }
 }
 
 async function runAiAutofill(type){
@@ -1370,6 +1398,9 @@ async function runAiAutofill(type){
   const btn = document.getElementById('aiAutofillBtn');
   const status = document.getElementById('aiAutofillStatus');
   const url = (input?.value||'').trim();
+  const apiKey = (document.getElementById('aiKeyInput')?.value || localStorage.getItem('anthropic_api_key') || '').trim();
+
+  if(!apiKey){ status.className='ai-autofill-status err'; status.innerHTML='⚠ Introduce y guarda tu API key primero.'; return; }
   if(!url){ status.className='ai-autofill-status err'; status.innerHTML='⚠ Pega un link primero.'; return; }
 
   btn.disabled = true;
@@ -1424,7 +1455,12 @@ Notas importantes:
     while(maxTurns-- > 0){
       const res = await fetch('https://api.anthropic.com/v1/messages', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'anthropic-dangerous-direct-browser-calls': 'true' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': apiKey,
+          'anthropic-version': '2023-06-01',
+          'anthropic-dangerous-direct-browser-calls': 'true'
+        },
         body: JSON.stringify({
           model: 'claude-sonnet-4-20250514',
           max_tokens: 2000,
@@ -1433,33 +1469,33 @@ Notas importantes:
         })
       });
       const data = await res.json();
-      if(!res.ok) throw new Error(data.error?.message || 'Error API');
+      if(!res.ok) throw new Error(data.error?.message || `Error API (${res.status})`);
 
       // Collect text blocks from this response
       for(const block of (data.content||[])){
         if(block.type === 'text') text += block.text;
       }
 
-      // If stop_reason is 'end_turn', we're done
+      // If stop_reason is end_turn, we're done
       if(data.stop_reason === 'end_turn') break;
 
-      // If there are tool_use blocks, add assistant turn + tool_result turn and continue
+      // If there are tool_use blocks, continue the conversation
       const toolUseBlocks = (data.content||[]).filter(b => b.type === 'tool_use');
       if(toolUseBlocks.length === 0) break;
 
-      // Add assistant message with the full content
+      // Add assistant message to history
       messages.push({ role: 'assistant', content: data.content });
 
-      // Add tool results (web_search results are handled server-side, we just acknowledge)
+      // Add tool_result placeholders so the model continues
       const toolResults = toolUseBlocks.map(block => ({
         type: 'tool_result',
         tool_use_id: block.id,
-        content: '' // server-side web_search fills this automatically
+        content: block.content || ''
       }));
       messages.push({ role: 'user', content: toolResults });
     }
 
-    // Parse JSON from response
+    // Parse JSON from final response
     const match = text.match(/\{[\s\S]*\}/);
     if(!match) throw new Error('No se encontró JSON en la respuesta');
     const info = JSON.parse(match[0]);
