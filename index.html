@@ -1470,7 +1470,7 @@ function buildCountryPicker(id, onChange, availableCountries){
 }
 
 let seriesSubtab='airing';
-let seriesFilters={q:'',countries:[],sort:'az',book:'all',year:'',genre:''};
+let seriesFilters={q:'',countries:[],sort:'recent',book:'all',year:'',genre:''};
 // Pagination state
 const PAGE_SIZE=20;
 const paginationState={series:{airing:1,notstarted:1,finished:1},movies:1,upcoming:1};
@@ -1518,6 +1518,12 @@ function renderListResults(){
     const hasAired=eps.some(e=>new Date(e.date+'T12:00:00')<=now&&!e.skipped);
     const hasFuture=eps.some(e=>new Date(e.date+'T12:00:00')>now&&!e.skipped);
     return hasAired&&hasFuture;
+  });
+  // Ordenar "en emisión" por día de la semana del próximo ep (lun=0 … dom=6)
+  airing.sort((a,b)=>{
+    const nextEp=s=>{const eps=genEps(s);return eps.find(e=>new Date(e.date+'T12:00:00')>now&&!e.skipped);};
+    const dayOf=s=>{const ep=nextEp(s);if(!ep)return 7;return(new Date(ep.date+'T12:00:00').getDay()+6)%7;};
+    return dayOf(a)-dayOf(b);
   });
 
   // "Estreno Próximo": todos los episodios son futuros, ninguno emitido aún
@@ -1630,8 +1636,9 @@ function applySeriesFilters(arr){
   if(seriesFilters.sort==='az') r.sort((a,b)=>a.name.localeCompare(b.name,'es'));
   else if(seriesFilters.sort==='za') r.sort((a,b)=>b.name.localeCompare(a.name,'es'));
   else if(seriesFilters.sort==='eps') r.sort((a,b)=>b.totalEpisodes-a.totalEpisodes);
-  else if(seriesFilters.sort==='date') r.sort((a,b)=>{ const da=(getSeasons(a)[0]?.startDate||a.startDate||''); const db=(getSeasons(b)[0]?.startDate||b.startDate||''); return da.localeCompare(db); });
-  else if(seriesFilters.sort==='recent') r.sort((a,b)=>getSeriesLastActivity(b).localeCompare(getSeriesLastActivity(a)));
+  else if(seriesFilters.sort==='date') r.sort((a,b)=>{ const da=(getSeasons(a)[0]?.startDate||a.startDate||''); const db=(getSeasons(b)[0]?.startDate||b.startDate||''); return db.localeCompare(da); });
+  else if(seriesFilters.sort==='dateold') r.sort((a,b)=>{ const da=(getSeasons(a)[0]?.startDate||a.startDate||''); const db=(getSeasons(b)[0]?.startDate||b.startDate||''); return da.localeCompare(db); });
+  else if(seriesFilters.sort==='recent') r.sort((a,b)=>{const ua=a.updatedAt||'';const ub=b.updatedAt||'';return ub.localeCompare(ua);});
   return r;
 }
 function resetSeriesPages(){ paginationState.series.airing=1; paginationState.series.notstarted=1; paginationState.series.finished=1; }
@@ -1668,7 +1675,8 @@ function renderList(){
             <option value="az"${seriesFilters.sort==='az'?' selected':''}>A → Z</option>
             <option value="za"${seriesFilters.sort==='za'?' selected':''}>Z → A</option>
             <option value="eps"${seriesFilters.sort==='eps'?' selected':''}>+ Episodios</option>
-            <option value="date"${seriesFilters.sort==='date'?' selected':''}>Por fecha</option>
+            <option value="date"${seriesFilters.sort==='date'?' selected':''}>📅 Más reciente primero</option>
+            <option value="dateold"${seriesFilters.sort==='dateold'?' selected':''}>📅 Más antiguo primero</option>
             <option value="recent"${seriesFilters.sort==='recent'?' selected':''}>🕐 Actualizado recientemente</option>
           </select>
         </div>
@@ -2094,8 +2102,9 @@ function applyMoviesFilters(arr){
   if(moviesFilters.genre) r=r.filter(mv=>mv.genres&&mv.genres.includes(moviesFilters.genre));
   if(moviesFilters.sort==='az') r.sort((a,b)=>a.name.localeCompare(b.name,'es'));
   else if(moviesFilters.sort==='za') r.sort((a,b)=>b.name.localeCompare(a.name,'es'));
-  else if(moviesFilters.sort==='date') r.sort((a,b)=>{if(!a.date&&!b.date)return 0;if(!a.date)return 1;if(!b.date)return-1;return a.date.localeCompare(b.date);});
-  else if(moviesFilters.sort==='recent') r.sort((a,b)=>{const da=a.date||'';const db=b.date||'';return db.localeCompare(da);});
+  else if(moviesFilters.sort==='date') r.sort((a,b)=>{if(!a.date&&!b.date)return 0;if(!a.date)return 1;if(!b.date)return-1;return b.date.localeCompare(a.date);});
+  else if(moviesFilters.sort==='dateold') r.sort((a,b)=>{if(!a.date&&!b.date)return 0;if(!a.date)return 1;if(!b.date)return-1;return a.date.localeCompare(b.date);});
+  else if(moviesFilters.sort==='recent') r.sort((a,b)=>{const ua=a.updatedAt||'';const ub=b.updatedAt||'';return ub.localeCompare(ua);});
   return r;
 }
 
@@ -2156,7 +2165,8 @@ function renderMovies(){
         <div class="filter-group">
           <span class="filter-label">Orden</span>
           <select id="moviesSortSel" class="filter-select" onchange="moviesFilters.sort=this.value;resetMoviesPage();renderMoviesResults()">
-            <option value="date">Por fecha</option>
+            <option value="date">📅 Más reciente primero</option>
+            <option value="dateold">📅 Más antiguo primero</option>
             <option value="az">A → Z</option>
             <option value="za">Z → A</option>
             <option value="recent">🕐 Actualizado recientemente</option>

@@ -1026,8 +1026,9 @@ function saveSeries(si){
     });
     payload={...payload,seasons};
   }
-  if(si===-1) series.push({id:Date.now().toString(),...payload});
-  else series[si]={...series[si],...payload};
+  const updatedAt=new Date().toISOString();
+  if(si===-1) series.push({id:Date.now().toString(),...payload,updatedAt});
+  else series[si]={...series[si],...payload,updatedAt};
   save(); closeAll(); render(); renderBooks();
 }
 
@@ -1321,8 +1322,9 @@ function saveMovie(mi){
     bookUrl:bookLinks.length?bookLinks[0].url:'',
     genres,
   };
-  if(mi===-1) movies.push({id:Date.now().toString(),...payload});
-  else movies[mi]={...movies[mi],...payload};
+  const movieUpdatedAt=new Date().toISOString();
+  if(mi===-1) movies.push({id:Date.now().toString(),...payload,updatedAt:movieUpdatedAt});
+  else movies[mi]={...movies[mi],...payload,updatedAt:movieUpdatedAt};
   save(); closeAll(); render(); renderBooks();
 }
 function delMovie(mi){
