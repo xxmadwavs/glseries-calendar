@@ -903,6 +903,34 @@ code{background:var(--lavender-soft);color:var(--lavender);padding:1px 7px;borde
 }
 .topbar-search-btn:hover{background:var(--surface2)}
 @media(max-width:600px){.topbar-search-btn{display:flex;align-items:center}}
+/* ═══ PAGINATION ═══ */
+.pagination{
+  display:flex;align-items:center;justify-content:center;
+  gap:4px;margin-top:1.75rem;flex-wrap:wrap;
+}
+.pg-btn{
+  min-width:34px;height:34px;padding:0 10px;
+  border-radius:10px;border:1.5px solid var(--border2);
+  background:var(--surface);color:var(--text);
+  font-size:13px;font-weight:600;cursor:pointer;
+  font-family:var(--font-body);transition:all .15s;
+  display:flex;align-items:center;justify-content:center;
+}
+.pg-btn:hover:not(:disabled):not(.pg-active){
+  background:var(--accent-soft);border-color:var(--accent2);color:var(--accent);
+}
+.pg-btn.pg-active{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;border-color:var(--accent);
+  box-shadow:0 3px 10px rgba(201,79,124,0.3);
+}
+.pg-btn:disabled{opacity:.35;cursor:default}
+.pg-btn.pg-prev,.pg-btn.pg-next{font-size:15px}
+.pg-ellipsis{color:var(--muted);font-size:13px;padding:0 4px;line-height:34px}
+@media(max-width:480px){
+  .pg-btn{min-width:30px;height:30px;font-size:12px}
+}
+
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .container>div[id^="view"]{animation:fadeIn .25s ease}
 </style>
@@ -1103,7 +1131,6 @@ function renderStats(){
   const stats=[
     {num:airingNow.length, label:'series activas', cls:''},
   ];
-  if(totalEps) stats.push({num:totalEps, label:'episodios en total', cls:'teal'});
   if(movieCount) stats.push({num:movieCount, label:'películas', cls:'lav'});
   if(upcoming) stats.push({num:upcoming, label:'próximamente', cls:'lav'});
   if(bookBased) stats.push({num:bookBased, label:'basadas en libro', cls:'gold'});
@@ -1445,6 +1472,28 @@ function buildCountryPicker(id, onChange, availableCountries){
 
 let seriesSubtab='airing';
 let seriesFilters={q:'',countries:[],sort:'az',book:'all',year:'',genre:''};
+// Pagination state
+const PAGE_SIZE=20;
+const paginationState={series:{airing:1,notstarted:1,finished:1},movies:1,upcoming:1};
+
+function paginationHtml(current,total,onPageFn){
+  if(total<=1) return '';
+  const pages=[];
+  // Always show first, last, current±1, and ellipsis
+  const show=new Set([1,total,current,current-1,current+1].filter(p=>p>=1&&p<=total));
+  const sorted=[...show].sort((a,b)=>a-b);
+  let html='<div class="pagination">';
+  html+=`<button class="pg-btn pg-prev" onclick="${onPageFn}(${current-1})" ${current===1?'disabled':''}>&larr;</button>`;
+  let prev=null;
+  sorted.forEach(p=>{
+    if(prev!==null&&p-prev>1) html+='<span class="pg-ellipsis">…</span>';
+    html+=`<button class="pg-btn${p===current?' pg-active':''}" onclick="${onPageFn}(${p})">${p}</button>`;
+    prev=p;
+  });
+  html+=`<button class="pg-btn pg-next" onclick="${onPageFn}(${current+1})" ${current===total?'disabled':''}>&rarr;</button>`;
+  html+='</div>';
+  return html;
+}
 
 function renderListResults(){
   const resultsEl=document.getElementById('listResults');
@@ -1522,32 +1571,39 @@ function renderListResults(){
 
   let html=tabsHtml;
 
+  function renderSubtabGrid(list, emptyMsg){
+    if(!list.length){ return '<div class="search-empty">'+emptyMsg+'</div>'; }
+    const sub=seriesSubtab;
+    const page=paginationState.series[sub]||1;
+    const totalPages=Math.ceil(list.length/PAGE_SIZE);
+    const safePage=Math.min(page,totalPages);
+    if(paginationState.series[sub]!==safePage) paginationState.series[sub]=safePage;
+    const slice=list.slice((safePage-1)*PAGE_SIZE, safePage*PAGE_SIZE);
+    let out=`<div class="books-count">Mostrando <strong>${(safePage-1)*PAGE_SIZE+1}–${Math.min(safePage*PAGE_SIZE,list.length)}</strong> de <strong>${list.length}</strong> serie${list.length!==1?'s':''}</div><div class="series-grid">`;
+    slice.forEach(s=>{ out+=seriesCardHtml(s, state.series.indexOf(s)); });
+    out+='</div>';
+    out+=paginationHtml(safePage, totalPages, `setSeriesPage_${sub}`);
+    return out;
+  }
+
+  // Expose page setters globally
+  window.setSeriesPage_airing=p=>{paginationState.series.airing=p;renderListResults();scrollToResults('listResults');};
+  window.setSeriesPage_notstarted=p=>{paginationState.series.notstarted=p;renderListResults();scrollToResults('listResults');};
+  window.setSeriesPage_finished=p=>{paginationState.series.finished=p;renderListResults();scrollToResults('listResults');};
+
   if(seriesSubtab==='airing'){
-    if(airing.length){
-      html+=`<div class="books-count">Mostrando <strong>${airing.length}</strong> serie${airing.length!==1?'s':''} en emisión</div><div class="series-grid">`;
-      airing.forEach(s=>{ html+=seriesCardHtml(s, state.series.indexOf(s)); });
-      html+='</div>';
-    } else {
-      html+='<div class="search-empty">No hay series en emisión con esos filtros.</div>';
-    }
+    html+=renderSubtabGrid(airing,'No hay series en emisión con esos filtros.');
   } else if(seriesSubtab==='notstarted'){
-    if(notStarted.length){
-      html+=`<div class="books-count">Mostrando <strong>${notStarted.length}</strong> serie${notStarted.length!==1?'s':''} con estreno próximo</div><div class="series-grid">`;
-      notStarted.forEach(s=>{ html+=seriesCardHtml(s, state.series.indexOf(s)); });
-      html+='</div>';
-    } else {
-      html+='<div class="search-empty">No hay series con estreno próximo con esos filtros.</div>';
-    }
+    html+=renderSubtabGrid(notStarted,'No hay series con estreno próximo con esos filtros.');
   } else {
-    if(finished.length){
-      html+=`<div class="books-count">Mostrando <strong>${finished.length}</strong> serie${finished.length!==1?'s':''}</div><div class="series-grid">`;
-      finished.forEach(s=>{ html+=seriesCardHtml(s, state.series.indexOf(s)); });
-      html+='</div>';
-    } else {
-      html+='<div class="search-empty">No hay series finalizadas con esos filtros.</div>';
-    }
+    html+=renderSubtabGrid(finished,'No hay series finalizadas con esos filtros.');
   }
   resultsEl.innerHTML=html;
+}
+
+function scrollToResults(id){
+  const el=document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
 function getCountries(arr){ return [...new Set(arr.map(s=>s.country).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'es')); }
@@ -1579,6 +1635,9 @@ function applySeriesFilters(arr){
   else if(seriesFilters.sort==='recent') r.sort((a,b)=>getSeriesLastActivity(b).localeCompare(getSeriesLastActivity(a)));
   return r;
 }
+function resetSeriesPages(){ paginationState.series.airing=1; paginationState.series.notstarted=1; paginationState.series.finished=1; }
+function resetMoviesPage(){ paginationState.movies=1; }
+function resetUpcomingPage(){ paginationState.upcoming=1; }
 
 function renderList(){
   const view=document.getElementById('viewList');
@@ -1591,7 +1650,7 @@ function renderList(){
       <div class="toolbar-search-row">
         <div class="search-wrap" style="position:relative;margin-bottom:0;width:100%">
           <span class="search-icon">🔍</span>
-          <input id="seriesSearchInput" class="search-input" placeholder="Buscar serie, país, plataforma…" value="${seriesFilters.q}" oninput="seriesFilters.q=this.value;renderListResults()" autocomplete="off">
+          <input id="seriesSearchInput" class="search-input" placeholder="Buscar serie, país, plataforma…" value="${seriesFilters.q}" oninput="seriesFilters.q=this.value;resetSeriesPages();renderListResults()" autocomplete="off">
         </div>
       </div>
       <div class="toolbar-filters-row" id="seriesFiltersRow">
@@ -1600,13 +1659,13 @@ function renderList(){
         </div>
         <div class="filter-group">
           <span class="filter-label">Género</span>
-          <select id="seriesGenreSel" class="filter-select" onchange="seriesFilters.genre=this.value;renderListResults()">
-            <option value="">🎭 Género</option>${genreOpts}
+          <select id="seriesGenreSel" class="filter-select" onchange="seriesFilters.genre=this.value;resetSeriesPages();renderListResults()">
+          <option value="">🎭 Género</option>${genreOpts}
           </select>
         </div>
         <div class="filter-group">
           <span class="filter-label">Orden</span>
-          <select id="seriesSortSel" class="filter-select" onchange="seriesFilters.sort=this.value;renderListResults()">
+          <select id="seriesSortSel" class="filter-select" onchange="seriesFilters.sort=this.value;resetSeriesPages();renderListResults()">
             <option value="az"${seriesFilters.sort==='az'?' selected':''}>A → Z</option>
             <option value="za"${seriesFilters.sort==='za'?' selected':''}>Z → A</option>
             <option value="eps"${seriesFilters.sort==='eps'?' selected':''}>+ Episodios</option>
@@ -1616,7 +1675,7 @@ function renderList(){
         </div>
         <div class="filter-group">
           <span class="filter-label">Libro</span>
-          <select id="seriesBookSel" class="filter-select" onchange="seriesFilters.book=this.value;renderListResults()">
+          <select id="seriesBookSel" class="filter-select" onchange="seriesFilters.book=this.value;resetSeriesPages();renderListResults()">
             <option value="all">📚 Libro</option>
             <option value="yes">📖 Con libro</option>
             <option value="no">Sin libro</option>
@@ -1624,24 +1683,24 @@ function renderList(){
         </div>
         <div class="filter-group">
           <span class="filter-label">Año</span>
-          <select id="seriesYearSel" class="filter-select" onchange="seriesFilters.year=this.value;renderListResults()">
+          <select id="seriesYearSel" class="filter-select" onchange="seriesFilters.year=this.value;resetSeriesPages();renderListResults()">
             <option value="">📅 Año</option>${allYears.map(y=>`<option value="${y}">${y}</option>`).join('')}
           </select>
         </div>
-        <button id="seriesClearBtn" class="filter-clear-btn" onclick="seriesFilters.countries=[];seriesFilters.book='all';seriesFilters.year='';seriesFilters.genre='';document.getElementById('seriesBookSel').value='all';document.getElementById('seriesYearSel').value='';document.getElementById('seriesGenreSel').value='';const scp=document.getElementById('cpWrap_series');if(scp&&scp._reset)scp._reset();renderListResults()" style="display:none">✕ Limpiar</button>
+        <button id="seriesClearBtn" class="filter-clear-btn" onclick="seriesFilters.countries=[];seriesFilters.book='all';seriesFilters.year='';seriesFilters.genre='';document.getElementById('seriesBookSel').value='all';document.getElementById('seriesYearSel').value='';document.getElementById('seriesGenreSel').value='';const scp=document.getElementById('cpWrap_series');if(scp&&scp._reset)scp._reset();resetSeriesPages();renderListResults()" style="display:none">✕ Limpiar</button>
       </div>
     </div>
     <div id="listResults"></div>`;
     // Inject country picker with countries from active series
     const slot=document.getElementById('seriesCountryPickerSlot');
     const activeCountries=getCountries(state.series.filter(s=>!s.upcoming));
-    const picker=buildCountryPicker('series',countries=>{seriesFilters.countries=countries;renderListResults();},activeCountries);
+    const picker=buildCountryPicker('series',countries=>{seriesFilters.countries=countries;resetSeriesPages();renderListResults();},activeCountries);
     slot.appendChild(picker);
   }
   renderListResults();
 }
 
-function switchSeriesSubtab(sub){ seriesSubtab=sub; renderListResults(); }
+function switchSeriesSubtab(sub){ seriesSubtab=sub; paginationState.series[sub]=1; renderListResults(); }
 
 let upcomingFilters={q:'',countries:[],sort:'az',book:'all',year:'',genre:''};
 
@@ -1682,7 +1741,7 @@ function renderUpcoming(){
       <div class="toolbar-search-row">
         <div class="search-wrap" style="position:relative;margin-bottom:0;width:100%">
           <span class="search-icon">🔍</span>
-          <input id="upcomingSearchInput" class="search-input" placeholder="Buscar serie, país, plataforma…" value="${upcomingFilters.q}" oninput="upcomingFilters.q=this.value;renderUpcomingResults()" autocomplete="off">
+          <input id="upcomingSearchInput" class="search-input" placeholder="Buscar serie, país, plataforma…" value="${upcomingFilters.q}" oninput="upcomingFilters.q=this.value;resetUpcomingPage();renderUpcomingResults()" autocomplete="off">
         </div>
       </div>
       <div class="toolbar-filters-row">
@@ -1691,13 +1750,13 @@ function renderUpcoming(){
         </div>
         <div class="filter-group">
           <span class="filter-label">Género</span>
-          <select id="upcomingGenreSel" class="filter-select" onchange="upcomingFilters.genre=this.value;renderUpcomingResults()">
+          <select id="upcomingGenreSel" class="filter-select" onchange="upcomingFilters.genre=this.value;resetUpcomingPage();renderUpcomingResults()">
             <option value="">🎭 Género</option>${genreOpts}
           </select>
         </div>
         <div class="filter-group">
           <span class="filter-label">Orden</span>
-          <select id="upcomingSortSel" class="filter-select" onchange="upcomingFilters.sort=this.value;renderUpcomingResults()">
+          <select id="upcomingSortSel" class="filter-select" onchange="upcomingFilters.sort=this.value;resetUpcomingPage();renderUpcomingResults()">
             <option value="az">A → Z</option>
             <option value="za">Z → A</option>
             <option value="recent">🕐 Actualizado recientemente</option>
@@ -1705,7 +1764,7 @@ function renderUpcoming(){
         </div>
         <div class="filter-group">
           <span class="filter-label">Libro</span>
-          <select id="upcomingBookSel" class="filter-select" onchange="upcomingFilters.book=this.value;renderUpcomingResults()">
+          <select id="upcomingBookSel" class="filter-select" onchange="upcomingFilters.book=this.value;resetUpcomingPage();renderUpcomingResults()">
             <option value="all">📚 Libro</option>
             <option value="yes">📖 Con libro</option>
             <option value="no">Sin libro</option>
@@ -1713,19 +1772,19 @@ function renderUpcoming(){
         </div>
         <div class="filter-group">
           <span class="filter-label">Año</span>
-          <select id="upcomingYearSel" class="filter-select" onchange="upcomingFilters.year=this.value;renderUpcomingResults()">
+          <select id="upcomingYearSel" class="filter-select" onchange="upcomingFilters.year=this.value;resetUpcomingPage();renderUpcomingResults()">
             <option value="">📅 Año</option>${yearsOpts}
           </select>
         </div>
         <button id="upcomingClearBtn" class="filter-clear-btn" style="display:none"
-          onclick="upcomingFilters.countries=[];upcomingFilters.book='all';upcomingFilters.year='';upcomingFilters.genre='';document.getElementById('upcomingBookSel').value='all';document.getElementById('upcomingYearSel').value='';const ug=document.getElementById('upcomingGenreSel');if(ug)ug.value='';const ucp=document.getElementById('cpWrap_upcoming');if(ucp&&ucp._reset)ucp._reset();renderUpcomingResults()">✕ Limpiar</button>
+          onclick="upcomingFilters.countries=[];upcomingFilters.book='all';upcomingFilters.year='';upcomingFilters.genre='';document.getElementById('upcomingBookSel').value='all';document.getElementById('upcomingYearSel').value='';const ug=document.getElementById('upcomingGenreSel');if(ug)ug.value='';const ucp=document.getElementById('cpWrap_upcoming');if(ucp&&ucp._reset)ucp._reset();resetUpcomingPage();renderUpcomingResults()">✕ Limpiar</button>
       </div>
     </div>
     <div id="upcomingResults"></div>`;
     // Inject country picker with countries from upcoming series
     const slot=document.getElementById('upcomingCountryPickerSlot');
     const upcomingCountries=getCountries(allUpcoming);
-    const picker=buildCountryPicker('upcoming',countries=>{upcomingFilters.countries=countries;renderUpcomingResults();},upcomingCountries);
+    const picker=buildCountryPicker('upcoming',countries=>{upcomingFilters.countries=countries;resetUpcomingPage();renderUpcomingResults();},upcomingCountries);
     slot.appendChild(picker);
   }
   renderUpcomingResults();
@@ -1748,9 +1807,14 @@ function renderUpcomingResults(){
     resultsEl.innerHTML='<div class="search-empty">No se encontró ninguna serie con esos filtros.</div>';
     return;
   }
-  let html=`<div class="books-count">Mostrando <strong>${upcoming.length}</strong> de <strong>${allUpcoming.length}</strong> serie${allUpcoming.length!==1?'s':''}</div>
+  window.setUpcomingPage=p=>{paginationState.upcoming=p;renderUpcomingResults();scrollToResults('upcomingResults');};
+  const upPage=Math.min(paginationState.upcoming,Math.ceil(upcoming.length/PAGE_SIZE))||1;
+  paginationState.upcoming=upPage;
+  const upSlice=upcoming.slice((upPage-1)*PAGE_SIZE, upPage*PAGE_SIZE);
+  const upTotalPages=Math.ceil(upcoming.length/PAGE_SIZE);
+  let html=`<div class="books-count">Mostrando <strong>${(upPage-1)*PAGE_SIZE+1}–${Math.min(upPage*PAGE_SIZE,upcoming.length)}</strong> de <strong>${upcoming.length}</strong> serie${upcoming.length!==1?'s':''}</div>
   <div class="upcoming-grid">`;
-  upcoming.forEach((s)=>{
+  upSlice.forEach((s)=>{
     const si=state.series.indexOf(s);
     const posterEl=s.poster
       ?`<div class="upcoming-poster-wrap"><img class="upcoming-poster" src="${s.poster}" alt="${s.name}" onerror="this.outerHTML='<div class=upcoming-poster-ph>🎬</div>'"></div>`
@@ -1768,6 +1832,7 @@ function renderUpcomingResults(){
     </div>`;
   });
   html+='</div>';
+  html+=paginationHtml(upPage, upTotalPages, 'setUpcomingPage');
   resultsEl.innerHTML=html;
 }
 
@@ -2076,7 +2141,7 @@ function renderMovies(){
       <div class="toolbar-search-row">
         <div class="search-wrap" style="position:relative;margin-bottom:0;width:100%">
           <span class="search-icon">🔍</span>
-          <input id="moviesSearchInput" class="search-input" placeholder="Buscar película, país, plataforma…" value="${moviesFilters.q}" oninput="moviesFilters.q=this.value;renderMoviesResults()" autocomplete="off">
+          <input id="moviesSearchInput" class="search-input" placeholder="Buscar película, país, plataforma…" value="${moviesFilters.q}" oninput="moviesFilters.q=this.value;resetMoviesPage();renderMoviesResults()" autocomplete="off">
         </div>
       </div>
       <div class="toolbar-filters-row">
@@ -2085,13 +2150,13 @@ function renderMovies(){
         </div>
         <div class="filter-group">
           <span class="filter-label">Género</span>
-          <select id="moviesGenreSel" class="filter-select" onchange="moviesFilters.genre=this.value;renderMoviesResults()">
+          <select id="moviesGenreSel" class="filter-select" onchange="moviesFilters.genre=this.value;resetMoviesPage();renderMoviesResults()">
             <option value="">🎭 Género</option>${genreOpts}
           </select>
         </div>
         <div class="filter-group">
           <span class="filter-label">Orden</span>
-          <select id="moviesSortSel" class="filter-select" onchange="moviesFilters.sort=this.value;renderMoviesResults()">
+          <select id="moviesSortSel" class="filter-select" onchange="moviesFilters.sort=this.value;resetMoviesPage();renderMoviesResults()">
             <option value="date">Por fecha</option>
             <option value="az">A → Z</option>
             <option value="za">Z → A</option>
@@ -2100,7 +2165,7 @@ function renderMovies(){
         </div>
         <div class="filter-group">
           <span class="filter-label">Libro</span>
-          <select id="moviesBookSel" class="filter-select" onchange="moviesFilters.book=this.value;renderMoviesResults()">
+          <select id="moviesBookSel" class="filter-select" onchange="moviesFilters.book=this.value;resetMoviesPage();renderMoviesResults()">
             <option value="all">📚 Libro</option>
             <option value="yes">📖 Con libro</option>
             <option value="no">Sin libro</option>
@@ -2108,25 +2173,25 @@ function renderMovies(){
         </div>
         <div class="filter-group">
           <span class="filter-label">Año</span>
-          <select id="moviesYearSel" class="filter-select" onchange="moviesFilters.year=this.value;renderMoviesResults()">
+          <select id="moviesYearSel" class="filter-select" onchange="moviesFilters.year=this.value;resetMoviesPage();renderMoviesResults()">
             <option value="">📅 Año</option>${yearsOpts}
           </select>
         </div>
         <button id="moviesClearBtn" class="filter-clear-btn" style="display:none"
-          onclick="moviesFilters.countries=[];moviesFilters.book='all';moviesFilters.year='';moviesFilters.genre='';document.getElementById('moviesBookSel').value='all';document.getElementById('moviesYearSel').value='';const mg=document.getElementById('moviesGenreSel');if(mg)mg.value='';const mcp=document.getElementById('cpWrap_movies');if(mcp&&mcp._reset)mcp._reset();renderMoviesResults()">✕ Limpiar</button>
+          onclick="moviesFilters.countries=[];moviesFilters.book='all';moviesFilters.year='';moviesFilters.genre='';document.getElementById('moviesBookSel').value='all';document.getElementById('moviesYearSel').value='';const mg=document.getElementById('moviesGenreSel');if(mg)mg.value='';const mcp=document.getElementById('cpWrap_movies');if(mcp&&mcp._reset)mcp._reset();resetMoviesPage();renderMoviesResults()">✕ Limpiar</button>
       </div>
     </div>
     <div id="moviesResults"></div>`;
     // Inject country picker with countries from movies
     const slot=document.getElementById('moviesCountryPickerSlot');
     const moviesCountries=getCountries(state.movies);
-    const picker=buildCountryPicker('movies',countries=>{moviesFilters.countries=countries;renderMoviesResults();},moviesCountries);
+    const picker=buildCountryPicker('movies',countries=>{moviesFilters.countries=countries;resetMoviesPage();renderMoviesResults();},moviesCountries);
     slot.appendChild(picker);
   }
   renderMoviesResults();
 }
 
-function switchMoviesSubtab(sub){ moviesSubtab=sub; renderMoviesResults(); }
+function switchMoviesSubtab(sub){ moviesSubtab=sub; resetMoviesPage(); renderMoviesResults(); }
 
 function renderMoviesResults(){
   const resultsEl=document.getElementById('moviesResults');
@@ -2165,10 +2230,17 @@ function renderMoviesResults(){
     html+='<div class="search-empty">No hay películas en esta categoría con esos filtros.</div>';
     resultsEl.innerHTML=html; return;
   }
-  html+=`<div class="books-count">Mostrando <strong>${shown.length}</strong> película${shown.length!==1?'s':''}</div>
+  // Expose page setter
+  window.setMoviesPage=p=>{paginationState.movies=p;renderMoviesResults();scrollToResults('moviesResults');};
+  const mvPage=Math.min(paginationState.movies,Math.ceil(shown.length/PAGE_SIZE))||1;
+  paginationState.movies=mvPage;
+  const mvSlice=shown.slice((mvPage-1)*PAGE_SIZE, mvPage*PAGE_SIZE);
+  const mvTotalPages=Math.ceil(shown.length/PAGE_SIZE);
+  html+=`<div class="books-count">Mostrando <strong>${(mvPage-1)*PAGE_SIZE+1}–${Math.min(mvPage*PAGE_SIZE,shown.length)}</strong> de <strong>${shown.length}</strong> película${shown.length!==1?'s':''}</div>
   <div class="movies-grid">`;
-  shown.forEach(mv=>{ html+=movieCardHtml(mv); });
+  mvSlice.forEach(mv=>{ html+=movieCardHtml(mv); });
   html+='</div>';
+  html+=paginationHtml(mvPage, mvTotalPages, 'setMoviesPage');
   resultsEl.innerHTML=html;
 }
 
