@@ -1890,17 +1890,24 @@
       "networkUrl": "",
       "watchLinks": [],
       "trailerUrl": "https://youtu.be/sY15eXJcRMU?si=6zrqd4IiZYlJI4Yj",
-      "bookSource": "",
-      "basedOnBook": false,
-      "bookCoverUrl": "",
-      "bookLinks": [],
-      "bookUrl": "",
+      "bookSource": "Beauty & The Bike",
+      "basedOnBook": true,
+      "bookCoverUrl": "https://cdn-local.mebmarket.com/meb/server1/398122/Thumbnail/book_detail_large.gif?2",
+      "bookLinks": [
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/index.php?action=BookDetails&book_id=398122"
+        }
+      ],
+      "bookUrl": "https://www.mebmarket.com/index.php?action=BookDetails&book_id=398122",
       "upcoming": true,
       "skipDates": [],
       "episodes": [],
       "genres": [
         "Romance"
-      ]
+      ],
+      "updatedAt": "2026-04-28T19:48:17.953Z"
     },
     {
       "id": "1777033081952",
@@ -1913,17 +1920,24 @@
       "networkUrl": "",
       "watchLinks": [],
       "trailerUrl": "https://youtu.be/b8Fa97kmgwQ?si=uk2guxOz4cN85v-2",
-      "bookSource": "",
-      "basedOnBook": false,
-      "bookCoverUrl": "",
-      "bookLinks": [],
-      "bookUrl": "",
+      "bookSource": "Third Person",
+      "basedOnBook": true,
+      "bookCoverUrl": "https://cdn-local.mebmarket.com/meb/server1/189987/Thumbnail/book_detail_large.gif?11",
+      "bookLinks": [
+        {
+          "lang": "th",
+          "store": "MEB",
+          "url": "https://www.mebmarket.com/ebook-189987-Third-Person-%E0%B8%96%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B8%A3%E0%B8%B1%E0%B8%81---%E0%B8%84%E0%B8%B3%E0%B8%A5%E0%B8%A7%E0%B8%87"
+        }
+      ],
+      "bookUrl": "https://www.mebmarket.com/ebook-189987-Third-Person-%E0%B8%96%E0%B9%89%E0%B8%AD%E0%B8%A2%E0%B8%A3%E0%B8%B1%E0%B8%81---%E0%B8%84%E0%B8%B3%E0%B8%A5%E0%B8%A7%E0%B8%87",
       "upcoming": true,
       "skipDates": [],
       "episodes": [],
       "genres": [
         "Romance"
-      ]
+      ],
+      "updatedAt": "2026-04-28T19:46:08.635Z"
     },
     {
       "id": "1777048197930",
@@ -4203,5 +4217,5 @@
       "genres": []
     }
   ],
-  "exportedAt": "2026-04-27T08:57:19.739Z"
+  "exportedAt": "2026-04-28T19:48:19.332Z"
 }
