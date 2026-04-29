@@ -4178,8 +4178,8 @@
     {
       "id": "1777449955163",
       "name": "B-Friend",
-      "poster": "",
-      "synopsis": "After losing her parents, Lalin must stay strong to run the family business. At her resort, she meets Dawhan, a girl with amnesia, and reunites with Lan after a long time. In Khao Yai, their growing closeness sparks unspoken feelings and an undeniable bond. ~~ Adapted from the web novel \"B-Friend เจตนา (ไม่) ลืม\" (B-Friend) by Guy Suwannaroj (กาย สุวรรณโรจน์) and Lita P. Edit Translation",
+      "poster": "https://i.mydramalist.com/oQ1p6N_4f.jpg",
+      "synopsis": "Tras perder a sus padres, Lalin debe mantenerse fuerte para llevar adelante el negocio familiar. En su complejo turístico, conoce a Dawhan, una chica que sufre amnesia, y se reencuentra con Lan después de mucho tiempo. En Khao Yai, su creciente cercanía despierta sentimientos tácitos y un vínculo innegable.",
       "year": 2025,
       "country": "Tailandia",
       "network": "WeTV",
@@ -4218,7 +4218,7 @@
           "episodes": []
         }
       ],
-      "updatedAt": "2026-04-29T08:05:55.163Z"
+      "updatedAt": "2026-04-29T10:11:26.364Z"
     },
     {
       "id": "1777451543042",
@@ -4513,7 +4513,7 @@
       "id": "1777452700876",
       "name": "21 Days Closer Step",
       "poster": "https://i.mydramalist.com/yWbBXn_4f.jpg",
-      "synopsis": "The story starts with the theory that if we flirt with someone continuously for twenty-one days, our interest will be returned. The eleven-month theory is that we will be able to forget our exes eleven months following a breakup. Nune likes Vicky, a customer at the coffee shop. She talks about Vicky to Pie every day, much to Pie's annoyance. Pie, therefore, challenges Nune to flirt with Vicky for twenty-one days. Nune accepts and challenges Pie back: to forget her ex-girlfriend Vava in twenty-one days, because in twenty-one days, it will have been eleven months since their breakup. Pie thinks it'll be no problem, but that day, Vava appears at the coffee shop. Edit Translation",
+      "synopsis": "La historia parte de la teoría de que, si coqueteamos con alguien de forma continuada durante veintiún días, esa persona corresponderá a nuestro interés. La teoría de los once meses sostiene que seremos capaces de olvidar a nuestras exparejas once meses después de la ruptura. A Nune le gusta Vicky, una clienta de la cafetería. Todos los días le habla de Vicky a Pie, para gran disgusto de este. Por eso, Pie reta a Nune a coquetear con Vicky durante veintiún días. Nune acepta y le devuelve el reto a Pie: que se olvide de su exnovia Vava en veintiún días, porque en veintiún días se habrán cumplido once meses desde su ruptura. Pie cree que no será ningún problema, pero ese mismo día, Vava aparece en la cafetería.",
       "year": 2024,
       "country": "Tailandia",
       "network": "YouTube",
@@ -4547,13 +4547,13 @@
           "episodes": []
         }
       ],
-      "updatedAt": "2026-04-29T08:51:40.876Z"
+      "updatedAt": "2026-04-29T09:49:04.800Z"
     },
     {
       "id": "1777452828468",
       "name": "Rak Overdose",
       "poster": "https://i.mydramalist.com/YYVKLB_4f.jpg",
-      "synopsis": "Mo and Tar face ostracism, societal judgement, and a struggle with addiction. However, the couple strives to overcome the darkness together through the power of love. Edit Translation",
+      "synopsis": "Mo y Tar se enfrentan al rechazo social, al juicio de la sociedad y a una lucha contra la adicción. Sin embargo, la pareja se esfuerza por superar juntos la oscuridad gracias al poder del amor.",
       "year": 2025,
       "country": "Tailandia",
       "network": "YouTube",
@@ -4587,7 +4587,219 @@
           "episodes": []
         }
       ],
-      "updatedAt": "2026-04-29T08:53:48.468Z"
+      "updatedAt": "2026-04-29T09:47:19.682Z"
+    },
+    {
+      "id": "1777453272580",
+      "name": "Catch Cat Crush",
+      "poster": "https://i.mydramalist.com/JBexLw_4f.jpg",
+      "synopsis": "Smay regresa a su antiguo hogar en busca del nuevo propietario de la casa de sus padres, con la esperanza de volver a comprarla. Sin embargo, este regreso lleva a Smay a reencontrarse con Thian, la elegante pero distante vecina de su infancia. A pesar de los alegres y cariñosos intentos de Smay por ganarse su confianza, Thian responde con indiferencia y un atisbo de irritación. Mientras tanto, «MomMam», la traviesa gata de Thian, observa atentamente cada momento. En medio de un torbellino de amor, verdades ocultas y pasados sin resolver, Smay y Thian deben enfrentarse a sus sentimientos y a su historia. ¿Cómo encontrarán el camino sus corazones?",
+      "year": 2025,
+      "country": "Tailandia",
+      "network": "YouTube",
+      "networkUrl": "https://youtube.com/playlist?list=PLhsCXKbbbsR2TwTdHRsoliZmpV_eRiFS_&si=hWO3K_ww6Yt0BRKy",
+      "watchLinks": [
+        {
+          "name": "YouTube",
+          "url": "https://youtube.com/playlist?list=PLhsCXKbbbsR2TwTdHRsoliZmpV_eRiFS_&si=hWO3K_ww6Yt0BRKy"
+        }
+      ],
+      "trailerUrl": "",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2025-03-27",
+          "totalEpisodes": 7,
+          "emissionDays": [
+            3,
+            4
+          ],
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-04-29T09:46:35.636Z"
+    },
+    {
+      "id": "1777455153369",
+      "name": "L.L.L. Project",
+      "poster": "https://i.mydramalist.com/73PjZL_4c.jpg?v=1",
+      "synopsis": "Ice, Toey y Nune son tres amigos que decidieron abrir su propio bar juntos después de que Nune, impulsivamente, pidiera un préstamo para hacer realidad su sueño. Esta historia narra sus complicadas vidas amorosas. Ice conoce a Rada una noche en el bar en un encuentro de «amor a primera vista». El viaje de Toey y Ling representa las relaciones «a distancia», mientras que a Nune y Vicky solo les queda una «última oportunidad» tras su ruptura, provocada por la impulsividad de Nune. En conjunto, es el proyecto L.L.L.",
+      "year": 2025,
+      "country": "Tailandia",
+      "network": "YouTube",
+      "networkUrl": "https://youtube.com/playlist?list=PLTMIT-bMUDsDmWx9HV98AWxVFFJnUpIgC&si=uDEcHCXMA4pDzA9R",
+      "watchLinks": [
+        {
+          "name": "YouTube",
+          "url": "https://youtube.com/playlist?list=PLTMIT-bMUDsDmWx9HV98AWxVFFJnUpIgC&si=uDEcHCXMA4pDzA9R"
+        }
+      ],
+      "trailerUrl": "",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Drama"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2025-03-07",
+          "totalEpisodes": 8,
+          "emissionDays": [
+            0
+          ],
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-04-29T09:46:09.962Z"
+    },
+    {
+      "id": "1777455453113",
+      "name": "MuTeLuv: Hello, Is This Luck?",
+      "poster": "https://i.mydramalist.com/JBYX5o_4f.jpg",
+      "synopsis": "Na, una estudiante de sexto curso de Medicina, tiene mucho talento, pero poca suerte. Siempre ha creído que el esfuerzo conduce al éxito, pero los acontecimientos de su vida la han llevado últimamente a sospechar que, en realidad, todo se reduce a la suerte. Lo más significativo es que Na se ha enamorado de Nine, un estudiante de último curso guapo e inteligente que está fuera de su alcance. Para forzar un cambio de suerte, Na decide cambiarse a un número de teléfono que dé buena suerte. Es entonces cuando conoce a Leemai y pronto llama mucho más que la atención de su amor platónico.",
+      "year": 2025,
+      "country": "Tailandia",
+      "network": "GMM 25",
+      "networkUrl": "https://youtu.be/NQw1egNBxjY?si=uXtishVxjraGCOpV",
+      "watchLinks": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/NQw1egNBxjY?si=uXtishVxjraGCOpV"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/2tV0hc-0iPQ?si=pKdFJP_btQEad40y",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Comedia",
+        "Sobrenatural"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2025-12-15",
+          "totalEpisodes": 4,
+          "emissionDays": [
+            0
+          ],
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-04-29T09:37:33.113Z"
+    },
+    {
+      "id": "1777455862847",
+      "name": "Denied Love Special Endless",
+      "poster": "https://i.mydramalist.com/JB5kAo_4f.jpg",
+      "synopsis": "Había muchas razones para casarse dos veces con la misma persona. En el caso de Phraenarin, la primera vez se casó por petición de su padre. Pero la segunda vez, quiso casarse movida por el deseo más profundo de honrar a la persona que amaba. La primera vez fue en la estación de las lluvias. La segunda vez fue en verano. El mismo corazón, la misma novia, pero con sentimientos diferentes... y dos gemelitos como testigos de su amor.",
+      "year": 2026,
+      "country": "Tailandia",
+      "network": "WeTV",
+      "networkUrl": "https://wetv.vip/en/album/id8bar46usc9oj4",
+      "watchLinks": [
+        {
+          "name": "WeTV",
+          "url": "https://wetv.vip/en/album/id8bar46usc9oj4"
+        }
+      ],
+      "trailerUrl": "",
+      "bookSource": "Denied Love Special: Endless",
+      "basedOnBook": true,
+      "bookCoverUrl": "https://cdn-local.mebmarket.com/meb/server1/361337/Thumbnail/book_detail_large.gif?11",
+      "bookLinks": [
+        {
+          "lang": "es",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/?action=book_details&book_id=371047"
+        },
+        {
+          "lang": "en",
+          "store": "MEB",
+          "url": "https://en.mebmarket.com/?action=book_details&book_id=361337"
+        }
+      ],
+      "bookUrl": "https://en.mebmarket.com/?action=book_details&book_id=371047",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Comedia"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2026-01-29",
+          "totalEpisodes": 2,
+          "emissionDays": [
+            3
+          ],
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-04-29T09:44:22.847Z"
+    },
+    {
+      "id": "1777455928497",
+      "name": "I Wanna Be Sup'tar",
+      "poster": "https://i.mydramalist.com/zBqdA7_4f.jpg",
+      "synopsis": "A story that explores the relationship between two women from opposing parts of the realm of stardom. One is an ordinary woman who will do anything to break into the world of entertainment, and another who, having experienced incredible success, was left disillusioned by the entertainment industry's cruelty and now wishes to run far away from it all. Unintentionally, the two end up living together when one has just moved into this house and the other refuses to move out. Edit Translation Related Content I Wanna Be Sup'Tar (Thai original story)",
+      "year": 2026,
+      "country": "Tailandia",
+      "network": "YouTube",
+      "networkUrl": "https://youtu.be/B1FbhclzkcE?si=PplOapFBcL7LWNsU",
+      "watchLinks": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/B1FbhclzkcE?si=PplOapFBcL7LWNsU"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/nVOlVrf2aa0?si=L1teNX00gOAVnNiG",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Comedia"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2026-02-06",
+          "totalEpisodes": 8,
+          "emissionDays": [
+            4
+          ],
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-04-29T09:45:28.497Z"
     }
   ],
   "movies": [
@@ -4721,5 +4933,5 @@
       "genres": []
     }
   ],
-  "exportedAt": "2026-04-29T08:54:21.491Z"
+  "exportedAt": "2026-04-29T10:11:41.051Z"
 }
