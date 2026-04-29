@@ -5028,6 +5028,107 @@
         }
       ],
       "updatedAt": "2026-04-29T10:44:15.348Z"
+    },
+    {
+      "id": "1777460464400",
+      "name": "Risking Love",
+      "poster": "https://i.mydramalist.com/nOlEkQ_4c.jpg?v=1",
+      "synopsis": "",
+      "year": "",
+      "country": "Tailandia",
+      "network": "",
+      "networkUrl": "",
+      "watchLinks": [],
+      "trailerUrl": "https://youtu.be/Ck1RW4DY3SA?si=3C8U8UJJqx12tueZ",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": true,
+      "genres": [],
+      "updatedAt": "2026-04-29T11:01:04.400Z"
+    },
+    {
+      "id": "1777460506708",
+      "name": "Trial Love",
+      "poster": "https://i.mydramalist.com/81K72d_4c.jpg?v=1",
+      "synopsis": "",
+      "year": "",
+      "country": "Tailandia",
+      "network": "",
+      "networkUrl": "",
+      "watchLinks": [],
+      "trailerUrl": "https://youtu.be/7JHJaUIBqqU?si=aGfhFq668CLiIvaN",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": true,
+      "genres": [],
+      "updatedAt": "2026-04-29T11:01:46.708Z"
+    },
+    {
+      "id": "1777460572035",
+      "name": "Shock Me Girls",
+      "poster": "https://i.mydramalist.com/VXyVKO_4c.jpg?v=1",
+      "synopsis": "Esta historia narra las desventuras de unas atrevidas chicas de instituto cuyos enredados enamoramientos dan lugar a confesiones, expectativas desajustadas y chispas inesperadas.",
+      "year": 2026,
+      "country": "Tailandia",
+      "network": "TikTok",
+      "networkUrl": "https://www.tiktok.com/@shockmegirls.official",
+      "watchLinks": [
+        {
+          "name": "TikTok",
+          "url": "https://www.tiktok.com/@shockmegirls.official"
+        }
+      ],
+      "trailerUrl": "",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Comedia"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2026-02-28",
+          "totalEpisodes": 10,
+          "emissionDays": [
+            5,
+            6
+          ],
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-04-29T11:02:52.035Z"
+    },
+    {
+      "id": "1777460603023",
+      "name": "Dangerous Love",
+      "poster": "",
+      "synopsis": "",
+      "year": "",
+      "country": "Tailandia",
+      "network": "",
+      "networkUrl": "",
+      "watchLinks": [],
+      "trailerUrl": "https://youtu.be/BUmmK8V5qJ4?si=qe-KJEkTFWr8k8B0",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": true,
+      "genres": [],
+      "updatedAt": "2026-04-29T11:03:23.023Z"
     }
   ],
   "movies": [
@@ -5161,5 +5262,5 @@
       "genres": []
     }
   ],
-  "exportedAt": "2026-04-29T10:44:40.723Z"
+  "exportedAt": "2026-04-29T11:03:29.505Z"
 }
