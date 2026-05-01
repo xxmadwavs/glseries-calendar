@@ -5713,6 +5713,227 @@
         }
       ],
       "updatedAt": "2026-05-01T07:55:50.204Z"
+    },
+    {
+      "id": "1777669299119",
+      "name": "The L Word: Generation Q",
+      "poster": "https://m.media-amazon.com/images/M/MV5BOTIzNjA2ZjgtZmVjNy00MmMwLTgwMTMtMDc1ZmEzZmY1ZjBiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+      "synopsis": "La innovadora serie dramática The L Word® revolucionó una generación. Su muy esperada secuela vuevle con Jennifer Beals, Kate Moennig y Leisha Hailey retomando sus papeles originales.",
+      "year": 2019,
+      "country": "Estados Unidos",
+      "network": "Prime Video",
+      "networkUrl": "https://www.primevideo.com/-/es/detail/0O433MRL5VBG1INRKVOWNBJ02U",
+      "watchLinks": [
+        {
+          "name": "Prime Video",
+          "url": "https://www.primevideo.com/-/es/detail/0O433MRL5VBG1INRKVOWNBJ02U"
+        }
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=571Qfsjxga0",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Drama"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2019-12-08",
+          "totalEpisodes": 8,
+          "emissionDays": [
+            6
+          ],
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 2",
+          "startDate": "2021-08-06",
+          "totalEpisodes": 10,
+          "emissionDays": [
+            4
+          ],
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 3",
+          "startDate": "2022-11-18",
+          "totalEpisodes": 10,
+          "emissionDays": [
+            4
+          ],
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-05-01T21:01:39.119Z"
+    },
+    {
+      "id": "1777669724978",
+      "name": "The L Word",
+      "poster": "https://m.media-amazon.com/images/M/MV5BMTM5Nzc5OTk2NV5BMl5BanBnXkFtZTcwMjYzMDAzMQ@@._V1_.jpg",
+      "synopsis": "\"Sigue las vidas y los amores de un pequeño y unido grupo de lesbianas que viven en Los Ángeles, así como de los amigos y familiares que los apoyan o los odian.\"",
+      "year": 2004,
+      "country": "Estados Unidos",
+      "network": "Prime Video",
+      "networkUrl": "https://www.primevideo.com/-/es/detail/0TVP56UFZ16GQZKUTEDGDWGPIX",
+      "watchLinks": [
+        {
+          "name": "Prime Video",
+          "url": "https://www.primevideo.com/-/es/detail/0TVP56UFZ16GQZKUTEDGDWGPIX"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/Yh-sIBhc3-s?si=828EmOfhtxwICyHp",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Drama"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2004-01-18",
+          "totalEpisodes": 13,
+          "emissionDays": [
+            6
+          ],
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 2",
+          "startDate": "2005-01-20",
+          "totalEpisodes": 13,
+          "emissionDays": [
+            6
+          ],
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 3",
+          "startDate": "2006-01-08",
+          "totalEpisodes": 12,
+          "emissionDays": [
+            6
+          ],
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 4",
+          "startDate": "2007-01-07",
+          "totalEpisodes": 12,
+          "emissionDays": [
+            6
+          ],
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 5",
+          "startDate": "2008-01-06",
+          "totalEpisodes": 12,
+          "emissionDays": [
+            6
+          ],
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 6",
+          "startDate": "2009-01-18",
+          "totalEpisodes": 8,
+          "emissionDays": [
+            6
+          ],
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-05-01T21:08:44.978Z"
+    },
+    {
+      "id": "1777670118261",
+      "name": "Ellas Dan el Golpe",
+      "poster": "https://pics.filmaffinity.com/Ellas_dan_el_golpe_Serie_de_TV-895872365-large.jpg",
+      "synopsis": "Serie de comedia sobre la liga de béisbol femenino profesional de la Segunda Guerra Mundial.",
+      "year": 2022,
+      "country": "Estados Unidos",
+      "network": "Prime Video",
+      "networkUrl": "https://www.primevideo.com/detail/amzn1.dv.gti.d597ba3f-c100-4945-adc5-63a278cb1f98",
+      "watchLinks": [
+        {
+          "name": "Prime Video",
+          "url": "https://www.primevideo.com/detail/amzn1.dv.gti.d597ba3f-c100-4945-adc5-63a278cb1f98"
+        }
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=jN8iOOipfEw",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Comedia"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2022-08-12",
+          "totalEpisodes": 6,
+          "emissionDays": [
+            4
+          ],
+          "skipDates": [],
+          "episodes": [
+            {
+              "num": 2,
+              "date": "2022-08-12",
+              "skipped": false
+            },
+            {
+              "num": 6,
+              "date": "2022-08-12",
+              "skipped": false
+            },
+            {
+              "num": 5,
+              "date": "2022-08-12",
+              "skipped": false
+            },
+            {
+              "num": 4,
+              "date": "2022-08-12",
+              "skipped": false
+            },
+            {
+              "num": 3,
+              "date": "2022-08-12",
+              "skipped": false
+            },
+            {
+              "num": 1,
+              "date": "2022-08-11",
+              "skipped": false
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-05-01T21:15:38.736Z"
     }
   ],
   "movies": [
@@ -5846,5 +6067,5 @@
       "genres": []
     }
   ],
-  "exportedAt": "2026-05-01T13:57:22.151Z"
+  "exportedAt": "2026-05-01T21:52:31.830Z"
 }
