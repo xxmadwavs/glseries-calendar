@@ -5674,6 +5674,45 @@
         }
       ],
       "updatedAt": "2026-04-30T21:36:50.770Z"
+    },
+    {
+      "id": "1777622150204",
+      "name": "White Angels Have No Wings",
+      "poster": "https://photos.hancinema.net/photos/photo2233881.jpg",
+      "synopsis": "Ah-yeon, que sufría acoso escolar, y Yeon-hwa, una figura angelical que se le apareció.\n¿Es el contacto del «Ángel Blanco» una salvación o una cadena?",
+      "year": 2026,
+      "country": "Corea del Sur",
+      "network": "Lezhin Snack",
+      "networkUrl": "https://www.lezhinsnack.com/en/home",
+      "watchLinks": [
+        {
+          "name": "Lezhin Snack",
+          "url": "https://www.lezhinsnack.com/en/home"
+        }
+      ],
+      "trailerUrl": "",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2026-05-14",
+          "totalEpisodes": 1,
+          "emissionDays": [
+            3
+          ],
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-05-01T07:55:50.204Z"
     }
   ],
   "movies": [
@@ -5807,5 +5846,5 @@
       "genres": []
     }
   ],
-  "exportedAt": "2026-04-30T21:37:01.937Z"
+  "exportedAt": "2026-05-01T07:55:55.931Z"
 }
