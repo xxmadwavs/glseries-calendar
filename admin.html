@@ -530,9 +530,20 @@ function genEpisodes(s){
   if(!seasons.length) return [];
   const all=[]; let offset=0;
   seasons.forEach((season,idx)=>{
+    const epOverrides=season.episodes||[];
+    // ── Modo estreno completo en un día ──────────────────────────────────────
+    if(season.allInOneDay){
+      for(let i=0;i<season.totalEpisodes;i++){
+        const epNum=i+1, globalNum=offset+epNum;
+        const ov=epOverrides.find(e=>e.num===epNum);
+        all.push(ov?{...ov,num:globalNum,seasonNum:epNum,season:idx+1}:{num:globalNum,seasonNum:epNum,season:idx+1,date:season.startDate,skipped:false});
+      }
+      offset+=season.totalEpisodes;
+      return;
+    }
+    // ── Modo emisión semanal normal ──────────────────────────────────────────
     const days=(season.emissionDays&&season.emissionDays.length)?[...season.emissionDays].sort((a,b)=>a-b):[season.dayOfWeek||0];
     const skipDates=new Set(season.skipDates||[]);
-    const epOverrides=season.episodes||[];
     let firstDate=null;
     for(let o=0;o<14;o++){const c=addDays(season.startDate,o);if(days.includes(getDow(c))){firstDate=c;break;}}
     if(!firstDate) firstDate=season.startDate;
@@ -718,6 +729,12 @@ function toggleBookFields(){
 }
 function bindDowChips(){ document.querySelectorAll('.dow-chip').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('selected'))); }
 function getSelectedDays(){ return [...document.querySelectorAll('.dow-chip.selected')].map(c=>parseInt(c.dataset.dow)).sort((a,b)=>a-b); }
+function toggleAllInOneDay(cb){
+  const block=cb.closest('.season-block');
+  const dowWrap=block.querySelector('.s-dow-wrap');
+  if(cb.checked){ dowWrap.style.display='none'; }
+  else { dowWrap.style.display=''; }
+}
 function toggleUpcomingFields(){
   const up=document.getElementById('f_upcoming')?.checked;
   const schedFields=document.getElementById('schedFields');
@@ -751,8 +768,14 @@ function addSeasonBlock(seasonData=null, idx=null){
       <input type="date" class="s-start" value="${startDate}"/>
     </div>
     <div class="form-row" style="margin-bottom:10px">
-      <label class="form-label">Días de emisión *</label>
-      <div class="dow-selector s-dow">${dowChipsHtml(emDays)}</div>
+      <label class="toggle-row s-allday-toggle" style="margin-bottom:8px;cursor:pointer" onclick="">
+        <input type="checkbox" class="s-allday" ${seasonData?.allInOneDay?'checked':''} style="width:auto;accent-color:var(--accent)" onchange="toggleAllInOneDay(this)">
+        <div><div class="toggle-label">📦 Estreno completo en un día</div><div class="toggle-desc">Todos los episodios se emiten el mismo día (ej: Netflix drop)</div></div>
+      </label>
+      <div class="s-dow-wrap" style="${seasonData?.allInOneDay?'display:none':''}">
+        <label class="form-label">Días de emisión *</label>
+        <div class="dow-selector s-dow">${dowChipsHtml(emDays)}</div>
+      </div>
     </div>
     <div class="form-row" style="margin-bottom:0">
       <label class="form-label">Número de episodios *</label>
@@ -792,14 +815,15 @@ function getSeasonsData(){
     const label=block.querySelector('.season-block-title input').value.trim()||`Temporada ${idx+1}`;
     const startDate=block.querySelector('.s-start').value;
     const totalEps=parseInt(block.querySelector('.s-eps').value);
-    const emissionDays=[...block.querySelectorAll('.s-dow .dow-chip.selected')].map(c=>parseInt(c.dataset.dow)).sort((a,b)=>a-b);
+    const allInOneDay=block.querySelector('.s-allday')?.checked||false;
+    const emissionDays=allInOneDay?[getDow(startDate)]:[...block.querySelectorAll('.s-dow .dow-chip.selected')].map(c=>parseInt(c.dataset.dow)).sort((a,b)=>a-b);
     if(!startDate||isNaN(totalEps)||totalEps<1){
       alert(`Temporada "${label}": rellena fecha y número de episodios`);valid=false;return;
     }
-    if(!emissionDays.length){
+    if(!allInOneDay&&!emissionDays.length){
       alert(`Temporada "${label}": selecciona al menos un día de emisión`);valid=false;return;
     }
-    seasons.push({label,startDate,totalEpisodes:totalEps,emissionDays,skipDates:[],episodes:[]});
+    seasons.push({label,startDate,totalEpisodes:totalEps,emissionDays,allInOneDay,skipDates:[],episodes:[]});
   });
   return valid?seasons:null;
 }
@@ -1038,6 +1062,8 @@ function delSeries(si){
 }
 
 function openEps(si){
+  // Cerrar modal de edición de episodio si estaba abierto
+  document.getElementById('epEditModal').classList.remove('open');
   const s=series[si], allEps=genEpisodes(s), now=new Date();
   const seasons=getSeasons(s);
   document.getElementById('epsModalTitle').textContent=`📋 ${s.name}`;
@@ -1046,8 +1072,28 @@ function openEps(si){
     const seasonEps=allEps.filter(e=>e.season===sIdx+1);
     const skipDates=new Set(season.skipDates||[]);
     if(seasons.length>1) html+=`<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin:${sIdx>0?'14px':0} 0 8px">${season.label||`Temporada ${sIdx+1}`}</div>`;
-    html+=`<button class="btn small" style="margin-bottom:8px;width:100%" onclick="openAddSkip(${si},${sIdx})">+ Añadir descanso en ${season.label||'T'+(sIdx+1)}</button>`;
+    if(!season.allInOneDay){
+      html+=`<button class="btn small" style="margin-bottom:8px;width:100%" onclick="openAddSkip(${si},${sIdx})">+ Añadir descanso en ${season.label||'T'+(sIdx+1)}</button>`;
+    } else {
+      html+=`<div style="font-size:12px;color:var(--teal);background:var(--teal-soft);border-radius:8px;padding:6px 12px;margin-bottom:8px">📦 Estreno completo — todos los eps el ${fmtDate(season.startDate)}</div>`;
+    }
     html+=`<div class="ep-list" style="margin-bottom:8px">`;
+    if(season.allInOneDay){
+      // Todos los eps el mismo día
+      for(let i=0;i<season.totalEpisodes;i++){
+        const epNum=i+1;
+        const ep=seasonEps.find(e=>e.seasonNum===epNum);
+        if(!ep) continue;
+        const isPast=new Date(ep.date+'T12:00:00')<=now;
+        const hasOv=(season.episodes||[]).some(e=>e.num===epNum);
+        let st,lb;
+        if(ep.skipped){st='skipped';lb='No emitido';}
+        else if(hasOv){st='modified';lb='Fecha cambiada';}
+        else if(isPast){st='aired';lb='Emitido';}
+        else{st='pending';lb='Pendiente';}
+        html+=`<div class="ep-row" onclick="openEpEdit(${si},${sIdx},${epNum})"><span class="ep-num">E${epNum}</span><span class="ep-date">${fmtDate(ep.date)}</span><span class="ep-status ${st}">${lb}</span></div>`;
+      }
+    } else {
     // Build rows with skips interleaved
     const days=(season.emissionDays&&season.emissionDays.length)?[...season.emissionDays].sort((a,b)=>a-b):[season.dayOfWeek||0];
     let firstDate=null;
@@ -1082,6 +1128,7 @@ function openEps(si){
         html+=`<div class="ep-row" onclick="openEpEdit(${si},${sIdx},${epCount})"><span class="ep-num">E${epCount}</span><span class="ep-date">${fmtDate(ep.date)}</span><span class="ep-status ${st}">${lb}</span></div>`;
       }
     }
+    } // end else (not allInOneDay)
     html+=`</div>`;
   });
   html+=`<div class="btn-row" style="margin-top:1rem"><button class="btn" onclick="closeAll()">Cerrar</button></div>`;
@@ -1162,14 +1209,18 @@ function saveEp(si, sIdx, epNum){
   const idx=eps.findIndex(e=>e.num===epNum);
   if(idx>=0) eps[idx]={num:epNum,date,skipped};
   else eps.push({num:epNum,date,skipped});
-  save(); openEps(si);
+  save();
+  document.getElementById('epEditModal').classList.remove('open');
+  openEps(si);
 }
 
 function resetEp(si, sIdx, epNum){
   const seasons=getSeasons(series[si]);
   if(!series[si].seasons) series[si].seasons=seasons;
   series[si].seasons[sIdx].episodes=(series[si].seasons[sIdx].episodes||[]).filter(e=>e.num!==epNum);
-  save(); openEps(si);
+  save();
+  document.getElementById('epEditModal').classList.remove('open');
+  openEps(si);
 }
 
 function movieFormHtml(mv){
