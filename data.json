@@ -5934,6 +5934,192 @@
         }
       ],
       "updatedAt": "2026-05-01T21:15:38.736Z"
+    },
+    {
+      "id": "1777726039958",
+      "name": "Feel Good",
+      "poster": "https://pics.filmaffinity.com/feel_good-675254638-mmed.jpg",
+      "synopsis": "Mae, adicta y comediante en recuperación, trata de controlar los comportamientos adictivos y el intenso romanticismo que ocupan cada faceta de su vida.",
+      "year": 2020,
+      "country": "Inglaterra",
+      "network": "Netflix",
+      "networkUrl": "https://www.netflix.com/es/title/80241545?source=imdb&fromWatch=true",
+      "watchLinks": [
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com/es/title/80241545?source=imdb&fromWatch=true"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/IA6zm_kt5iM?si=Q3EDQ0WcV5DZM1E4",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Drama",
+        "Comedia"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2020-03-19",
+          "totalEpisodes": 6,
+          "emissionDays": [
+            3
+          ],
+          "skipDates": [],
+          "episodes": [
+            {
+              "num": 2,
+              "date": "2020-03-19",
+              "skipped": false
+            },
+            {
+              "num": 3,
+              "date": "2020-03-19",
+              "skipped": false
+            },
+            {
+              "num": 4,
+              "date": "2020-03-19",
+              "skipped": false
+            },
+            {
+              "num": 5,
+              "date": "2020-03-19",
+              "skipped": false
+            },
+            {
+              "num": 6,
+              "date": "2020-03-19",
+              "skipped": false
+            }
+          ]
+        },
+        {
+          "label": "Temporada 2",
+          "startDate": "2021-06-04",
+          "totalEpisodes": 6,
+          "emissionDays": [
+            4
+          ],
+          "skipDates": [],
+          "episodes": [
+            {
+              "num": 2,
+              "date": "2021-06-04",
+              "skipped": false
+            },
+            {
+              "num": 3,
+              "date": "2021-06-04",
+              "skipped": false
+            },
+            {
+              "num": 4,
+              "date": "2021-06-04",
+              "skipped": false
+            },
+            {
+              "num": 5,
+              "date": "2021-06-04",
+              "skipped": false
+            },
+            {
+              "num": 6,
+              "date": "2021-06-04",
+              "skipped": false
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-05-02T12:47:19.958Z"
+    },
+    {
+      "id": "1777726945205",
+      "name": "She-Ra y las princesas del poder",
+      "poster": "https://pics.filmaffinity.com/she_ra_and_the_princesses_of_power-336087876-large.jpg",
+      "synopsis": "She-Ra, princesa de poder, lidera la rebelión para liberar a su tierra Etheria de los monstruosos invasores de Hordak.",
+      "year": 2018,
+      "country": "Estados Unidos",
+      "network": "Netflix",
+      "networkUrl": "https://www.netflix.com/es/title/80179762",
+      "watchLinks": [
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com/es/title/80179762"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/GsGMkAWB6lY?si=NeR-9uQXmiP8LtkO",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Acción",
+        "Ciencia Ficción",
+        "Aventura",
+        "Familia"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2018-11-13",
+          "totalEpisodes": 13,
+          "emissionDays": [
+            1
+          ],
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 2",
+          "startDate": "2019-04-26",
+          "totalEpisodes": 7,
+          "emissionDays": [
+            4
+          ],
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 3",
+          "startDate": "2019-08-02",
+          "totalEpisodes": 6,
+          "emissionDays": [
+            4
+          ],
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 4",
+          "startDate": "2019-11-05",
+          "totalEpisodes": 13,
+          "emissionDays": [
+            1
+          ],
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 5",
+          "startDate": "2020-05-15",
+          "totalEpisodes": 13,
+          "emissionDays": [
+            4
+          ],
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-05-02T13:02:25.205Z"
     }
   ],
   "movies": [
@@ -6067,5 +6253,5 @@
       "genres": []
     }
   ],
-  "exportedAt": "2026-05-01T21:52:31.830Z"
+  "exportedAt": "2026-05-02T13:02:34.126Z"
 }
