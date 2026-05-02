@@ -5970,6 +5970,7 @@
           "emissionDays": [
             3
           ],
+          "allInOneDay": true,
           "skipDates": [],
           "episodes": [
             {
@@ -6006,6 +6007,7 @@
           "emissionDays": [
             4
           ],
+          "allInOneDay": true,
           "skipDates": [],
           "episodes": [
             {
@@ -6036,7 +6038,7 @@
           ]
         }
       ],
-      "updatedAt": "2026-05-02T12:47:19.958Z"
+      "updatedAt": "2026-05-02T13:10:05.140Z"
     },
     {
       "id": "1777726945205",
@@ -6075,6 +6077,7 @@
           "emissionDays": [
             1
           ],
+          "allInOneDay": true,
           "skipDates": [],
           "episodes": []
         },
@@ -6085,6 +6088,7 @@
           "emissionDays": [
             4
           ],
+          "allInOneDay": true,
           "skipDates": [],
           "episodes": []
         },
@@ -6095,6 +6099,7 @@
           "emissionDays": [
             4
           ],
+          "allInOneDay": true,
           "skipDates": [],
           "episodes": []
         },
@@ -6105,6 +6110,7 @@
           "emissionDays": [
             1
           ],
+          "allInOneDay": true,
           "skipDates": [],
           "episodes": []
         },
@@ -6115,11 +6121,419 @@
           "emissionDays": [
             4
           ],
+          "allInOneDay": true,
           "skipDates": [],
           "episodes": []
         }
       ],
-      "updatedAt": "2026-05-02T13:02:25.205Z"
+      "updatedAt": "2026-05-02T13:09:58.752Z"
+    },
+    {
+      "id": "1777727593627",
+      "name": "First Kill",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_face/nNYxOdYGdLd5pJ39vAvTC4XEYh0.jpg",
+      "synopsis": "Enamorarse no es cosa fácil para las adolescentes Juliette y Calíope. Una es vampira, la otra es cazavampiros... y las dos están listas para matar.",
+      "year": 2022,
+      "country": "Estados Unidos",
+      "network": "Netflix",
+      "networkUrl": "https://www.netflix.com/es/title/81213653",
+      "watchLinks": [
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com/es/title/81213653"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/D4wJK4C_nZY?si=a4_C_4G3SLFldxV6",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Drama",
+        "Misterio"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2022-06-10",
+          "totalEpisodes": 8,
+          "emissionDays": [
+            4
+          ],
+          "allInOneDay": true,
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-05-02T13:13:13.627Z"
+    },
+    {
+      "id": "1777727758315",
+      "name": "Stupid Wife",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_face/ieHy5i4LubQ88xU6UnTyUetwRdc.jpg",
+      "synopsis": "Luíza ve en Valentina todos los defectos que cree que puede tener alguien, y la odia. Un día, sin embargo, Luíza se despierta y se encuentra diez años mayor y, para su horror, casada con Valentina.",
+      "year": 2022,
+      "country": "Brasil",
+      "network": "YouTube",
+      "networkUrl": "https://youtu.be/kFjMAw5sw_o?si=NN1zegiSJQbySO2F",
+      "watchLinks": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/kFjMAw5sw_o?si=NN1zegiSJQbySO2F"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/IpQfxgU4C7w?si=UW3vRKHGIpbtsqA2",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Drama"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2022-08-04",
+          "totalEpisodes": 12,
+          "emissionDays": [
+            3
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": [
+            {
+              "num": 4,
+              "date": "2022-08-25",
+              "skipped": false
+            },
+            {
+              "num": 5,
+              "date": "2022-10-06",
+              "skipped": false
+            },
+            {
+              "num": 6,
+              "date": "2022-10-13",
+              "skipped": false
+            },
+            {
+              "num": 7,
+              "date": "2022-10-20",
+              "skipped": false
+            },
+            {
+              "num": 8,
+              "date": "2022-10-27",
+              "skipped": false
+            }
+          ]
+        },
+        {
+          "label": "Temporada 2",
+          "startDate": "2023-05-18",
+          "totalEpisodes": 12,
+          "emissionDays": [
+            3
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": [
+            {
+              "num": 9,
+              "date": "2023-08-24",
+              "skipped": false
+            },
+            {
+              "num": 12,
+              "date": "2023-09-14",
+              "skipped": false
+            },
+            {
+              "num": 11,
+              "date": "2023-09-07",
+              "skipped": false
+            },
+            {
+              "num": 10,
+              "date": "2023-08-31",
+              "skipped": false
+            }
+          ]
+        },
+        {
+          "label": "Temporada 3",
+          "startDate": "2023-11-23",
+          "totalEpisodes": 9,
+          "emissionDays": [
+            3
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": [
+            {
+              "num": 5,
+              "date": "2023-03-08",
+              "skipped": false
+            },
+            {
+              "num": 6,
+              "date": "2023-03-15",
+              "skipped": false
+            },
+            {
+              "num": 7,
+              "date": "2024-03-22",
+              "skipped": false
+            },
+            {
+              "num": 8,
+              "date": "2024-03-28",
+              "skipped": false
+            },
+            {
+              "num": 9,
+              "date": "2024-04-03",
+              "skipped": false
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-05-02T13:15:58.315Z"
+    },
+    {
+      "id": "1777728203386",
+      "name": "Orange Is the New Black",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_face/ekaa7YjGPTkFLcPhwWXTnARuCEU.jpg",
+      "synopsis": "Tras haber sido sentenciada por un año y medio de prisión, Piper Chapman se da cuenta de cómo la cárcel puede llegar a cambiar la vida de una persona.",
+      "year": 2013,
+      "country": "Estados Unidos",
+      "network": "Netflix",
+      "networkUrl": "https://www.netflix.com/es/title/70242311?source=imdb&fromWatch=true",
+      "watchLinks": [
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com/es/title/70242311?source=imdb&fromWatch=true"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/vY0qzXi5oJg?si=mGdsDwB8PxQODLjT",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Drama",
+        "Comedia",
+        "Crimen"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2013-07-11",
+          "totalEpisodes": 13,
+          "emissionDays": [
+            3
+          ],
+          "allInOneDay": true,
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 2",
+          "startDate": "2014-06-06",
+          "totalEpisodes": 13,
+          "emissionDays": [
+            4
+          ],
+          "allInOneDay": true,
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 3",
+          "startDate": "2015-06-11",
+          "totalEpisodes": 13,
+          "emissionDays": [
+            3
+          ],
+          "allInOneDay": true,
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 4",
+          "startDate": "2026-06-17",
+          "totalEpisodes": 13,
+          "emissionDays": [
+            2
+          ],
+          "allInOneDay": true,
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 5",
+          "startDate": "2017-06-09",
+          "totalEpisodes": 13,
+          "emissionDays": [
+            4
+          ],
+          "allInOneDay": true,
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 6",
+          "startDate": "2018-07-27",
+          "totalEpisodes": 13,
+          "emissionDays": [
+            4
+          ],
+          "allInOneDay": true,
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 7",
+          "startDate": "2019-07-26",
+          "totalEpisodes": 13,
+          "emissionDays": [
+            4
+          ],
+          "allInOneDay": true,
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-05-02T13:23:23.386Z"
+    },
+    {
+      "id": "1777728316920",
+      "name": "Gypsy",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_face/9dtm1ExRh6ihPGYIaAxEygOnl6G.jpg",
+      "synopsis": "Jean Holloway (Naomi Watts) es una terapeuta que se ve involucrada en relaciones íntimas y peligrosas con personas relacionadas con la vida de sus pacientes.",
+      "year": 2017,
+      "country": "Estados Unidos",
+      "network": "Netflix",
+      "networkUrl": "https://www.netflix.com/es/title/80095411?source=imdb&fromWatch=true",
+      "watchLinks": [
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com/es/title/80095411?source=imdb&fromWatch=true"
+        }
+      ],
+      "trailerUrl": "",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Drama",
+        "Thriller",
+        "Psicológico"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2017-06-30",
+          "totalEpisodes": 10,
+          "emissionDays": [
+            4
+          ],
+          "allInOneDay": true,
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-05-02T13:25:16.920Z"
+    },
+    {
+      "id": "1777728556747",
+      "name": "Vis a vis",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_face/poKkYIyUfxVu5h78b082x3Rojd3.jpg",
+      "synopsis": "Su amante la manipuló para que cometiera varios delitos fiscales. Ahora, esta joven inocente deberá aprender a sobrevivir en un mundo nuevo y despiadado. Y rápido.",
+      "year": 2015,
+      "country": "España",
+      "network": "Netflix, Prime Video",
+      "networkUrl": "https://www.netflix.com/es/title/80059465",
+      "watchLinks": [
+        {
+          "name": "Netflix",
+          "url": "https://www.netflix.com/es/title/80059465"
+        },
+        {
+          "name": "Prime Video",
+          "url": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.66885e7d-7f95-4261-b4fa-cfd4cb3c8708&linkCode=xm2&tag=justesrsjd-21"
+        }
+      ],
+      "trailerUrl": "https://www.youtube.com/watch?v=1AZOY0Xo3m8",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Drama",
+        "Crimen"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2015-04-20",
+          "totalEpisodes": 11,
+          "emissionDays": [
+            0
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 2",
+          "startDate": "2016-03-30",
+          "totalEpisodes": 11,
+          "emissionDays": [
+            2
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 3",
+          "startDate": "2018-04-23",
+          "totalEpisodes": 8,
+          "emissionDays": [
+            0
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 4",
+          "startDate": "2018-12-03",
+          "totalEpisodes": 8,
+          "emissionDays": [
+            0
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-05-02T13:29:16.747Z"
     }
   ],
   "movies": [
@@ -6253,5 +6667,5 @@
       "genres": []
     }
   ],
-  "exportedAt": "2026-05-02T13:02:34.126Z"
+  "exportedAt": "2026-05-02T13:30:07.627Z"
 }
