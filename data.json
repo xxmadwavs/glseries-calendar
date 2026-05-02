@@ -6534,6 +6534,525 @@
         }
       ],
       "updatedAt": "2026-05-02T13:29:16.747Z"
+    },
+    {
+      "id": "1777750223833",
+      "name": "The Owl House",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_face/lE5OYF0axjCVtrxLMetA8i8QpZ8.jpg",
+      "synopsis": "Luz, una adolescente humana muy segura de sí misma, tropieza con un portal a un nuevo mundo mágico donde se hace amiga de una bruja rebelde, Eda, y de un adorable y diminuto guerrero, Rey. A pesar de no saber hacer magia, Luz persigue su sueño de convertirse en bruja aprendiendo de Eda en la Casa Búho, y acaba por encontrar una nueva familia en un entorno extraño.",
+      "year": 2020,
+      "country": "Estados Unidos",
+      "network": "Disney+",
+      "networkUrl": "https://www.disneyplus.com/es-es/browse/entity-4249e544-b4cd-4f3d-bb68-31967428ce13?irclickid=XNcSnCwBAxyZWMb0YITIhUalUkuyZFxxSyi5Vk0&campaignId=9358&irgwc=1&afsrc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=06010019-0184-457c-a400-259969f65010",
+      "watchLinks": [
+        {
+          "name": "Disney+",
+          "url": "https://www.disneyplus.com/es-es/browse/entity-4249e544-b4cd-4f3d-bb68-31967428ce13?irclickid=XNcSnCwBAxyZWMb0YITIhUalUkuyZFxxSyi5Vk0&campaignId=9358&irgwc=1&afsrc=1&cid=DSS-Affiliate-Impact-Content-JustWatch+GmbH-705874&tgclid=06010019-0184-457c-a400-259969f65010"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/4O_i4lSTHB4?si=Z2Q7OAH2GSdV0Yop",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Comedia",
+        "Fantasía",
+        "Aventura",
+        "Familia"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2020-01-10",
+          "totalEpisodes": 19,
+          "emissionDays": [
+            4
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": [
+            {
+              "num": 6,
+              "date": "2020-02-21",
+              "skipped": false
+            },
+            {
+              "num": 7,
+              "date": "2020-02-28",
+              "skipped": false
+            },
+            {
+              "num": 8,
+              "date": "2020-03-06",
+              "skipped": false
+            },
+            {
+              "num": 9,
+              "date": "2020-03-13",
+              "skipped": false
+            },
+            {
+              "num": 10,
+              "date": "2020-03-20",
+              "skipped": false
+            },
+            {
+              "num": 11,
+              "date": "2020-07-11",
+              "skipped": false
+            },
+            {
+              "num": 12,
+              "date": "2020-07-18",
+              "skipped": false
+            },
+            {
+              "num": 13,
+              "date": "2020-07-25",
+              "skipped": false
+            },
+            {
+              "num": 14,
+              "date": "2020-08-01",
+              "skipped": false
+            },
+            {
+              "num": 15,
+              "date": "2020-08-01",
+              "skipped": false
+            },
+            {
+              "num": 19,
+              "date": "2020-08-29",
+              "skipped": false
+            },
+            {
+              "num": 18,
+              "date": "2020-08-22",
+              "skipped": false
+            },
+            {
+              "num": 17,
+              "date": "2020-08-15",
+              "skipped": false
+            },
+            {
+              "num": 16,
+              "date": "2020-08-08",
+              "skipped": false
+            }
+          ]
+        },
+        {
+          "label": "Temporada 2",
+          "startDate": "2021-06-12",
+          "totalEpisodes": 21,
+          "emissionDays": [
+            5
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": [
+            {
+              "num": 14,
+              "date": "2022-04-09",
+              "skipped": false
+            },
+            {
+              "num": 21,
+              "date": "2022-05-28",
+              "skipped": false
+            },
+            {
+              "num": 20,
+              "date": "2022-08-21",
+              "skipped": false
+            },
+            {
+              "num": 19,
+              "date": "2022-05-14",
+              "skipped": false
+            },
+            {
+              "num": 18,
+              "date": "2022-05-07",
+              "skipped": false
+            },
+            {
+              "num": 17,
+              "date": "2022-04-30",
+              "skipped": false
+            },
+            {
+              "num": 16,
+              "date": "2022-04-23",
+              "skipped": false
+            },
+            {
+              "num": 15,
+              "date": "2022-04-16",
+              "skipped": false
+            },
+            {
+              "num": 13,
+              "date": "2022-04-02",
+              "skipped": false
+            },
+            {
+              "num": 12,
+              "date": "2022-03-26",
+              "skipped": false
+            },
+            {
+              "num": 11,
+              "date": "2022-03-19",
+              "skipped": false
+            }
+          ]
+        },
+        {
+          "label": "Temporada 3",
+          "startDate": "2022-10-15",
+          "totalEpisodes": 3,
+          "emissionDays": [
+            5
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": [
+            {
+              "num": 2,
+              "date": "2023-01-21",
+              "skipped": false
+            },
+            {
+              "num": 3,
+              "date": "2023-04-08",
+              "skipped": false
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-05-02T19:34:38.266Z"
+    },
+    {
+      "id": "1777750880982",
+      "name": "Dickinson",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_face/dDdcAfHBZ6Aalv53iR6o35CSLWA.jpg",
+      "synopsis": "La historia se ubica en el siglo XIX donde a través de la mirada y perspectiva de la joven y rebelde poeta Emily Dickinson se explorarán las limitaciones de la sociedad, el género y la familia de su tiempo.",
+      "year": 2019,
+      "country": "Estados Unidos",
+      "network": "AppleTv",
+      "networkUrl": "https://tv.apple.com/es/episode/porque-no-pude-parar/umc.cmc.7ce71s408rqgrnsgtkmilevzw?showId=umc.cmc.1ogyy5s2agasxa5qztabrlykn&playableId=tvs.sbd.4000%3AVDKSN0560101",
+      "watchLinks": [
+        {
+          "name": "AppleTv",
+          "url": "https://tv.apple.com/es/episode/porque-no-pude-parar/umc.cmc.7ce71s408rqgrnsgtkmilevzw?showId=umc.cmc.1ogyy5s2agasxa5qztabrlykn&playableId=tvs.sbd.4000%3AVDKSN0560101"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/z8cr6OWPd9k?si=_ZygcfX--0YqLjMl",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Drama",
+        "Comedia"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2019-11-01",
+          "totalEpisodes": 10,
+          "emissionDays": [
+            4
+          ],
+          "allInOneDay": true,
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 2",
+          "startDate": "2021-01-08",
+          "totalEpisodes": 10,
+          "emissionDays": [
+            4
+          ],
+          "allInOneDay": true,
+          "skipDates": [],
+          "episodes": [
+            {
+              "num": 4,
+              "date": "2021-01-15",
+              "skipped": false
+            },
+            {
+              "num": 5,
+              "date": "2021-01-22",
+              "skipped": false
+            },
+            {
+              "num": 6,
+              "date": "2021-01-29",
+              "skipped": false
+            },
+            {
+              "num": 7,
+              "date": "2021-02-05",
+              "skipped": false
+            },
+            {
+              "num": 10,
+              "date": "2021-02-26",
+              "skipped": false
+            },
+            {
+              "num": 9,
+              "date": "2021-02-09",
+              "skipped": false
+            },
+            {
+              "num": 8,
+              "date": "2021-02-12",
+              "skipped": false
+            }
+          ]
+        },
+        {
+          "label": "Temporada 3",
+          "startDate": "2021-11-04",
+          "totalEpisodes": 10,
+          "emissionDays": [
+            3
+          ],
+          "allInOneDay": true,
+          "skipDates": [],
+          "episodes": [
+            {
+              "num": 10,
+              "date": "2021-12-24",
+              "skipped": false
+            },
+            {
+              "num": 9,
+              "date": "2021-12-17",
+              "skipped": false
+            },
+            {
+              "num": 8,
+              "date": "2021-12-10",
+              "skipped": false
+            },
+            {
+              "num": 7,
+              "date": "2021-12-03",
+              "skipped": false
+            },
+            {
+              "num": 6,
+              "date": "2021-11-25",
+              "skipped": false
+            },
+            {
+              "num": 5,
+              "date": "2021-11-19",
+              "skipped": false
+            },
+            {
+              "num": 4,
+              "date": "2021-11-12",
+              "skipped": false
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-05-02T19:41:20.982Z"
+    },
+    {
+      "id": "1777751254463",
+      "name": "The Girls on Rela",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_face/4CQDOhMidNBGf4kmcTUL4FtH4Sp.jpg",
+      "synopsis": "Ahí viene otra vez, esa chica que te gusta. ¿Qué haces? Búscala en Rela \"cerca\". Habla con ella, ya que tu propia historia de amor podría comenzar ahí.",
+      "year": 2017,
+      "country": "China",
+      "network": "YouTube",
+      "networkUrl": "https://www.youtube.com/watch?v=C8_FRBLkhUU",
+      "watchLinks": [
+        {
+          "name": "YouTube",
+          "url": "https://www.youtube.com/watch?v=C8_FRBLkhUU"
+        }
+      ],
+      "trailerUrl": "",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Drama"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2017-09-13",
+          "totalEpisodes": 15,
+          "emissionDays": [
+            2
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 2",
+          "startDate": "2018-11-24",
+          "totalEpisodes": 8,
+          "emissionDays": [
+            5
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-05-02T19:47:34.463Z"
+    },
+    {
+      "id": "1777751376726",
+      "name": "Am I the Only One with Butterflies?",
+      "poster": "https://i.mydramalist.com/Z0rAkc.jpg?v=1",
+      "synopsis": "La conocí el primer día de trabajo. Últimamente siento mariposas en el estómago por culpa de mi jefe. ¿Soy la única que siente mariposas?",
+      "year": 2018,
+      "country": "Corea del Sur",
+      "network": "YouTube",
+      "networkUrl": "https://www.youtube.com/watch?v=yiwYp9jzh6o&list=PL_wBhmJHUwXQWeqXhDU57_sXNdtu7j9Ij&index=1",
+      "watchLinks": [
+        {
+          "name": "YouTube",
+          "url": "https://www.youtube.com/watch?v=yiwYp9jzh6o&list=PL_wBhmJHUwXQWeqXhDU57_sXNdtu7j9Ij&index=1"
+        }
+      ],
+      "trailerUrl": "",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2018-08-30",
+          "totalEpisodes": 3,
+          "emissionDays": [
+            3
+          ],
+          "allInOneDay": true,
+          "skipDates": [],
+          "episodes": []
+        },
+        {
+          "label": "Temporada 2",
+          "startDate": "2019-03-20",
+          "totalEpisodes": 4,
+          "emissionDays": [
+            2
+          ],
+          "allInOneDay": true,
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-05-02T19:49:36.726Z"
+    },
+    {
+      "id": "1777751530698",
+      "name": "Yuri Dano Kan Dano",
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkW1xZAWlAMmKebN4sSwvuE83HXYT7TckY8g&s",
+      "synopsis": "La historia sigue a Sugawara Yuri, una estudiante universitaria que sufre acoso. Debido al hostigamiento, Yuri decide mudarse. Mientras busca un nuevo lugar para vivir, se reencuentra con su compañera de la escuela primaria, Ninomiya Uri.",
+      "year": 2019,
+      "country": "Japón",
+      "network": "",
+      "networkUrl": "",
+      "watchLinks": [],
+      "trailerUrl": "",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Drama",
+        "Psicológico",
+        "Escolar"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2019-05-24",
+          "totalEpisodes": 8,
+          "emissionDays": [
+            4
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-05-02T19:52:10.698Z"
+    },
+    {
+      "id": "1777751604849",
+      "name": "Dear My Girlfriend",
+      "poster": "https://i.mydramalist.com/dE0l5_4c.jpg?v=1",
+      "synopsis": "",
+      "year": 2021,
+      "country": "Corea del Sur",
+      "network": "YouTube",
+      "networkUrl": "https://youtube.com/playlist?list=PLjd5-3yYwC4QCyp7ZxMNnkIjD3H2A8UCp",
+      "watchLinks": [
+        {
+          "name": "YouTube",
+          "url": "https://youtube.com/playlist?list=PLjd5-3yYwC4QCyp7ZxMNnkIjD3H2A8UCp"
+        }
+      ],
+      "trailerUrl": "",
+      "bookSource": "",
+      "basedOnBook": false,
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Romance",
+        "Drama"
+      ],
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2021-12-04",
+          "totalEpisodes": 3,
+          "emissionDays": [
+            5
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": []
+        }
+      ],
+      "updatedAt": "2026-05-02T19:53:24.849Z"
     }
   ],
   "movies": [
@@ -6667,5 +7186,5 @@
       "genres": []
     }
   ],
-  "exportedAt": "2026-05-02T13:32:22.983Z"
+  "exportedAt": "2026-05-02T19:53:29.467Z"
 }
