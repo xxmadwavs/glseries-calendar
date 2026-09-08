@@ -22961,13 +22961,18 @@
       "id": "1787683046577",
       "name": "Hello, Stranger",
       "nameEn": "안녕, 낯선 사람",
-      "poster": "https://girlsloveinfo.com/wp-content/uploads/2026/08/Captura-de-Tela-2026-08-19-as-21.30.29.jpg",
+      "poster": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ6rrh47BRxDFZu1NzPPCBBZgC7xfh57BjzMolvkQVXJmLl5ZzCU4Ike99&s=10",
       "synopsis": "",
       "year": 2026,
       "country": "Corea del Sur",
       "network": "",
-      "networkUrl": "",
-      "watchLinks": [],
+      "networkUrl": "https://youtu.be/EJQ6de4S-No?si=eOaC6uyM9do2TRKV",
+      "watchLinks": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/EJQ6de4S-No?si=eOaC6uyM9do2TRKV"
+        }
+      ],
       "trailerUrl": "https://youtu.be/GGEOQXKiEnA?si=Br_YQIYLLVSvdRCq",
       "bookSource": "",
       "basedOnBook": false,
@@ -22975,8 +22980,10 @@
       "bookCoverUrl": "",
       "bookLinks": [],
       "bookUrl": "",
-      "upcoming": true,
-      "genres": [],
+      "upcoming": false,
+      "genres": [
+        "Romance"
+      ],
       "moods": [],
       "tropos": [],
       "dinamica": [],
@@ -22995,7 +23002,21 @@
       "snLastUpdate": "",
       "snNote": "",
       "productoraId": "",
-      "updatedAt": "2026-08-25T18:37:32.834Z"
+      "updatedAt": "2026-09-08T19:30:11.167Z",
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2026-09-01",
+          "totalEpisodes": 8,
+          "emissionDays": [
+            1
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": [],
+          "premiereSchedule": []
+        }
+      ]
     },
     {
       "id": "1787683216934",
@@ -23994,6 +24015,314 @@
         }
       ],
       "updatedAt": "2026-09-01T07:54:45.558Z"
+    },
+    {
+      "id": "1788895228729",
+      "name": "Vigil",
+      "nameEn": "",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_face/7v2D9l9QmU02pXP7R2udu1uYN2y.jpg",
+      "synopsis": "La brillante y frágil detective Amy Silva (Suranne Jones) es enviada al submarino HMS Vigil para investigar la misteriosa muerte de uno de sus tripulantes. Cuando la escotilla se cierra encima de su cabeza, la realidad que encuentra es muy distinta a lo esperado. Dentro del submarino el secretismo, las jerarquías y el claustrofóbico escenario complican la investigación, y la tripulación se muestra reacia a colaborar. Mientras tanto, en tierra, su compañera y confidente Kirsten Longacre (Rose Leslie) hace sus propias indagaciones. El caso pronto trasciende las paredes del submarino y desvela una conspiración que amenaza el corazón mismo de la seguridad nacional británica.",
+      "year": 2021,
+      "country": "Reino Unido",
+      "network": "",
+      "networkUrl": "https://www.movistarplus.es/series/vigil-conspiracion-desde-el-aire-t2/episodio-1/ficha?tipo=E&id=3057546&epi=&tduid=bc9986621331224d856e079b9bec4b43&utm_campaign=alwaysON&utm_content=Price%20Comparison&utm_medium=Affiliates&utm_source=Tradedoubler&utm_term=2854067",
+      "watchLinks": [
+        {
+          "name": "Movistar +",
+          "url": "https://www.movistarplus.es/series/vigil-conspiracion-desde-el-aire-t2/episodio-1/ficha?tipo=E&id=3057546&epi=&tduid=bc9986621331224d856e079b9bec4b43&utm_campaign=alwaysON&utm_content=Price%20Comparison&utm_medium=Affiliates&utm_source=Tradedoubler&utm_term=2854067"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/oFhgNy5jqsU?si=M3dpuMEIBtioi4mJ",
+      "bookSource": "",
+      "basedOnBook": false,
+      "sourceType": "",
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Crimen",
+        "Drama",
+        "Thriller"
+      ],
+      "moods": [],
+      "tropos": [],
+      "dinamica": [],
+      "awards": [],
+      "category": "series",
+      "seriesType": "serie",
+      "cast": [],
+      "animeSeason": "",
+      "renewedNextSeason": false,
+      "episodeDuration": 59,
+      "myPick": false,
+      "myPick2026": false,
+      "cancelStatus": "",
+      "cancelNote": "",
+      "sinNovedades": false,
+      "snLastUpdate": "",
+      "snNote": "",
+      "productoraId": "",
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2021-09-13",
+          "totalEpisodes": 6,
+          "emissionDays": [
+            0
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": [],
+          "premiereSchedule": [],
+          "episodeDuration": 59
+        },
+        {
+          "label": "Temporada 2",
+          "startDate": "2024-02-27",
+          "totalEpisodes": 6,
+          "emissionDays": [
+            1
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": [],
+          "premiereSchedule": []
+        },
+        {
+          "label": "Temporada 3",
+          "startDate": "2026-08-30",
+          "totalEpisodes": 6,
+          "emissionDays": [
+            6
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": [],
+          "premiereSchedule": [
+            {
+              "fromEp": 1,
+              "toEp": 2,
+              "date": "2026-08-30"
+            },
+            {
+              "fromEp": 3,
+              "toEp": 4,
+              "date": "2026-09-06"
+            },
+            {
+              "fromEp": 5,
+              "toEp": 6,
+              "date": "2026-09-13"
+            }
+          ]
+        }
+      ],
+      "updatedAt": "2026-09-08T19:20:28.729Z"
+    },
+    {
+      "id": "1788895582415",
+      "name": "Yes Maybe No",
+      "nameEn": "YES maybe NO เหมือนจะใช่เมื่อใจมีรัก",
+      "poster": "",
+      "synopsis": "Una chica introvertida se reencuentra con su primer amor, que también era su amigo. Pero su corazón ya ha ido mucho más allá de la amistad. Su falta de valor para admitir sus propios sentimientos hace que esté a punto de perder ese amor para siempre.",
+      "year": "",
+      "country": "Tailandia",
+      "network": "",
+      "networkUrl": "",
+      "watchLinks": [],
+      "trailerUrl": "",
+      "bookSource": "",
+      "basedOnBook": false,
+      "sourceType": "",
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": true,
+      "genres": [
+        "Romance"
+      ],
+      "moods": [],
+      "tropos": [],
+      "dinamica": [],
+      "awards": [],
+      "category": "series",
+      "seriesType": "serie",
+      "cast": [
+        {
+          "actressId": "1788895546539",
+          "character": "Pat",
+          "coupleType": "main",
+          "coupleNum": 1
+        },
+        {
+          "actressId": "1788895574201",
+          "character": "Pie",
+          "coupleType": "main",
+          "coupleNum": 1
+        }
+      ],
+      "animeSeason": "",
+      "renewedNextSeason": false,
+      "episodeDuration": "",
+      "myPick": false,
+      "myPick2026": false,
+      "cancelStatus": "",
+      "cancelNote": "",
+      "sinNovedades": false,
+      "snLastUpdate": "",
+      "snNote": "",
+      "productoraId": "1779136303417",
+      "updatedAt": "2026-09-08T19:26:22.415Z"
+    },
+    {
+      "id": "1788896024625",
+      "name": "Xeque Mate",
+      "nameEn": "",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_face/zoPxIzOrKezqjXYI1vSdBgGW0F2.jpg",
+      "synopsis": "Un juego peligroso, lleno de trampas. Una disputa de poder, dinero y deseo. A un lado del tablero, la delegada Giovanna Torres; al otro, la mujer de un empresario, Maya Manoela. En este juego, sólo uno caerá. ¿Quién dará jaque mate?",
+      "year": 2024,
+      "country": "Brasil",
+      "network": "Youtube",
+      "networkUrl": "https://youtube.com/playlist?list=PLXcBD1c3lsUhGSvfPooS39WCQbauyDbwq&si=DHsBa9XyguonEsZJ",
+      "watchLinks": [
+        {
+          "name": "YouTube",
+          "url": "https://youtube.com/playlist?list=PLXcBD1c3lsUhGSvfPooS39WCQbauyDbwq&si=DHsBa9XyguonEsZJ"
+        }
+      ],
+      "trailerUrl": "",
+      "bookSource": "",
+      "basedOnBook": false,
+      "sourceType": "",
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Crimen",
+        "Misterio",
+        "Romance"
+      ],
+      "moods": [],
+      "tropos": [],
+      "dinamica": [],
+      "awards": [],
+      "category": "series",
+      "seriesType": "serie",
+      "cast": [],
+      "animeSeason": "",
+      "renewedNextSeason": false,
+      "episodeDuration": 28,
+      "myPick": false,
+      "myPick2026": false,
+      "cancelStatus": "",
+      "cancelNote": "",
+      "sinNovedades": false,
+      "snLastUpdate": "",
+      "snNote": "",
+      "productoraId": "",
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2024-05-16",
+          "totalEpisodes": 8,
+          "emissionDays": [
+            3
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": [],
+          "premiereSchedule": []
+        },
+        {
+          "label": "Temporada 2",
+          "startDate": "2026-08-21",
+          "totalEpisodes": 11,
+          "emissionDays": [
+            4
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": [],
+          "premiereSchedule": []
+        },
+        {
+          "label": "Temporada 3",
+          "startDate": "2026-08-13",
+          "totalEpisodes": 6,
+          "emissionDays": [
+            3
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": [],
+          "premiereSchedule": []
+        }
+      ],
+      "updatedAt": "2026-09-08T19:33:44.625Z"
+    },
+    {
+      "id": "1788896181091",
+      "name": "The 'Other' Love Story",
+      "nameEn": "",
+      "poster": "https://www.themoviedb.org/t/p/w600_and_h900_face/iNgR7vw7aKTIsWIvOFicuHfgYNY.jpg",
+      "synopsis": "Dos adolescentes indias se enamoran en la década de los noventa en Bangalore, cuando aún no existían los móviles ni Internet: una historia de amor pura, intensa y apasionada que se impone contra todo pronóstico.",
+      "year": 2016,
+      "country": "India",
+      "network": "YouTube",
+      "networkUrl": "https://youtu.be/r6IHJ3SD4Ik?si=pnXgg4-KEMs9SNvm",
+      "watchLinks": [
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/r6IHJ3SD4Ik?si=pnXgg4-KEMs9SNvm"
+        }
+      ],
+      "trailerUrl": "https://youtu.be/tqFHY0J17aE?si=pKEmfMbViWhdF-3J",
+      "bookSource": "",
+      "basedOnBook": false,
+      "sourceType": "",
+      "bookCoverUrl": "",
+      "bookLinks": [],
+      "bookUrl": "",
+      "upcoming": false,
+      "genres": [
+        "Drama",
+        "Romance"
+      ],
+      "moods": [],
+      "tropos": [],
+      "dinamica": [],
+      "awards": [],
+      "category": "series",
+      "seriesType": "serie",
+      "cast": [],
+      "animeSeason": "",
+      "renewedNextSeason": false,
+      "episodeDuration": "",
+      "myPick": false,
+      "myPick2026": false,
+      "cancelStatus": "",
+      "cancelNote": "",
+      "sinNovedades": false,
+      "snLastUpdate": "",
+      "snNote": "",
+      "productoraId": "",
+      "seasons": [
+        {
+          "label": "Temporada 1",
+          "startDate": "2016-08-27",
+          "totalEpisodes": 12,
+          "emissionDays": [
+            5
+          ],
+          "allInOneDay": false,
+          "skipDates": [],
+          "episodes": [],
+          "premiereSchedule": []
+        }
+      ],
+      "updatedAt": "2026-09-08T19:36:21.091Z"
     }
   ],
   "movies": [
@@ -36376,6 +36705,22 @@
       "country": "China",
       "birthdate": "",
       "notes": ""
+    },
+    {
+      "id": "1788895546539",
+      "name": "Tan Thanatcha",
+      "photo": "https://pbs.twimg.com/media/Ft6R-BwaQAAmw7H?format=jpg&name=large",
+      "country": "Tailandia",
+      "birthdate": "",
+      "notes": "Actriz"
+    },
+    {
+      "id": "1788895574201",
+      "name": "Zanook Nadnada",
+      "photo": "https://pbs.twimg.com/profile_images/2080613693390483456/DnAq-v41_400x400.jpg",
+      "country": "Tailandia",
+      "birthdate": "",
+      "notes": ""
     }
   ],
   "ships": [
@@ -37020,6 +37365,19 @@
       "actressIds": [
         "1784480397735",
         "1784480354646"
+      ]
+    },
+    {
+      "id": "1788895622084",
+      "name": "TanZanook",
+      "desc": "",
+      "retired": false,
+      "couplePhoto": "https://pbs.twimg.com/media/HRr67RDWoAAWfXV?format=jpg&name=large",
+      "couplePhotoPosition": "50% 20%",
+      "couplePhotoZoom": 1,
+      "actressIds": [
+        "1788895546539",
+        "1788895574201"
       ]
     }
   ],
@@ -38509,5 +38867,5 @@
       ]
     }
   },
-  "exportedAt": "2026-09-06T17:24:44.944Z"
+  "exportedAt": "2026-09-08T19:36:22.618Z"
 }
